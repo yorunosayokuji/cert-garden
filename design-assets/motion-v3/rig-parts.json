@@ -1,0 +1,167 @@
+{
+  "version": 2,
+  "file": "apricot-rig-parts-v1.png",
+  "width": 1536,
+  "height": 1024,
+  "body": {
+    "rect": [
+      60,
+      45,
+      660,
+      452
+    ],
+    "logicalWidth": 74
+  },
+  "logicalCanvas": [
+    96,
+    76
+  ],
+  "bodyOrigin": [
+    8,
+    0
+  ],
+  "groundY": 58,
+  "parts": {
+    "foreUpper": {
+      "rect": [
+        863,
+        196,
+        148,
+        248
+      ],
+      "start": [
+        75,
+        39
+      ],
+      "end": [
+        73,
+        221
+      ]
+    },
+    "foreLower": {
+      "rect": [
+        1247,
+        174,
+        133,
+        242
+      ],
+      "start": [
+        60,
+        51
+      ],
+      "end": [
+        63,
+        223
+      ]
+    },
+    "forePaw": {
+      "rect": [
+        1231,
+        391,
+        147,
+        93
+      ],
+      "sole": [
+        54,
+        84
+      ],
+      "logicalWidth": 11
+    },
+    "hindUpper": {
+      "rect": [
+        197,
+        584,
+        207,
+        313
+      ],
+      "start": [
+        108,
+        46
+      ],
+      "end": [
+        108,
+        270
+      ]
+    },
+    "hindShin": {
+      "rect": [
+        730,
+        626,
+        135,
+        265
+      ],
+      "start": [
+        72,
+        42
+      ],
+      "end": [
+        75,
+        228
+      ]
+    },
+    "hindHock": {
+      "rect": [
+        1221,
+        657,
+        152,
+        184
+      ],
+      "start": [
+        65,
+        48
+      ],
+      "end": [
+        91,
+        178
+      ]
+    },
+    "hindPaw": {
+      "rect": [
+        1221,
+        812,
+        151,
+        93
+      ],
+      "sole": [
+        65,
+        84
+      ],
+      "logicalWidth": 11
+    }
+  },
+  "joints": {
+    "LF": {
+      "root": [
+        30,
+        40
+      ],
+      "groundY": 58,
+      "footCenterX": 28
+    },
+    "RF": {
+      "root": [
+        26,
+        39
+      ],
+      "groundY": 55.5,
+      "footCenterX": 24
+    },
+    "LH": {
+      "root": [
+        60,
+        40
+      ],
+      "groundY": 58,
+      "footCenterX": 59
+    },
+    "RH": {
+      "root": [
+        57,
+        39
+      ],
+      "groundY": 55.5,
+      "footCenterX": 56
+    }
+  },
+  "note": "New generated cutout parts. This atlas is not a complete hand-drawn animation. Compose new poses by articulated joints and foot-contact math. Original PNG unchanged; rectangles and pivots measured from visible parts. Validate visual overlap and tune geometry; skeleton diagram is a design, not animal measurement."
+}

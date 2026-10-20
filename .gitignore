@@ -1,0 +1,17 @@
+node_modules/
+dist/
+dist-ios-design/
+.expo/
+.wrangler/
+.tmp/
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.p8
+*.pem
+*.p12
+*.mobileprovision
+*.log
+.DS_Store

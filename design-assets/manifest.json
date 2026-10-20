@@ -1,0 +1,509 @@
+{
+  "version": "2026-10-12-v1",
+  "owner": "Codex",
+  "method": "Built-in imagegen; non-destructive copies; no generated code drawings",
+  "status": "LOCAL_IMPLEMENTATION_ASSETS_READY_VISUAL_ACCEPTANCE_PENDING",
+  "assets": [
+    {
+      "path": "originals/room-wide-opaque-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "0dd88c53b31373b93d16b3cb5268bc6d0012f2979635dec48191803336c36049",
+      "bytes": 1599993,
+      "cornerAlpha": 255,
+      "status": "generation-history"
+    },
+    {
+      "path": "parts/room-wide-v1.png",
+      "width": 1254,
+      "height": 1254,
+      "sha256": "94b40d0670ca53019ff9a2adf732aabb224abcf576653e9eceacb2a87090ab07",
+      "bytes": 1779737,
+      "cornerAlpha": 0,
+      "status": "implementation-candidate-pending-user-visual-acceptance"
+    },
+    {
+      "path": "parts/study-desk-v1.png",
+      "width": 2172,
+      "height": 724,
+      "sha256": "d6bd92ff16013378cb25eb416d537cab774612c09b650f0ba88bd4e6de7f5513",
+      "bytes": 1249226,
+      "cornerAlpha": 255,
+      "status": "implementation-candidate-pending-user-visual-acceptance"
+    },
+    {
+      "path": "variants/apricot-atlas-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "0fa93ea8a01f996521b85528872527b707510b08c98d99b2f27e5252a937875b",
+      "bytes": 1589071,
+      "cornerAlpha": 0,
+      "cells": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            28,
+            84,
+            496,
+            464
+          ],
+          "pose": "idle",
+          "anchor": {
+            "x": 262,
+            "y": 464
+          }
+        },
+        {
+          "index": 1,
+          "rect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            24,
+            196,
+            472,
+            468
+          ],
+          "pose": "sleep",
+          "anchor": {
+            "x": 248,
+            "y": 468
+          }
+        },
+        {
+          "index": 2,
+          "rect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            4,
+            84,
+            460,
+            468
+          ],
+          "pose": "roll",
+          "anchor": {
+            "x": 232,
+            "y": 468
+          }
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            32,
+            36,
+            496,
+            416
+          ],
+          "pose": "cheer",
+          "anchor": {
+            "x": 264,
+            "y": 416
+          }
+        },
+        {
+          "index": 4,
+          "rect": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            40,
+            92,
+            484,
+            416
+          ],
+          "pose": "encourage",
+          "anchor": {
+            "x": 262,
+            "y": 416
+          }
+        },
+        {
+          "index": 5,
+          "rect": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            12,
+            36,
+            464,
+            412
+          ],
+          "pose": "celebrate",
+          "anchor": {
+            "x": 238,
+            "y": 412
+          }
+        }
+      ],
+      "status": "implementation-candidate-pending-user-visual-acceptance"
+    },
+    {
+      "path": "variants/cream-atlas-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "4375ccb843961ede4c699e4e28150bbfff12ff82ae17abba91da381ef226af77",
+      "bytes": 1611408,
+      "cornerAlpha": 0,
+      "cells": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            68,
+            80,
+            504,
+            460
+          ],
+          "pose": "idle",
+          "anchor": {
+            "x": 286,
+            "y": 460
+          }
+        },
+        {
+          "index": 1,
+          "rect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            28,
+            160,
+            480,
+            436
+          ],
+          "pose": "sleep",
+          "anchor": {
+            "x": 254,
+            "y": 436
+          }
+        },
+        {
+          "index": 2,
+          "rect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            20,
+            112,
+            476,
+            452
+          ],
+          "pose": "roll",
+          "anchor": {
+            "x": 248,
+            "y": 452
+          }
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            68,
+            36,
+            504,
+            432
+          ],
+          "pose": "cheer",
+          "anchor": {
+            "x": 286,
+            "y": 432
+          }
+        },
+        {
+          "index": 4,
+          "rect": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            56,
+            48,
+            492,
+            432
+          ],
+          "pose": "encourage",
+          "anchor": {
+            "x": 274,
+            "y": 432
+          }
+        },
+        {
+          "index": 5,
+          "rect": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            24,
+            16,
+            460,
+            428
+          ],
+          "pose": "celebrate",
+          "anchor": {
+            "x": 242,
+            "y": 428
+          }
+        }
+      ],
+      "status": "implementation-candidate-pending-user-visual-acceptance"
+    },
+    {
+      "path": "variants/lavender-atlas-v1.png",
+      "width": 1536,
+      "height": 1024,
+      "sha256": "28f7f3f2014d5227e4ee54177361048534f61b02c1063bbc3ad5d01ced9a0e54",
+      "bytes": 1628973,
+      "cornerAlpha": 0,
+      "cells": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            32,
+            100,
+            504,
+            468
+          ],
+          "pose": "idle",
+          "anchor": {
+            "x": 268,
+            "y": 468
+          }
+        },
+        {
+          "index": 1,
+          "rect": [
+            512,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            76,
+            156,
+            476,
+            476
+          ],
+          "pose": "sleep",
+          "anchor": {
+            "x": 276,
+            "y": 476
+          }
+        },
+        {
+          "index": 2,
+          "rect": [
+            1024,
+            0,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            76,
+            164,
+            488,
+            484
+          ],
+          "pose": "roll",
+          "anchor": {
+            "x": 282,
+            "y": 484
+          }
+        },
+        {
+          "index": 3,
+          "rect": [
+            0,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            48,
+            40,
+            504,
+            420
+          ],
+          "pose": "cheer",
+          "anchor": {
+            "x": 276,
+            "y": 420
+          }
+        },
+        {
+          "index": 4,
+          "rect": [
+            512,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            52,
+            64,
+            500,
+            420
+          ],
+          "pose": "encourage",
+          "anchor": {
+            "x": 276,
+            "y": 420
+          }
+        },
+        {
+          "index": 5,
+          "rect": [
+            1024,
+            512,
+            512,
+            512
+          ],
+          "visibleBBoxSampled4px": [
+            24,
+            32,
+            484,
+            400
+          ],
+          "pose": "celebrate",
+          "anchor": {
+            "x": 254,
+            "y": 400
+          }
+        }
+      ],
+      "status": "implementation-candidate-pending-user-visual-acceptance"
+    },
+    {
+      "bytes": 1737993,
+      "reason": "Alpha1 fringe in image tool display; actual runtime v1 on cream background has no visible red fringe. No runtime substitution.",
+      "width": 1254,
+      "sha256": "bcc754ce9b11270a11c373a5bb94005a309419c08147f22e6cbc0c03b6ca42d9",
+      "height": 1254,
+      "status": "unused-generation-history-not-adopted",
+      "path": "originals/room-edge-cleanup-candidate-v2.png"
+    }
+  ],
+  "atlas": {
+    "columns": 3,
+    "rows": 2,
+    "cellWidth": 512,
+    "cellHeight": 512,
+    "poseOrder": [
+      "idle",
+      "sleep",
+      "roll",
+      "cheer",
+      "encourage",
+      "celebrate"
+    ],
+    "anchorNote": "Sampled at 4px with alpha >32. Use pose-specific anchors to keep visible feet in a stable ground position. These are independent poses, not six consecutive frames of one animation."
+  },
+  "home": {
+    "room": "parts/room-wide-v1.png",
+    "placements": [
+      {
+        "id": "cream",
+        "atlas": "variants/cream-atlas-v1.png",
+        "pose": "idle",
+        "ground": [
+          0.3,
+          0.445
+        ],
+        "cellWidthRatio": 0.21
+      },
+      {
+        "id": "lavender",
+        "atlas": "variants/lavender-atlas-v1.png",
+        "pose": "idle",
+        "ground": [
+          0.78,
+          0.525
+        ],
+        "cellWidthRatio": 0.24
+      },
+      {
+        "id": "apricot",
+        "atlas": "variants/apricot-atlas-v1.png",
+        "pose": "idle",
+        "ground": [
+          0.5,
+          0.71
+        ],
+        "cellWidthRatio": 0.3
+      }
+    ]
+  },
+  "study": {
+    "background": "parts/study-desk-v1.png",
+    "aspectRatio": 3,
+    "character": "apricot",
+    "cellWidthRatio": 0.36,
+    "ground": [
+      0.62,
+      0.91
+    ],
+    "readingPoses": [
+      "idle",
+      "sleep",
+      "roll"
+    ],
+    "motion": "Small sprite-only translation/rotation; no occlusion of choices. Reduced-motion: static pose. Never signal correctness until confirm."
+  },
+  "limits": [
+    "3 creatures for this local slice, not full 10-15 species release",
+    "Furniture still in background plate, not individually movable yet",
+    "18 independent poses; not hand-drawn animation strips",
+    "Native device, purchases, account sync, full 10 qualification content remain unverified"
+  ]
+}

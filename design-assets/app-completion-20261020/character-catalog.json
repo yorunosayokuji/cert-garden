@@ -1,0 +1,1310 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "owner": "Codex design-assets",
+  "framePathBase": "app root; never infer flips",
+  "runtime": "existing Expo React Native; Claude writer",
+  "room": "design-assets/parts/room-wide-v1.png",
+  "roomScale": "visible pet width about 18-23 percent; use alpha bbox and ground anchor",
+  "characters": [
+    {
+      "id": "anzu",
+      "name": "あんず",
+      "kind": "quadruped",
+      "seed": "design-assets/motion-v13-ensemble/anzu/idle/01.png",
+      "seedSha256": "06f11878dd250db3c2b75788208ac545b3f22ac06808347a9093534f92dffa40",
+      "designAccepted": true,
+      "motionStatus": "selected-idle-and-walk; transition-candidate",
+      "nativeFacing": "left",
+      "roomWidth": 0.23,
+      "clips": {
+        "idle": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/01.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/02.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/03.png",
+              "ms": 500
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/04.png",
+              "ms": 600
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/05.png",
+              "ms": 500
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/06.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/idle/07.png",
+              "ms": 400
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.802
+          ]
+        },
+        "move": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/01.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/02.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/03.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/04.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/05.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/06.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/07.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/move/08.png",
+              "ms": 200
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.807
+          ]
+        },
+        "stop": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/stop/01.png",
+              "ms": 120
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/stop/02.png",
+              "ms": 120
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/stop/03.png",
+              "ms": 120
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/stop/04.png",
+              "ms": 120
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "start": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/start/01.png",
+              "ms": 120
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/start/02.png",
+              "ms": 120
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/start/03.png",
+              "ms": 120
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/anzu/start/04.png",
+              "ms": 120
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        }
+      },
+      "source": "design-assets/motion-v13-ensemble/manifest.json"
+    },
+    {
+      "id": "cream",
+      "name": "クリーム",
+      "kind": "biped",
+      "seed": "design-assets/motion-v13-ensemble/cream/idle/01.png",
+      "seedSha256": "4e4995f2f24dd9ce0ad0380dab7598fc1425c23a612a9952f95f3d01f29f646d",
+      "designAccepted": true,
+      "motionStatus": "candidate",
+      "nativeFacing": "left",
+      "roomWidth": 0.2,
+      "clips": {
+        "idle": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/01.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/02.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/03.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/04.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/05.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/06.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/07.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/idle/08.png",
+              "ms": 400
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "move": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/01.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/02.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/03.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/04.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/05.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/06.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/07.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/move/08.png",
+              "ms": 250
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "start": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/start/01.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/start/02.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/start/03.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/start/04.png",
+              "ms": 200
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "stop": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/stop/01.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/stop/02.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/stop/03.png",
+              "ms": 200
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/cream/stop/04.png",
+              "ms": 200
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        }
+      },
+      "source": "design-assets/motion-v13-ensemble/manifest.json"
+    },
+    {
+      "id": "lavender",
+      "name": "ラベンダー",
+      "kind": "hopper",
+      "seed": "design-assets/motion-v13-ensemble/lavender/idle/01.png",
+      "seedSha256": "134472a5486c59ba12d428fcac2085a22b56e0418d2d300a444a1e9508fd556e",
+      "designAccepted": true,
+      "motionStatus": "candidate",
+      "nativeFacing": "left",
+      "roomWidth": 0.23,
+      "clips": {
+        "idle": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/01.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/02.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/03.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/04.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/05.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/06.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/07.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/idle/08.png",
+              "ms": 400
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "move": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/01.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/02.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/03.png",
+              "ms": 140
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/04.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/05.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/06.png",
+              "ms": 140
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/07.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/lavender/move/08.png",
+              "ms": 260
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ],
+          "travelWeights": [
+            0,
+            0,
+            0.15,
+            0.3,
+            0.3,
+            0.25,
+            0,
+            0
+          ]
+        }
+      },
+      "source": "design-assets/motion-v13-ensemble/manifest.json"
+    },
+    {
+      "id": "beans",
+      "name": "ビーンズ",
+      "kind": "quadruped",
+      "seed": "design-assets/motion-v13-ensemble/beans/idle/01.png",
+      "seedSha256": "17fe94120fb647a31b4f4dc71c55c5c4dee09c9f3e92fcccfe88b266934cbfb9",
+      "designAccepted": true,
+      "motionStatus": "candidate",
+      "nativeFacing": "left",
+      "roomWidth": 0.24,
+      "clips": {
+        "idle": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/01.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/02.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/03.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/04.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/05.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/06.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/07.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/idle/08.png",
+              "ms": 400
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "move": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/01.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/02.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/03.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/04.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/05.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/06.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/07.png",
+              "ms": 250
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/move/08.png",
+              "ms": 250
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "start": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/start/01.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/start/02.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/start/03.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/start/04.png",
+              "ms": 180
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "stop": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/stop/01.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/stop/02.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/stop/03.png",
+              "ms": 180
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/beans/stop/04.png",
+              "ms": 180
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        }
+      },
+      "source": "design-assets/motion-v13-ensemble/manifest.json"
+    },
+    {
+      "id": "mint",
+      "name": "ミント",
+      "kind": "floating",
+      "seed": "design-assets/motion-v13-ensemble/mint/idle/01.png",
+      "seedSha256": "ae2112da947d5005b1f19debafbf988e5b1ec56d783398fd2af3d354b74d441f",
+      "designAccepted": true,
+      "motionStatus": "candidate",
+      "nativeFacing": "left",
+      "roomWidth": 0.21,
+      "clips": {
+        "idle": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/01.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/02.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/03.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/04.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/05.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/06.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/07.png",
+              "ms": 400
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/idle/08.png",
+              "ms": 400
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "move": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/01.png",
+              "ms": 280
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/02.png",
+              "ms": 280
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/03.png",
+              "ms": 280
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/04.png",
+              "ms": 280
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/05.png",
+              "ms": 280
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/06.png",
+              "ms": 300
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/move/07.png",
+              "ms": 300
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "start": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/start/01.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/start/02.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/start/03.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/start/04.png",
+              "ms": 160
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        },
+        "stop": {
+          "frames": [
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/stop/01.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/stop/02.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/stop/03.png",
+              "ms": 160
+            },
+            {
+              "file": "design-assets/motion-v13-ensemble/mint/stop/04.png",
+              "ms": 160
+            }
+          ],
+          "anchor": [
+            0.5,
+            0.83984375
+          ]
+        }
+      },
+      "source": "design-assets/motion-v13-ensemble/manifest.json"
+    },
+    {
+      "id": "kokemaru",
+      "name": "こけまる",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-plus10-20261015/characters/01-こけまる.png",
+      "seedSha256": "b50d9e0703243287fd403af2ff050c3e89bd4d1cd73d4d9ce245cfbd545f3cdb",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "01-kokemaru",
+        "name": "こけまる",
+        "body": "low broad quadruped",
+        "face": "relaxed sleepy horizontal olive eyelids, small golden irises, tiny content mouth",
+        "design": "sage-green low moss-cushion body; three broad soft moss lobes rising from its back as body shapes, not hard shell plates; short horizontal folded-leaf ears; light mint underside, no cream heart-shaped face mask; short flat fern-leaf tail resting to the side",
+        "pose": "standing low and peacefully, all four tiny feet grounded",
+        "character": "のんびり、面倒見がよい"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "pomuri",
+      "name": "ぽむり",
+      "kind": "biped",
+      "seed": "design-assets/characters-plus10-20261015/characters/02-ぽむり.png",
+      "seedSha256": "44ec0859c9b1b9d26618577cf981ad743161ce5892abece1430fdb1d030d0d89",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "02-pomuri",
+        "name": "ぽむり",
+        "body": "tall pear-shaped biped",
+        "face": "large downturned lilac eyes with teardrop-shaped pupils, timid little side pout, both eyes open",
+        "design": "dusty rose pear-shaped body tapering toward small head; two broad soft drooping hood-like ear flaps reaching shoulders; cheeks slightly paler rose but no cream face mask; continuous tail made of three large round bead-like lobes; tiny oval feet and long soft arms resting down at sides",
+        "pose": "slightly shy inward knees, arms down, gently turning head to viewer",
+        "character": "照れ屋、好奇心が強い"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "sumimaru",
+      "name": "すみまる",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-plus10-20261015/characters/03-すみまる.png",
+      "seedSha256": "5f19af4c9861081b4f69026d71776d82f0fd010fe66d836e60a9d4b19ae81127",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "03-sumimaru",
+        "name": "すみまる",
+        "body": "squat softly squared quadruped",
+        "face": "small sharply upswept amber eyes under a lowered brow, soft grumpy pout, cute not threatening",
+        "design": "charcoal/slate-gray softly squared chunky body; short soft blunt folded pebble-shaped ear nubs pointing sideways, no horns; blue-gray broad blunt muzzle; four thick little feet with rounded toes; very short tail ending in one pale gray spade shape; one broad warm-gray shoulder patch, soft flesh rather than faceted rock",
+        "pose": "firm four-foot stance with one shoulder slightly forward, stubborn but friendly",
+        "character": "むすっとしている、まじめ"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "hiyomo",
+      "name": "ひよも",
+      "kind": "biped",
+      "seed": "design-assets/characters-plus10-20261015/characters/04-ひよも.png",
+      "seedSha256": "863c156790288845b0566a306229ca4e7f89bbc2eac95b43e205b3f265c30059",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "04-hiyomo",
+        "name": "ひよも",
+        "body": "round birdlike fantasy biped",
+        "face": "small wide-open dark teal round eyes, open delighted beak-smile, one round coral cheek on each side",
+        "design": "butter-yellow rounded pear body with a small rounded diamond-shaped orange beak; three large smooth leaf-blades forming a soft upright head crest, not fine feathers; stubby wing-like arms held open low; two rounded soft feet, not chicken talons; short three-lobed leaf-fan tail; pale yellow chest, no white mammal face mask",
+        "pose": "eager upright stance, wings slightly apart, both feet grounded",
+        "character": "元気、すぐ喜ぶ"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "urune",
+      "name": "うるね",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-plus10-20261015/characters/05-うるね.png",
+      "seedSha256": "2585deaea269b90a480c83176d36821316d0672ddc09ae52af6986a53917e831",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "05-urune",
+        "name": "うるね",
+        "body": "long low reclining fantasy quadruped",
+        "face": "long rounded droopy navy eyes, one upper lid slightly lower but both eyes visibly open, tiny single rounded tooth and relaxed mouth",
+        "design": "pale icy-blue long smooth plump cloud-seal body; three broad joined cloud humps forming its head crest, no ears; small dark blue nose; four broad soft paddle-like feet visibly grounded; thick low tail ending in a broad wave curl; warm white underside only, no cream heart mask",
+        "pose": "reclining low with front paddle-feet stretched comfortably, head lifted a little",
+        "character": "マイペース、眠るのが好き"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "hoshiru",
+      "name": "ほしる",
+      "kind": "float",
+      "seed": "design-assets/characters-plus10-20261015/characters/06-ほしる.png",
+      "seedSha256": "d775658863a4308d3147837e332d48ca6772e5093dcf4eedc489bbfcb1b94081",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "06-hoshiru",
+        "name": "ほしる",
+        "body": "small floating star-headed creature",
+        "face": "curious almond-shaped bright turquoise eyes looking slightly upward, tiny surprised o mouth",
+        "design": "mauve-violet head shaped as exactly five large soft rounded star lobes, no additional ears or hair; small compact round lower body; tiny arms stretched gently sideways; no legs, lower body ends in three short rounded wisp tabs; single pale gold crescent marking on chest; no external stars or glow effects",
+        "pose": "quietly hovering, compact body readable as one connected creature",
+        "character": "不思議ちゃん、探検好き"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "kurin",
+      "name": "くりん",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-plus10-20261015/characters/07-くりん.png",
+      "seedSha256": "250e9b9c661f78efdda935a5b519834f07e2bef438e72cfc5aa7e70ffdc8d20c",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "07-kurin",
+        "name": "くりん",
+        "body": "slender long quadruped",
+        "face": "narrow upswept green eyes, cheeky asymmetric little smile, small triangular nose",
+        "design": "warm rust/caramel long sleek body and rounded elongated muzzle; two small flat spoon-shaped ears angled back; one broad cream eyebrow band rather than a heart-shaped face mask; short slim legs and larger hind haunches; long thin tail with curl only at its very tip and a single pale tip marking; no giant curled hair or back petals",
+        "pose": "light alert four-foot stance with one front paw resting slightly ahead, playful",
+        "character": "いたずら好き、身軽"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "mochine",
+      "name": "もちね",
+      "kind": "biped",
+      "seed": "design-assets/characters-plus10-20261015/characters/08-もちね.png",
+      "seedSha256": "bdc1036f523a387704cbac4950e848bf352992bcca289000c7837323a0436c63",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "08-mochine",
+        "name": "もちね",
+        "body": "soft pillow-cube biped",
+        "face": "very small widely spaced dark bead eyes, tiny neutral dot mouth, blank innocent expression; no large colored irises",
+        "design": "warm off-white softly cuboid pillow body; one broad soft sage leaf sprout at the top; two short broad coral ear-flippers set low on the sides of its head; large warm peach heart-shaped belly marking, not a face mask; two wide flat peach feet splayed outward and tiny arms dangling at sides; tiny round pom tail",
+        "pose": "sitting squarely with feet apart and arms hanging, mildly puzzled",
+        "character": "ぽやっとしている、甘えん坊"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "ruriko",
+      "name": "るりこ",
+      "kind": "biped",
+      "seed": "design-assets/characters-plus10-20261015/characters/09-るりこ.png",
+      "seedSha256": "faa0afd216d5b83ef1d184fb1dd664d39091dc2ecaceb0bb50f9e008bf0fd756",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "09-ruriko",
+        "name": "るりこ",
+        "body": "lean upright fantasy biped",
+        "face": "long narrow lavender eyes with softly downturned outer corners, calm composed expression, tiny coral nose",
+        "design": "dusty cerulean slender upright body with long gentle neck; one large smooth curved umbrella-like head crest flowing backward, not two fan ears; long leaf-like forearms hanging along body sides, not chest-front paws; two broad blue flipper feet; tapered dark blue tail with one small rounded diamond tip; pale blue teardrop chest patch, no cream heart-shaped face mask",
+        "pose": "elegant upright stance, arms relaxed at sides, tail curved low behind",
+        "character": "落ち着いている、少し誇り高い"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "mitsuno",
+      "name": "みつの",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-plus10-20261015/characters/10-みつの.png",
+      "seedSha256": "86f6ca0f765310adf398f26e779dc291fda0151322b7a9123c90c51b716c957b",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "10-mitsuno",
+        "name": "みつの",
+        "body": "front-heavy round quadruped",
+        "face": "determined half-round upturned teal eyes, small confident smile, rounded brown nose",
+        "design": "warm honey-gold round body with larger chest and narrower haunches; one single backward-curving blunt central forehead horn, not two horns; small drooping teardrop ears; peach three-lobed soft collar frill growing from chest, not clothing; thick short tail ending in one broad spoon-shaped lobe; cream small muzzle only, four broad soft feet",
+        "pose": "proud friendly grounded stance, head raised a little",
+        "character": "強気、仲間思い"
+      },
+      "source": "design-assets/characters-plus10-20261015/asset-manifest.json"
+    },
+    {
+      "id": "curlyhorn",
+      "name": "巻き角のふわ獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/01-巻き角のふわ獣.png",
+      "seedSha256": "f8639c3e23115c76c4def28ea101763e2ded0375ec309823273172d6ac326864",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "01",
+        "label": "巻き角のふわ獣",
+        "sheet": 1,
+        "position": "上段左から2体目",
+        "location": "top row, second from left",
+        "traits": "A compact seated pear-shaped cream-and-blush wool creature. Two broad lavender ram horns curl inward at the sides, soft round ear lobes, a small cloud forelock rather than a huge spiral haircut, 5-7 broad wool lobes, little purple hands and wide purple feet, small pink pom tail. Keep the lilac horn/cream wool/blush body relationship.",
+        "face": "Sleepy half-lidded mauve oval eyes, eyelids gently drooping, tiny content sideways mouth. An easygoing face; not the same big round sparkling eyes as the motif sheet.",
+        "avoid": "Do not copy the original cream pet's giant curled forelock or make a realistic sheep.",
+        "file": "characters/01-巻き角のふわ獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, top row, second from left (上段左から2体目).\nKeep and reinterpret: A compact seated pear-shaped cream-and-blush wool creature. Two broad lavender ram horns curl inward at the sides, soft round ear lobes, a small cloud forelock rather than a huge spiral haircut, 5-7 broad wool lobes, little purple hands and wide purple feet, small pink pom tail. Keep the lilac horn/cream wool/blush body relationship.\nFace and individuality: Sleepy half-lidded mauve oval eyes, eyelids gently drooping, tiny content sideways mouth. An easygoing face; not the same big round sparkling eyes as the motif sheet.\nAvoid: Do not copy the original cream pet's giant curled forelock or make a realistic sheep.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "flowerlong",
+      "name": "花襟の長耳獣",
+      "kind": "biped",
+      "seed": "design-assets/characters-selected11-20261016/characters/02-花襟の長耳獣.png",
+      "seedSha256": "a837194a53c4c70187847e236876b46bcee34cda84552dc4525e346c6fc7eb42",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "02",
+        "label": "花襟の長耳獣",
+        "sheet": 1,
+        "position": "下段左から2体目",
+        "location": "bottom row, second from left",
+        "traits": "An elegant small seated cream-and-peach creature with extremely long ribbon-shaped coral-pink ears hanging almost to the floor, ears tipped pale warm yellow. Two broad petal tufts on top, a simple coral flower-shaped neck ruff with a tiny yellow center, slender upright torso, small forepaws resting near the floor, compact haunches. The ears are actual body parts, not a hairstyle.",
+        "face": "Alert gently upturned almond-shaped rose eyes, a small self-assured closed smile, lively attentive expression. Different from the droopy pink pet in the current roster.",
+        "avoid": "No bead-segment tail, no huge curly forelock, no human hair or dress, no two hands clasped at the chest.",
+        "file": "characters/02-花襟の長耳獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, bottom row, second from left (下段左から2体目).\nKeep and reinterpret: An elegant small seated cream-and-peach creature with extremely long ribbon-shaped coral-pink ears hanging almost to the floor, ears tipped pale warm yellow. Two broad petal tufts on top, a simple coral flower-shaped neck ruff with a tiny yellow center, slender upright torso, small forepaws resting near the floor, compact haunches. The ears are actual body parts, not a hairstyle.\nFace and individuality: Alert gently upturned almond-shaped rose eyes, a small self-assured closed smile, lively attentive expression. Different from the droopy pink pet in the current roster.\nAvoid: No bead-segment tail, no huge curly forelock, no human hair or dress, no two hands clasped at the chest.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "mushroom",
+      "name": "赤傘のきのこ獣",
+      "kind": "biped",
+      "seed": "design-assets/characters-selected11-20261016/characters/03-赤傘のきのこ獣.png",
+      "seedSha256": "09875643ed281844b24d77cb91c6f9a15a55b2353516d66ecb8ca1ac9b579cb2",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "03",
+        "label": "赤傘のきのこ獣",
+        "sheet": 1,
+        "position": "下段右端",
+        "location": "bottom row, far right",
+        "traits": "A very low squat ivory mushroom creature with a wide rounded coral-red cap; just 5-6 broad pale cap spots, two very short drooping arms, tiny pink foot tips, cream gill collar visible under the cap. A small simple brown cross-body satchel with a green sprout clasp as in the selected concept; the mushroom body, not the bag, defines the creature.",
+        "face": "Small downturned rose eyes, slightly worried raised inner brow, a tiny open o mouth. Tender and timid rather than glittery round-eyed.",
+        "avoid": "No fine gill stripes, no realistic mushroom texture, no human body, no excessive cap freckles.",
+        "file": "characters/03-赤傘のきのこ獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, bottom row, far right (下段右端).\nKeep and reinterpret: A very low squat ivory mushroom creature with a wide rounded coral-red cap; just 5-6 broad pale cap spots, two very short drooping arms, tiny pink foot tips, cream gill collar visible under the cap. A small simple brown cross-body satchel with a green sprout clasp as in the selected concept; the mushroom body, not the bag, defines the creature.\nFace and individuality: Small downturned rose eyes, slightly worried raised inner brow, a tiny open o mouth. Tender and timid rather than glittery round-eyed.\nAvoid: No fine gill stripes, no realistic mushroom texture, no human body, no excessive cap freckles.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "nightfox",
+      "name": "星耳の夜色獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/04-星耳の夜色獣.png",
+      "seedSha256": "d2e6a37ceb8d06504135a55b5fc39e9e5cbc3d36b5f1097b5dcdf74938327117",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "04",
+        "label": "星耳の夜色獣",
+        "sheet": 2,
+        "position": "上段左端",
+        "location": "top row, far left",
+        "traits": "A seated indigo-purple fantasy fox with huge pointed ears, a broad high curled crescent-like tail with a pale yellow tip, small forehead star and two or three larger simplified star/crescent body markings. Cream muzzle and narrow chest patch, compact hindquarters, forepaws planted separately. Preserve the night-sky motif without fine speckle.",
+        "face": "Narrow slightly upturned amber eyes, calm clever sideways smile, a subtly proud expression. Not round baby eyes.",
+        "avoid": "No star-shaped head, no horns, no galaxy gradient, no many tiny stars, do not copy a specific existing franchise character.",
+        "file": "characters/04-星耳の夜色獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, top row, far left (上段左端).\nKeep and reinterpret: A seated indigo-purple fantasy fox with huge pointed ears, a broad high curled crescent-like tail with a pale yellow tip, small forehead star and two or three larger simplified star/crescent body markings. Cream muzzle and narrow chest patch, compact hindquarters, forepaws planted separately. Preserve the night-sky motif without fine speckle.\nFace and individuality: Narrow slightly upturned amber eyes, calm clever sideways smile, a subtly proud expression. Not round baby eyes.\nAvoid: No star-shaped head, no horns, no galaxy gradient, no many tiny stars, do not copy a specific existing franchise character.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "bat",
+      "name": "ふわ胸のコウモリ獣",
+      "kind": "float",
+      "seed": "design-assets/characters-selected11-20261016/characters/05-ふわ胸のコウモリ獣.png",
+      "seedSha256": "d248e015b85fe91077c7185be0f910d9ce2c59841650ae845996485f813007d2",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "05",
+        "label": "ふわ胸のコウモリ獣",
+        "sheet": 2,
+        "position": "上段右端",
+        "location": "top row, far right",
+        "traits": "A compact round dark-plum bat creature, two tall wide ears with coral-lilac inner panels, small scalloped membrane wings open to the sides, a broad cream cloud-lobed chest ruff, very short dark feet, almost no visible neck. Preserve the ear/wing/body proportions; wings are clear membranes not feathers.",
+        "face": "Uneven friendly plum eyes with one upper eyelid a little lower, tiny upward mouth and one minute ivory fang, bashful mischievous expression.",
+        "avoid": "No realistic bat skin, no scary teeth, no feathered wings, no large mammal tail.",
+        "file": "characters/05-ふわ胸のコウモリ獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, top row, far right (上段右端).\nKeep and reinterpret: A compact round dark-plum bat creature, two tall wide ears with coral-lilac inner panels, small scalloped membrane wings open to the sides, a broad cream cloud-lobed chest ruff, very short dark feet, almost no visible neck. Preserve the ear/wing/body proportions; wings are clear membranes not feathers.\nFace and individuality: Uneven friendly plum eyes with one upper eyelid a little lower, tiny upward mouth and one minute ivory fang, bashful mischievous expression.\nAvoid: No realistic bat skin, no scary teeth, no feathered wings, no large mammal tail.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "leafwrap",
+      "name": "秋葉に包まれた獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/06-秋葉に包まれた獣.png",
+      "seedSha256": "44e93ad693d03c25edc1997226c972efc52f7e1ee8ff7aa258e25e226e993148",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "06",
+        "label": "秋葉に包まれた獣",
+        "sheet": 2,
+        "position": "下段左端",
+        "location": "bottom row, far left",
+        "traits": "A small cream creature curled into an almost circular overlapping leaf cocoon. Broad ochre, chestnut and warm tan leaves wrap around the body in about two rings; the little face peeks out through an off-center opening with two small brown paws tucked under the chin. Keep the round leaf-envelope silhouette, not a hedgehog standing on legs.",
+        "face": "Small softly drooping rusty eyes looking sideways, tiny uncertain pout, shy reserved expression.",
+        "avoid": "No fine leaf veins, no hard rock armor, no many sharp spikes, no large pointed ears, no feet sticking out of the circular outline.",
+        "file": "characters/06-秋葉に包まれた獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, bottom row, far left (下段左端).\nKeep and reinterpret: A small cream creature curled into an almost circular overlapping leaf cocoon. Broad ochre, chestnut and warm tan leaves wrap around the body in about two rings; the little face peeks out through an off-center opening with two small brown paws tucked under the chin. Keep the round leaf-envelope silhouette, not a hedgehog standing on legs.\nFace and individuality: Small softly drooping rusty eyes looking sideways, tiny uncertain pout, shy reserved expression.\nAvoid: No fine leaf veins, no hard rock armor, no many sharp spikes, no large pointed ears, no feet sticking out of the circular outline.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "moonsleeper",
+      "name": "月星毛布の眠り獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/07-月星毛布の眠り獣.png",
+      "seedSha256": "e73fbd67e23577dc0868bbd0c5777c43187f2eab74f18831839a553dbb92b8f9",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "07",
+        "label": "月星毛布の眠り獣",
+        "sheet": 2,
+        "position": "下段右端",
+        "location": "bottom row, far right",
+        "traits": "A low curled sleeping creature under its own thick periwinkle-blue cloud-like back, with one pale yellow crescent and three broad simplified pale stars embedded as fur markings. Cream face tucked low, two tiny purple forepaws, a short curled blue rear tuft, a broad horizontal napping silhouette. The night coat is the creature's body, not a detached blanket.",
+        "face": "Both eyes fully closed as gentle downward curves, tiny relaxed dot nose and peaceful small mouth. No open glitter eyes.",
+        "avoid": "No floating star particles, no crescent horn, no moon-shaped prop, no standing pose, no busy star field.",
+        "file": "characters/07-月星毛布の眠り獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, bottom row, far right (下段右端).\nKeep and reinterpret: A low curled sleeping creature under its own thick periwinkle-blue cloud-like back, with one pale yellow crescent and three broad simplified pale stars embedded as fur markings. Cream face tucked low, two tiny purple forepaws, a short curled blue rear tuft, a broad horizontal napping silhouette. The night coat is the creature's body, not a detached blanket.\nFace and individuality: Both eyes fully closed as gentle downward curves, tiny relaxed dot nose and peaceful small mouth. No open glitter eyes.\nAvoid: No floating star particles, no crescent horn, no moon-shaped prop, no standing pose, no busy star field.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "cloudfur",
+      "name": "青白い雲毛の獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/08-青白い雲毛の獣.png",
+      "seedSha256": "814327cc9f1efa75165f19626666344444d36eb993b7344ee293b2df1a60db6a",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "08",
+        "label": "青白い雲毛の獣",
+        "sheet": 3,
+        "position": "上段左端",
+        "location": "top row, far left",
+        "traits": "A standing stocky quadruped made of broad ivory cloud wool and pale powder-blue rounded lobes. A large soft cloud crown, two low hanging blue ear lobes, four distinct short blue paws, round blue-tuft tail, generous cheek wool. Unlike the ram, no horns and no seated pear torso; no giant spiral forelock.",
+        "face": "Small rounded droopy violet eyes with low upper lids, tiny thoughtful closed mouth, a quiet placid expression.",
+        "avoid": "No horns, no ram spiral, no tiny curly fur strokes, no rear legs hidden beyond recognition, no blue spots added to all white lobes.",
+        "file": "characters/08-青白い雲毛の獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, top row, far left (上段左端).\nKeep and reinterpret: A standing stocky quadruped made of broad ivory cloud wool and pale powder-blue rounded lobes. A large soft cloud crown, two low hanging blue ear lobes, four distinct short blue paws, round blue-tuft tail, generous cheek wool. Unlike the ram, no horns and no seated pear torso; no giant spiral forelock.\nFace and individuality: Small rounded droopy violet eyes with low upper lids, tiny thoughtful closed mouth, a quiet placid expression.\nAvoid: No horns, no ram spiral, no tiny curly fur strokes, no rear legs hidden beyond recognition, no blue spots added to all white lobes.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "lantern",
+      "name": "灯り触角の夜獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/09-灯り触角の夜獣.png",
+      "seedSha256": "edbfa94d5a5571f376ab1aaa00e58dc698975271f60ad3c5788ae6566de0f4ca",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "09",
+        "label": "灯り触角の夜獣",
+        "initial_identification": "提灯しっぽの夜獣。制作後に原本を拡大し、頭の灯り茎と別の丸い尾があると訂正。初期promptは保持。",
+        "sheet": 3,
+        "position": "上段左から2体目",
+        "location": "top row, second from left",
+        "traits": "A compact dark-plum seated fantasy creature with broad upright triangular ears with ochre inner ears, cream face and small chest tuft. From the rear rises ONE long smooth dark tail, arching over the body, ending in a small warm yellow lantern-like natural bulb with three broad lobes and one short dark tassel tip. A small cream forehead crescent and a golden rump/tail base patch. The lantern is part of the creature, not a handheld prop.",
+        "face": "Golden eyes slightly different in size due to three-quarter view, one brow gently lifted, calm curious closed smile; keep the muzzle short.",
+        "avoid": "No second tail, no lamp stand, no handheld lantern, no many decorative strings, no costume, no oversized glow halo, no duplicate horn.",
+        "file": "characters/09-灯り触角の夜獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, top row, second from left (上段左から2体目).\nKeep and reinterpret: A compact dark-plum seated fantasy creature with broad upright triangular ears with ochre inner ears, cream face and small chest tuft. From the rear rises ONE long smooth dark tail, arching over the body, ending in a small warm yellow lantern-like natural bulb with three broad lobes and one short dark tassel tip. A small cream forehead crescent and a golden rump/tail base patch. The lantern is part of the creature, not a handheld prop.\nFace and individuality: Golden eyes slightly different in size due to three-quarter view, one brow gently lifted, calm curious closed smile; keep the muzzle short.\nAvoid: No second tail, no lamp stand, no handheld lantern, no many decorative strings, no costume, no oversized glow halo, no duplicate horn.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "flowergill",
+      "name": "花えらの桃色水獣",
+      "kind": "quadruped",
+      "seed": "design-assets/characters-selected11-20261016/characters/10-花えらの桃色水獣.png",
+      "seedSha256": "2e04b8e89c9edc17ad245da154872da7dfac0885b80558a65e1154848fff7055",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "10",
+        "label": "花えらの桃色水獣",
+        "sheet": 3,
+        "position": "上段中央（左から3体目）",
+        "location": "top row, middle, third from left",
+        "traits": "A pale peach-pink axolotl-inspired fantasy quadruped with a broad rounded flat head, three broad coral-and-peach petal-shaped external gill lobes on EACH side, a long low body with a cream underside, four small coral paddle paws, a thick tapered tail curving upward with a broad fin edge, only a few broad rose back patches.",
+        "face": "Widely spaced small rose oval eyes, a broad gentle w-shaped smiling mouth, carefree sunny expression; eye highlights restrained.",
+        "avoid": "No mammal ears, no horns, no fingery gill filaments, no flower hat, no big hair tuft, no human hands.",
+        "file": "characters/10-花えらの桃色水獣.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, top row, middle, third from left (上段中央（左から3体目）).\nKeep and reinterpret: A pale peach-pink axolotl-inspired fantasy quadruped with a broad rounded flat head, three broad coral-and-peach petal-shaped external gill lobes on EACH side, a long low body with a cream underside, four small coral paddle paws, a thick tapered tail curving upward with a broad fin edge, only a few broad rose back patches.\nFace and individuality: Widely spaced small rose oval eyes, a broad gentle w-shaped smiling mouth, carefree sunny expression; eye highlights restrained.\nAvoid: No mammal ears, no horns, no fingery gill filaments, no flower hat, no big hair tuft, no human hands.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    },
+    {
+      "id": "cloudghost",
+      "name": "淡色のうず雲おばけ",
+      "kind": "float",
+      "seed": "design-assets/characters-selected11-20261016/characters/11-淡色のうず雲おばけ.png",
+      "seedSha256": "2de47fdc199a1eac877ca7b301cd471280ddbcbfbf09b6ca2598a510f8add576",
+      "designAccepted": true,
+      "motionStatus": "static-only; new motion in production",
+      "nativeFacing": "three-quarter",
+      "roomWidth": 0.2,
+      "clips": {},
+      "identity": {
+        "id": "11",
+        "label": "淡色のうず雲おばけ",
+        "sheet": 3,
+        "position": "下段左端",
+        "location": "bottom row, far left",
+        "traits": "A floating rounded cream-and-pale-lilac spirit with a soft three-lobed upper cloud body, two tiny side flipper arms, a tapered lavender lower body curling into a single wisp tail, one lilac flame-like crest at the top. Two or three small pastel mote dots may sit close to the silhouette as in the concept, but no scene or aura.",
+        "face": "Small vertically oval violet eyes with eyebrows lifted, a joyful open coral mouth, openly cheerful expression unlike the sleeping or shy creatures.",
+        "avoid": "No legs, no wings, no human ghost sheet holes, no translucent body, no big halo, no jellyfish tentacles.",
+        "file": "characters/11-淡色のうず雲おばけ.png",
+        "prompt": "Use case: stylized-concept.\nAsset type: one new full-body transparent PNG creature sprite for the existing Cert Garden C pixel-art room.\nImage roles: images 1, 2 and 3 are the APPROVED ART STYLE only (gray creature, cream cushion creature, apricot creature). Image 4 is a CONCEPT IDEA SHEET, not the rendering style. Reinterpret ONLY the specified creature from image 4; do not reproduce the sheet or any other creature.\nStyle: match the actual stepped pixel-cluster outlines, soft muted flat color planes and economical 2-3-level shading of images 1-3. Handcrafted soft pixel sprite, neither smooth painted/vector art nor extremely coarse 16x16 pixel mosaic. Use the same apparent pixel density and simple readable shapes. Rounded silhouettes, colored darker edge accents instead of harsh black outlines, no fine grain, no photographic fur, no 3D facets. The face may be redesigned to give this creature its own expression while preserving its motif and colors.\nComposition: ONE entire creature in a relaxed normal pose, three-quarter view consistent with the references, all ears/horns/wingtips/tails/paws in frame, generous clear margin on all sides. Square canvas, creature occupies about 75-82% of the canvas including appendages. True alpha-transparent background; no white plate, checkerboard, floor, cast shadow, text, border, logo, watermark, red annotation, character sheet or extra pet.\nDraw the complete creature anew as a single intact body. No pasted pieces from the style animals, no anatomy rig or animation. This is a static normal-pose asset.\n\nSELECTED MOTIF: Image 4, bottom row, far left (下段左端).\nKeep and reinterpret: A floating rounded cream-and-pale-lilac spirit with a soft three-lobed upper cloud body, two tiny side flipper arms, a tapered lavender lower body curling into a single wisp tail, one lilac flame-like crest at the top. Two or three small pastel mote dots may sit close to the silhouette as in the concept, but no scene or aura.\nFace and individuality: Small vertically oval violet eyes with eyebrows lifted, a joyful open coral mouth, openly cheerful expression unlike the sleeping or shy creatures.\nAvoid: No legs, no wings, no human ghost sheet holes, no translucent body, no big halo, no jellyfish tentacles.\nOutput only this one creature."
+      },
+      "source": "design-assets/characters-selected11-20261016/asset-manifest.json"
+    }
+  ],
+  "referenceCheck": {
+    "static21HashesMatch": true,
+    "entries": [
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/01-こけまる.png",
+        "sha256": "b50d9e0703243287fd403af2ff050c3e89bd4d1cd73d4d9ce245cfbd545f3cdb",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/02-ぽむり.png",
+        "sha256": "44ec0859c9b1b9d26618577cf981ad743161ce5892abece1430fdb1d030d0d89",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/03-すみまる.png",
+        "sha256": "5f19af4c9861081b4f69026d71776d82f0fd010fe66d836e60a9d4b19ae81127",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/04-ひよも.png",
+        "sha256": "863c156790288845b0566a306229ca4e7f89bbc2eac95b43e205b3f265c30059",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/05-うるね.png",
+        "sha256": "2585deaea269b90a480c83176d36821316d0672ddc09ae52af6986a53917e831",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/06-ほしる.png",
+        "sha256": "d775658863a4308d3147837e332d48ca6772e5093dcf4eedc489bbfcb1b94081",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/07-くりん.png",
+        "sha256": "250e9b9c661f78efdda935a5b519834f07e2bef438e72cfc5aa7e70ffdc8d20c",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/08-もちね.png",
+        "sha256": "bdc1036f523a387704cbac4950e848bf352992bcca289000c7837323a0436c63",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/09-るりこ.png",
+        "sha256": "faa0afd216d5b83ef1d184fb1dd664d39091dc2ecaceb0bb50f9e008bf0fd756",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-plus10-20261015/characters/10-みつの.png",
+        "sha256": "86f6ca0f765310adf398f26e779dc291fda0151322b7a9123c90c51b716c957b",
+        "priorAnalysis": "design-assets/characters-plus10-20261015/design-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/01-巻き角のふわ獣.png",
+        "sha256": "f8639c3e23115c76c4def28ea101763e2ded0375ec309823273172d6ac326864",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/02-花襟の長耳獣.png",
+        "sha256": "a837194a53c4c70187847e236876b46bcee34cda84552dc4525e346c6fc7eb42",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/03-赤傘のきのこ獣.png",
+        "sha256": "09875643ed281844b24d77cb91c6f9a15a55b2353516d66ecb8ca1ac9b579cb2",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/04-星耳の夜色獣.png",
+        "sha256": "d2e6a37ceb8d06504135a55b5fc39e9e5cbc3d36b5f1097b5dcdf74938327117",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/05-ふわ胸のコウモリ獣.png",
+        "sha256": "d248e015b85fe91077c7185be0f910d9ce2c59841650ae845996485f813007d2",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/06-秋葉に包まれた獣.png",
+        "sha256": "44e93ad693d03c25edc1997226c972efc52f7e1ee8ff7aa258e25e226e993148",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/07-月星毛布の眠り獣.png",
+        "sha256": "e73fbd67e23577dc0868bbd0c5777c43187f2eab74f18831839a553dbb92b8f9",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/08-青白い雲毛の獣.png",
+        "sha256": "814327cc9f1efa75165f19626666344444d36eb993b7344ee293b2df1a60db6a",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/09-灯り触角の夜獣.png",
+        "sha256": "edbfa94d5a5571f376ab1aaa00e58dc698975271f60ad3c5788ae6566de0f4ca",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/10-花えらの桃色水獣.png",
+        "sha256": "2e04b8e89c9edc17ad245da154872da7dfac0885b80558a65e1154848fff7055",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      },
+      {
+        "file": "design-assets/characters-selected11-20261016/characters/11-淡色のうず雲おばけ.png",
+        "sha256": "2de47fdc199a1eac877ca7b301cd471280ddbcbfbf09b6ca2598a510f8add576",
+        "priorAnalysis": "design-assets/characters-selected11-20261016/production-plan.json",
+        "analysisReuse": "same adopted normal pose and identity; new animation needs fresh visual review"
+      }
+    ]
+  },
+  "motionRules": [
+    "whole-body redrawn cels only",
+    "no mirrored character images",
+    "no body-part animation",
+    "static fallback is explicit; not a generated motion",
+    "newly generated motions are candidates until reviewed"
+  ],
+  "userMotionAcceptanceIsSeparate": true
+}

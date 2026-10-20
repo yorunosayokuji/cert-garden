@@ -1,0 +1,93 @@
+# 公開repo用のCI（release/template/ci.yml から生成写しの .github/workflows/ci.yml へ置かれる）
+# できること: 固定install / 型検査 / 試験 / Web bundle。
+# やらないこと: iOS署名・実機・実OAuth・Cloudflare本番・デプロイ・公開。secret は使わない。
+# このCIの成功は「ローカル相当の機械検査が通った」ことだけを意味し、App Store公開の証明ではない。
+#
+# uses: は公式 actions を40桁SHAで固定（2026-10-20 に親が公式repoへ git ls-remote で確認。v4 タグ、annotated の peeled ref は無く下記が参照先）。
+#   actions/checkout  refs/tags/v4 = 11d5960a326750d5838078e36cf38b85af677262
+#   actions/setup-node refs/tags/v4 = 49933ea5288caeca8642d1e84afbd3f7d6820020
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  core:
+    name: core (typecheck + tests)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+
+  mobile:
+    name: mobile (typecheck + tests + web bundle)
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    defaults:
+      run:
+        working-directory: mobile
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      # puppeteer-core は devDependency に入っているが、ブラウザーは起動しない（e2e は走らせない）
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      # 通常の書き出し(比較用フラグ無し)と、候補比較の書き出し(フラグ有り)を別々に検査する。互いのフラグは混ぜない
+      - run: npm run export:web
+        env:
+          CI: '1'
+          EXPO_NO_TELEMETRY: '1'
+      - run: npm run export:web:ios-design
+        env:
+          CI: '1'
+          EXPO_NO_TELEMETRY: '1'
+
+  server:
+    name: server (typecheck + tests)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      WRANGLER_SEND_METRICS: 'false'
+    defaults:
+      run:
+        working-directory: server
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: server/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run test:preflight
+      # bundle:dry / 未設定のpreflight(本番設定の確認)はCIの成功条件にしない。ローカルで確認済みでも、CIの緑を本番の準備完了と扱わない

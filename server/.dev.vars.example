@@ -1,0 +1,4 @@
+# 名前だけの例。実値の .dev.vars は作ってもcommitしない（.gitignore済み）。
+# 本番の秘密は `wrangler secret put <NAME>`（このリポジトリでは未実施）。
+APPLE_PRIVATE_KEY=<ここにAppleのp8(PKCS8 PEM)。ダミーのみ記載>
+APPLE_TOKEN_ENC_KEY=<base64の32バイト。例: openssl rand -base64 32 の出力>

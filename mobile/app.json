@@ -1,0 +1,31 @@
+{
+  "expo": {
+    "name": "資格箱庭（ローカル試作）",
+    "slug": "cert-garden-local",
+    "scheme": "certgarden",
+    "version": "0.0.1",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "usesAppleSignIn": true,
+      "config": {
+        "usesNonExemptEncryption": false
+      }
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "single"
+    },
+    "plugins": [
+      "expo-asset",
+      "expo-web-browser",
+      "expo-secure-store"
+    ]
+  }
+}

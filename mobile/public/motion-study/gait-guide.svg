@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 歩行の骨格ガイド（画像生成への設計資料）。最終キャラの絵でも、解剖図・生体測定の結果でもない。
+     座標は scripts/gen-gait-guide.mjs と同じ式（2関節IK）を手計算した値（小数1桁）。親が mjs を実行すると同じ構成で再生成される。
+     向き: 左向き（進行方向は左）。近い側=左(LH/LF)=暖色、遠い側=右(RH/RF)=寒色。
+     接地位相: LH 0% / LF 25% / RH 50% / RF 75%。支持65%・運び35%。8姿勢は周期の 0,12.5,…,87.5%。
+     支持中の足は床の上で体に対して後方(右)へ一定速度で移動、遊脚は上に弧を描いて前方(左)へ運ぶ。
+     1周期の歩幅60単位（=20論理px×3）。支持中の足の体に対する移動量は 60×0.65=39単位。
+     屈曲: 前脚は 肩→肘(後ろへ折れる)→手根→足。後脚は 股→膝(前へ折れる)→飛節(後ろへ折れる)→足。 -->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="1536" height="512" viewBox="0 0 1536 512" font-family="'Noto Sans JP','Meiryo',sans-serif">
+  <title>歩行の骨格ガイド 8主要姿勢（設計図）</title>
+  <desc>横向き左の単純な四足骨格。LH/LF=近い側(橙/珊瑚)、RH/RF=遠い側(紫/青)。接地 LH0% LF25% RH50% RF75%、支持65%・運び35%。設計図であり、解剖図や測定結果ではありません。</desc>
+  <defs>
+    <!-- 前脚（近い側の座標）: 肩(126,114) → 肘 → 手根 → 足。k=周期位置 k/8 -->
+    <g id="ff0" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 127.5,154 106.5,188 106.5,212"/><circle cx="127.5" cy="154" r="4" fill="#fff" stroke-width="2.5"/><circle cx="106.5" cy="188" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="103.5" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff1" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 133.8,153.2 114,188 114,212"/><circle cx="133.8" cy="153.2" r="4" fill="#fff" stroke-width="2.5"/><circle cx="114" cy="188" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="111" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 138.8,151.9 121.5,188 121.5,212"/><circle cx="138.8" cy="151.9" r="4" fill="#fff" stroke-width="2.5"/><circle cx="121.5" cy="188" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="118.5" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff3" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 142.6,150.4 129,188 129,212"/><circle cx="142.6" cy="150.4" r="4" fill="#fff" stroke-width="2.5"/><circle cx="129" cy="188" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="126" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 145.4,149 136.5,188 136.5,212"/><circle cx="145.4" cy="149" r="4" fill="#fff" stroke-width="2.5"/><circle cx="136.5" cy="188" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="133.5" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 146.9,148.1 144,188 144,212"/><circle cx="146.9" cy="148.1" r="4" fill="#fff" stroke-width="2.5"/><circle cx="144" cy="188" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="141" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 156.9,139.4 130.1,169.1 138.1,191.7"/><circle cx="156.9" cy="139.4" r="4" fill="#fff" stroke-width="2.5"/><circle cx="130.1" cy="169.1" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="135.1" cy="189.7" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="ff7" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="126,114 145.6,148.9 109.5,166 117.5,188.6"/><circle cx="145.6" cy="148.9" r="4" fill="#fff" stroke-width="2.5"/><circle cx="109.5" cy="166" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="114.5" cy="186.6" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <!-- 後脚（近い側の座標）: 股(258,114) → 膝(前へ) → 飛節(後ろへ) → 足 -->
+    <g id="hh0" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 225,143.1 244.5,182.6 238.5,212"/><circle cx="225" cy="143.1" r="4" fill="#fff" stroke-width="2.5"/><circle cx="244.5" cy="182.6" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="235.5" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh1" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 227.7,145.9 252,182.6 246,212"/><circle cx="227.7" cy="145.9" r="4" fill="#fff" stroke-width="2.5"/><circle cx="252" cy="182.6" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="243" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh2" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 231.2,148.9 259.5,182.6 253.5,212"/><circle cx="231.2" cy="148.9" r="4" fill="#fff" stroke-width="2.5"/><circle cx="259.5" cy="182.6" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="250.5" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh3" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 235.5,151.8 267,182.6 261,212"/><circle cx="235.5" cy="151.8" r="4" fill="#fff" stroke-width="2.5"/><circle cx="267" cy="182.6" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="258" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh4" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 240.7,154.5 274.5,182.6 268.5,212"/><circle cx="240.7" cy="154.5" r="4" fill="#fff" stroke-width="2.5"/><circle cx="274.5" cy="182.6" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="265.5" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh5" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 246.6,156.5 282,182.6 276,212"/><circle cx="246.6" cy="156.5" r="4" fill="#fff" stroke-width="2.5"/><circle cx="282" cy="182.6" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="273" cy="210" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh6" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 239.3,153.9 282.1,164.2 270.1,191.7"/><circle cx="239.3" cy="153.9" r="4" fill="#fff" stroke-width="2.5"/><circle cx="282.1" cy="164.2" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="267.1" cy="189.7" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <g id="hh7" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><polyline points="258,114 222.7,140.3 261.5,161.1 249.5,188.6"/><circle cx="222.7" cy="140.3" r="4" fill="#fff" stroke-width="2.5"/><circle cx="261.5" cy="161.1" r="4" fill="#fff" stroke-width="2.5"/><ellipse cx="246.5" cy="186.6" rx="8" ry="4" fill="currentColor" stroke="none"/></g>
+    <!-- セルの下地: 枠・床（近い側212、遠い側207）・肩と腰の基準線 -->
+    <g id="cellBg">
+      <rect x="1" y="1" width="382" height="254" fill="#FFFDF8" stroke="#D9CBBE" stroke-width="2"/>
+      <line x1="20" y1="212" x2="364" y2="212" stroke="#8B6F5A" stroke-width="2"/>
+      <line x1="27" y1="207" x2="371" y2="207" stroke="#B9A99A" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="126" y1="118" x2="126" y2="212" stroke="#B9A99A" stroke-width="1" stroke-dasharray="3 4"/>
+      <line x1="258" y1="118" x2="258" y2="212" stroke="#B9A99A" stroke-width="1" stroke-dasharray="3 4"/>
+      <text x="14" y="246" font-size="10" fill="#8B6F5A">← 進行方向（左向き）　設計図です。解剖図・測定結果ではありません</text>
+    </g>
+    <!-- 頭・胴（淡い楕円）と肩・腰の関節印。遠い側の関節は(+7,-5) -->
+    <g id="body">
+      <ellipse cx="192" cy="104" rx="92" ry="34" fill="#F3D9C4" fill-opacity="0.45" stroke="#C9A98F" stroke-width="2"/>
+      <ellipse cx="84" cy="94" rx="40" ry="30" fill="#F3D9C4" fill-opacity="0.55" stroke="#C9A98F" stroke-width="2"/>
+      <ellipse cx="68" cy="68" rx="9" ry="12" fill="#F3D9C4" fill-opacity="0.55" stroke="#C9A98F" stroke-width="2"/>
+      <circle cx="68" cy="92" r="3" fill="#8B6F5A"/>
+      <path d="M282,96 C310,78 322,60 316,44" fill="none" stroke="#C9A98F" stroke-width="5" stroke-linecap="round"/>
+      <circle cx="133" cy="109" r="5" fill="#fff" stroke="#8B6F5A" stroke-width="2"/>
+      <circle cx="265" cy="109" r="5" fill="#fff" stroke="#8B6F5A" stroke-width="2"/>
+      <circle cx="126" cy="114" r="5" fill="#8B6F5A"/>
+      <circle cx="258" cy="114" r="5" fill="#8B6F5A"/>
+    </g>
+    <!-- 脚の凡例（色と脚の対応） -->
+    <g id="legend" font-size="12" fill="#3A2E26">
+      <rect x="196" y="12" width="10" height="10" fill="#F29A2E"/><text x="210" y="22">LH</text>
+      <rect x="240" y="12" width="10" height="10" fill="#E8604C"/><text x="254" y="22">LF</text>
+      <rect x="284" y="12" width="10" height="10" fill="#7A4FC4"/><text x="298" y="22">RH</text>
+      <rect x="328" y="12" width="10" height="10" fill="#3B7DD8"/><text x="342" y="22">RF</text>
+      <text x="196" y="38" font-size="10" fill="#8B6F5A">近い側=LH・LF　遠い側=RH・RF</text>
+    </g>
+  </defs>
+
+  <!-- 01 (周期0%): 運び=LF / 接地=LH -->
+  <g transform="translate(0,0)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh4" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff2" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh0" color="#F29A2E"/>
+    <use xlink:href="#ff6" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">01</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期0%　運び: LF</text>
+    <text x="14" y="70" font-size="12" fill="#3A2E26">接地: LH</text>
+  </g>
+  <!-- 02 (12.5%): 運び=LF -->
+  <g transform="translate(384,0)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh5" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff3" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh1" color="#F29A2E"/>
+    <use xlink:href="#ff7" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">02</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期12.5%　運び: LF</text>
+  </g>
+  <!-- 03 (25%): 運び=RH / 接地=LF -->
+  <g transform="translate(768,0)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh6" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff4" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh2" color="#F29A2E"/>
+    <use xlink:href="#ff0" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">03</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期25%　運び: RH</text>
+    <text x="14" y="70" font-size="12" fill="#3A2E26">接地: LF</text>
+  </g>
+  <!-- 04 (37.5%): 運び=RH -->
+  <g transform="translate(1152,0)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh7" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff5" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh3" color="#F29A2E"/>
+    <use xlink:href="#ff1" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">04</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期37.5%　運び: RH</text>
+  </g>
+  <!-- 05 (50%): 運び=RF / 接地=RH -->
+  <g transform="translate(0,256)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh0" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff6" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh4" color="#F29A2E"/>
+    <use xlink:href="#ff2" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">05</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期50%　運び: RF</text>
+    <text x="14" y="70" font-size="12" fill="#3A2E26">接地: RH</text>
+  </g>
+  <!-- 06 (62.5%): 運び=RF -->
+  <g transform="translate(384,256)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh1" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff7" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh5" color="#F29A2E"/>
+    <use xlink:href="#ff3" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">06</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期62.5%　運び: RF</text>
+  </g>
+  <!-- 07 (75%): 運び=LH / 接地=RF -->
+  <g transform="translate(768,256)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh2" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff0" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh6" color="#F29A2E"/>
+    <use xlink:href="#ff4" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">07</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期75%　運び: LH</text>
+    <text x="14" y="70" font-size="12" fill="#3A2E26">接地: RF</text>
+  </g>
+  <!-- 08 (87.5%): 運び=LH -->
+  <g transform="translate(1152,256)">
+    <use xlink:href="#cellBg"/>
+    <use xlink:href="#hh3" transform="translate(7,-5)" color="#7A4FC4"/>
+    <use xlink:href="#ff1" transform="translate(7,-5)" color="#3B7DD8"/>
+    <use xlink:href="#body"/>
+    <use xlink:href="#hh7" color="#F29A2E"/>
+    <use xlink:href="#ff5" color="#E8604C"/>
+    <use xlink:href="#legend"/>
+    <text x="14" y="34" font-size="28" font-weight="700" fill="#3A2E26">08</text>
+    <text x="14" y="54" font-size="12" fill="#3A2E26">周期87.5%　運び: LH</text>
+  </g>
+</svg>

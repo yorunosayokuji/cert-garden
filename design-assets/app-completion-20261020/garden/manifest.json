@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "date": "2026-10-20",
+  "base": "design-assets/app-completion-20261020/garden/room-editable.png",
+  "style": "C room derived; original untouched",
+  "roomCoordinateSize": [
+    600,
+    600
+  ],
+  "floorPolygon": [
+    [
+      0.255,
+      0.33
+    ],
+    [
+      0.765,
+      0.33
+    ],
+    [
+      0.945,
+      0.8
+    ],
+    [
+      0.875,
+      0.89
+    ],
+    [
+      0.125,
+      0.89
+    ],
+    [
+      0.055,
+      0.8
+    ]
+  ],
+  "items": [
+    {
+      "id": "leaf-rug",
+      "name": "葉っぱのラグ",
+      "file": "design-assets/app-completion-20261020/garden/leaf-rug.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        41,
+        222,
+        471,
+        425
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 430,
+      "roomWidth": 0.44,
+      "defaultGround": [
+        0.5,
+        0.77
+      ],
+      "footprint": [
+        0.4,
+        0.13
+      ],
+      "layer": "floor",
+      "trialPointCost": 0,
+      "moneyPrice": null,
+      "sourceCell": 1,
+      "sha256": "f8acba4cad346b3af2263f89f46c036211b881362b8d66f44d62440a50ed8344"
+    },
+    {
+      "id": "knowledge-tree",
+      "name": "知恵の木",
+      "file": "design-assets/app-completion-20261020/garden/knowledge-tree.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        106,
+        44,
+        406,
+        423
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 300,
+      "roomWidth": 0.23,
+      "defaultGround": [
+        0.5,
+        0.47
+      ],
+      "footprint": [
+        0.13,
+        0.08
+      ],
+      "layer": "object",
+      "trialPointCost": 0,
+      "moneyPrice": null,
+      "sourceCell": 2,
+      "sha256": "1f0f7a22e948aed625911eeb77dd09202c729d3e6f406577a9d800f0902f0f92"
+    },
+    {
+      "id": "wood-stool",
+      "name": "木のスツール",
+      "file": "design-assets/app-completion-20261020/garden/wood-stool.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        76,
+        43,
+        435,
+        423
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 359,
+      "roomWidth": 0.12,
+      "defaultGround": [
+        0.64,
+        0.6
+      ],
+      "footprint": [
+        0.09,
+        0.06
+      ],
+      "layer": "object",
+      "trialPointCost": 0,
+      "moneyPrice": null,
+      "sourceCell": 3,
+      "sha256": "da7e023aa7bf408c7e76dbaeb00e192ad72bd402678c4e7d08317cc4a01b9647"
+    },
+    {
+      "id": "bookcase",
+      "name": "小さな本棚",
+      "file": "design-assets/app-completion-20261020/garden/bookcase.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        46,
+        44,
+        466,
+        424
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 420,
+      "roomWidth": 0.25,
+      "defaultGround": [
+        0.78,
+        0.52
+      ],
+      "footprint": [
+        0.21,
+        0.08
+      ],
+      "layer": "object",
+      "trialPointCost": 30,
+      "moneyPrice": null,
+      "sourceCell": 4,
+      "sha256": "870c9f71208f2de6c8e458c158ed627518203f30298252e0717bbc9d4800b4e5"
+    },
+    {
+      "id": "armchair",
+      "name": "くつろぎの椅子",
+      "file": "design-assets/app-completion-20261020/garden/armchair.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        52,
+        44,
+        459,
+        424
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 407,
+      "roomWidth": 0.22,
+      "defaultGround": [
+        0.23,
+        0.67
+      ],
+      "footprint": [
+        0.18,
+        0.11
+      ],
+      "layer": "object",
+      "trialPointCost": 40,
+      "moneyPrice": null,
+      "sourceCell": 5,
+      "sha256": "e2acca9a2c24251deed08d2f70676ffe8bde4fd1b4d487e2641477c2bef304e1"
+    },
+    {
+      "id": "leaf-cushion",
+      "name": "葉っぱのクッション",
+      "file": "design-assets/app-completion-20261020/garden/leaf-cushion.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        41,
+        127,
+        471,
+        424
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 430,
+      "roomWidth": 0.18,
+      "defaultGround": [
+        0.31,
+        0.76
+      ],
+      "footprint": [
+        0.15,
+        0.07
+      ],
+      "layer": "object",
+      "trialPointCost": 20,
+      "moneyPrice": null,
+      "sourceCell": 6,
+      "sha256": "02ce625184edc32bf3034e36cc229cab4e17b5cebf75a94967492b90bc05c45e"
+    },
+    {
+      "id": "coffee-table",
+      "name": "本のあるテーブル",
+      "file": "design-assets/app-completion-20261020/garden/coffee-table.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        41,
+        110,
+        471,
+        424
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 430,
+      "roomWidth": 0.24,
+      "defaultGround": [
+        0.75,
+        0.79
+      ],
+      "footprint": [
+        0.19,
+        0.1
+      ],
+      "layer": "object",
+      "trialPointCost": 30,
+      "moneyPrice": null,
+      "sourceCell": 7,
+      "sha256": "45529f5ba1664494009faf9643a6e70fe1e0bc568ec7f031a99c4bcf4423d13a"
+    },
+    {
+      "id": "leaf-pot",
+      "name": "みどりの鉢植え",
+      "file": "design-assets/app-completion-20261020/garden/leaf-pot.png",
+      "size": [
+        512,
+        512
+      ],
+      "visible_bbox": [
+        66,
+        44,
+        447,
+        424
+      ],
+      "anchor": [
+        256,
+        424
+      ],
+      "referenceWidth": 381,
+      "roomWidth": 0.13,
+      "defaultGround": [
+        0.87,
+        0.76
+      ],
+      "footprint": [
+        0.08,
+        0.06
+      ],
+      "layer": "object",
+      "trialPointCost": 20,
+      "moneyPrice": null,
+      "sourceCell": 8,
+      "sha256": "cc842ced1aba293b2011c29eba15c6fdba177f4ca7c05c8ba27bda1842107f80"
+    }
+  ],
+  "starterFurniture": [
+    "leaf-rug",
+    "knowledge-tree",
+    "wood-stool"
+  ],
+  "pricingStatus": "trial in-game points only; not paid products or final economy",
+  "userVisualAcceptance": false
+}

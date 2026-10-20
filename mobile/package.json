@@ -1,0 +1,50 @@
+{
+  "name": "cert-garden-mobile",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.ts",
+  "description": "資格学習×箱庭: Expo + React Native ローカル試作（未公開）",
+  "scripts": {
+    "start": "expo start --web --localhost",
+    "web": "expo start --web --localhost",
+    "web:ios-design": "node scripts/run-with-env.mjs EXPO_PUBLIC_IOS_DESIGN=1 -- expo start --web --localhost",
+    "ios:design": "node scripts/run-with-env.mjs EXPO_PUBLIC_IOS_DESIGN=1 -- expo start --localhost",
+    "export:web": "node scripts/run-with-env.mjs EXPO_PUBLIC_IOS_DESIGN= -- expo export --platform web --clear",
+    "export:web:ios-design": "node scripts/run-with-env.mjs EXPO_PUBLIC_IOS_DESIGN=1 -- expo export --platform web --clear --output-dir dist-ios-design",
+    "check:ios-config": "node scripts/check-ios-config.mjs",
+    "check:ios-config:build": "node scripts/check-ios-config.mjs --build",
+    "typecheck": "tsc --noEmit",
+    "e2e": "node e2e/run.mjs",
+    "test": "node --test \"test/*.test.ts\""
+  },
+  "dependencies": {
+    "@expo/metro-runtime": "~57.0.16",
+    "@react-native-async-storage/async-storage": "2.2.0",
+    "expo": "57.0.30",
+    "expo-apple-authentication": "~57.0.2",
+    "expo-asset": "57.0.20",
+    "expo-auth-session": "~57.0.16",
+    "expo-constants": "~57.0.22",
+    "expo-crypto": "~57.0.4",
+    "expo-dev-client": "~57.0.20",
+    "expo-haptics": "~57.0.3",
+    "expo-secure-store": "~57.0.4",
+    "expo-web-browser": "~57.0.3",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "react-native": "0.86.3",
+    "react-native-safe-area-context": "~5.7.0",
+    "react-native-web": "~0.21.0"
+  },
+  "overrides": {
+    "xcode": {
+      "uuid": "^11.1.1"
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/react": "~19.2.0",
+    "puppeteer-core": "^25.13.0",
+    "typescript": "~6.0.3"
+  }
+}

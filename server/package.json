@@ -1,0 +1,28 @@
+{
+  "name": "cert-garden-server",
+  "version": "0.0.1",
+  "private": true,
+  "description": "cert-garden Cloudflare Workers + D1 backend (local-verified only, not deployed)",
+  "type": "module",
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "test": "vitest run --silent",
+    "test:preflight": "node --test scripts/preflight.test.mjs",
+    "typecheck": "tsc --noEmit",
+    "types": "node scripts/wrangler-quiet.mjs types",
+    "preflight": "node scripts/preflight.mjs",
+    "bundle:dry": "node scripts/wrangler-quiet.mjs deploy --dry-run --outdir .tmp/bundle",
+    "migrate:local": "node scripts/wrangler-quiet.mjs d1 migrations apply cert-garden --local"
+  },
+  "dependencies": {
+    "jose": "^6.2.12"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.4.5",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.12",
+    "wrangler": "^4.151.2"
+  }
+}

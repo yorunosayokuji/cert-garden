@@ -1,0 +1,676 @@
+{
+  "version": 1,
+  "method": "原画の再生成ではない。新規に作った5枚の連続した有機的パーツ（apricot-fullbody-parts.png: 胴・頭・尾・前脚・後脚）を、30姿勢の全身へ連続変形（胴=胸腰の横位置メッシュ変形、頭=首で回転、尾=根元から先端へ遅れる変形、脚=1枚の皮膚を骨の重みで変形するスキニング）して合成した絵。30枚の新規手描きではない。描画用の一時textureは alpha>=180 だけを不透明にし、原PNGの周辺光は使わず原PNGは加工しない。4倍の格子へ三角形を描いてから、被覆が半分以上の画素だけを不透明にして 96x80 の論理格子へ戻す。",
+  "note": "数値は設計値（実在の動物の測定値ではない）。自然さの合否はこの JSON ではなく親の実物比較で判断する。",
+  "inputs": {
+    "parts": {
+      "file": "apricot-fullbody-parts-readable.png",
+      "sha256": "4d2e2465e33190fe5f2b177b77698d5177bff20df7618dbecb938e44ff465d8a"
+    },
+    "bounds": {
+      "file": "parts-bounds.json",
+      "rects": {
+        "body": [
+          64,
+          138,
+          444,
+          361
+        ],
+        "head": [
+          548,
+          143,
+          442,
+          356
+        ],
+        "tail": [
+          1079,
+          21,
+          399,
+          484
+        ],
+        "foreleg": [
+          160,
+          601,
+          231,
+          341
+        ],
+        "hindleg": [
+          672,
+          601,
+          234,
+          348
+        ]
+      }
+    }
+  },
+  "parameters": {
+    "strideLogicalPx": 14,
+    "support": 0.65,
+    "liftLogicalPx": 3.2,
+    "ankleHeight": 2.8,
+    "toeCurlDeg": 5,
+    "ground": {
+      "near": 68,
+      "far": 65.5
+    },
+    "renderSuperSample": 4,
+    "alphaCutoff": 180,
+    "farLegShade": 0.8,
+    "legWidthScale": {
+      "fore": 0.06,
+      "hind": 0.06
+    },
+    "pawWidthLogicalPx": {
+      "fore": 7.98,
+      "hind": 9.6
+    }
+  },
+  "atlases": {
+    "walk": {
+      "file": "apricot-walk-30.png",
+      "width": 576,
+      "height": 400,
+      "referenceWidth": 90,
+      "durationMs": 1800,
+      "frameCount": 30,
+      "sha256": "5ac0d9fe620f0d06a1aa06abac71f71223919b5718a78f9c06298ef70cffecc2",
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            96,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            192,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            288,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            384,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            480,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 6,
+          "rect": [
+            0,
+            80,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 7,
+          "rect": [
+            96,
+            80,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 8,
+          "rect": [
+            192,
+            80,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 9,
+          "rect": [
+            288,
+            80,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 10,
+          "rect": [
+            384,
+            80,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 11,
+          "rect": [
+            480,
+            80,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 12,
+          "rect": [
+            0,
+            160,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 13,
+          "rect": [
+            96,
+            160,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 14,
+          "rect": [
+            192,
+            160,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 15,
+          "rect": [
+            288,
+            160,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 16,
+          "rect": [
+            384,
+            160,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 17,
+          "rect": [
+            480,
+            160,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 18,
+          "rect": [
+            0,
+            240,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 19,
+          "rect": [
+            96,
+            240,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 20,
+          "rect": [
+            192,
+            240,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 21,
+          "rect": [
+            288,
+            240,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 22,
+          "rect": [
+            384,
+            240,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 23,
+          "rect": [
+            480,
+            240,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 24,
+          "rect": [
+            0,
+            320,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 25,
+          "rect": [
+            96,
+            320,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 26,
+          "rect": [
+            192,
+            320,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 27,
+          "rect": [
+            288,
+            320,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 28,
+          "rect": [
+            384,
+            320,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 29,
+          "rect": [
+            480,
+            320,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        }
+      ]
+    },
+    "idle": {
+      "file": "apricot-walk-idle.png",
+      "width": 96,
+      "height": 80,
+      "referenceWidth": 90,
+      "durationMs": 0,
+      "frameCount": 1,
+      "sha256": "806d0f59bdc3a8bed926a1c65964d0c02c3172acad144fdf9a1fa6aa35e88699",
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        }
+      ],
+      "note": "t0 の胴・頭・尾・足の x のまま、浮いていた左前足だけを同じ x で接地させた4脚立ち"
+    },
+    "settle": {
+      "file": "apricot-walk-settle.png",
+      "width": 576,
+      "height": 80,
+      "referenceWidth": 90,
+      "durationMs": 240,
+      "frameCount": 6,
+      "sha256": "88ee2b793e28376e5533110f2444dd8ef992c861a6befb8af38a1920853412a6",
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            96,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            192,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            288,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            384,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            480,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        }
+      ],
+      "note": "poseAt(0,{liftScale:1-(i+1)/6})。胴・頭・尾と支持足の x は t0 のまま、浮いた左前足だけが接地へ。最後の1枚は idle と同じ姿勢"
+    },
+    "start": {
+      "file": "apricot-walk-start.png",
+      "width": 576,
+      "height": 80,
+      "referenceWidth": 90,
+      "durationMs": 240,
+      "frameCount": 6,
+      "sha256": "76923121a5cf720d915ab74088783bcee22734faf4bae80c34bbc97cc77f7259",
+      "frames": [
+        {
+          "index": 0,
+          "rect": [
+            0,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 1,
+          "rect": [
+            96,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 2,
+          "rect": [
+            192,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 3,
+          "rect": [
+            288,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 4,
+          "rect": [
+            384,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        },
+        {
+          "index": 5,
+          "rect": [
+            480,
+            0,
+            96,
+            80
+          ],
+          "anchor": [
+            48,
+            68
+          ]
+        }
+      ],
+      "note": "poseAt(0,{liftScale:(i+1)/6})。接地から左前足を浮かせ戻す。最後の1枚は歩行の0番と同じ姿勢"
+    }
+  }
+}

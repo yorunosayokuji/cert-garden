@@ -1,0 +1,29 @@
+{
+  // cert-garden backend。ローカル検証専用の設定: database_id は未作成のダミー、vars は空（= 未設定で fail closed）。
+  // 秘密は vars に置かず `wrangler secret put` で入れる（名前は README / .dev.vars.example）。
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cert-garden-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-01",
+  "workers_dev": false,
+  "preview_urls": false,
+  "observability": { "enabled": true },
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "cert-garden",
+      "database_id": "00000000-0000-0000-0000-000000000000",
+      "migrations_dir": "migrations"
+    }
+  ],
+  "vars": {
+    "APP_ENV": "development",
+    "ALLOWED_ORIGINS": "",
+    "GOOGLE_CLIENT_IDS": "",
+    "APPLE_CLIENT_ID": "",
+    "APPLE_TEAM_ID": "",
+    "APPLE_KEY_ID": "",
+    "ACCESS_TTL_SECONDS": "900",
+    "REFRESH_TTL_SECONDS": "2592000"
+  }
+}

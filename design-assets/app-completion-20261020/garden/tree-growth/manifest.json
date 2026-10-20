@@ -1,0 +1,101 @@
+{
+  "version": 1,
+  "wholeSprites": true,
+  "commonSourceScale": 0.7807308970099668,
+  "referenceWidth": 356,
+  "roomWidth": 0.23,
+  "stageAtUniqueStudyDays": [
+    0,
+    1,
+    3,
+    7
+  ],
+  "stages": [
+    {
+      "stage": 0,
+      "file": "design-assets/app-completion-20261020/garden/tree-growth/0.png",
+      "anchor": [
+        256,
+        488
+      ],
+      "visibleBBox": [
+        145,
+        292,
+        367,
+        488
+      ],
+      "sourceCellBBox": [
+        237,
+        285,
+        522,
+        539
+      ],
+      "sha256": "68a6fd917b1679dd90634de505e5d40a160c4ed586c641162f12b090a16a8e2e"
+    },
+    {
+      "stage": 1,
+      "file": "design-assets/app-completion-20261020/garden/tree-growth/1.png",
+      "anchor": [
+        256,
+        488
+      ],
+      "visibleBBox": [
+        146,
+        255,
+        367,
+        488
+      ],
+      "sourceCellBBox": [
+        106,
+        241,
+        391,
+        539
+      ],
+      "sha256": "7758ead74bdf2e5a138abba1ea3e4eb656c5e78e42f257abcaebb1a5c09266aa"
+    },
+    {
+      "stage": 2,
+      "file": "design-assets/app-completion-20261020/garden/tree-growth/2.png",
+      "anchor": [
+        256,
+        488
+      ],
+      "visibleBBox": [
+        146,
+        91,
+        366,
+        487
+      ],
+      "sourceCellBBox": [
+        238,
+        109,
+        522,
+        619
+      ],
+      "sha256": "b8a75ca7b893c3b79a473b71b013d12f526cc994a48eed4d814d941f9c84ac77"
+    },
+    {
+      "stage": 3,
+      "file": "design-assets/app-completion-20261020/garden/tree-growth/3.png",
+      "anchor": [
+        256,
+        488
+      ],
+      "visibleBBox": [
+        78,
+        18,
+        434,
+        487
+      ],
+      "sourceCellBBox": [
+        27,
+        17,
+        484,
+        619
+      ],
+      "sha256": "c77854371e206bf492a0d2967feef034784888f40f1ea4b71d1e32d2c5d66abe"
+    }
+  ],
+  "originalPreserved": true,
+  "userVisualAcceptance": false
+}
