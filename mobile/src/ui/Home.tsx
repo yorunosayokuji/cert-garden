@@ -264,7 +264,7 @@ const styles = StyleSheet.create({
   // 説明文は自然な高さ（2行になっても次のボタンと重ならない）。上下に余白を持つ
   note: { ...T.body, minHeight: NOTE_H, fontSize: 13, lineHeight: 19, color: C.sub, textAlign: 'center', paddingVertical: 4, marginBottom: 4 },
   entries: { height: ENTRY_H, flexDirection: 'row', alignItems: 'center', justifyContent: 'center', gap: 8, paddingHorizontal: 16 },
-  entry: { minHeight: 40, paddingHorizontal: 14, borderRadius: 18, borderWidth: 1.5, borderColor: C.line, backgroundColor: C.card, alignItems: 'center', justifyContent: 'center' },
+  entry: { minHeight: 44, minWidth: 44, paddingHorizontal: 14, borderRadius: 18, borderWidth: 1.5, borderColor: C.line, backgroundColor: C.card, alignItems: 'center', justifyContent: 'center' },
   entryText: { ...T.button, fontSize: 13, lineHeight: 19, color: C.ink },
   chips: { height: CHIPS_H, alignItems: 'center', gap: 8, paddingHorizontal: 16 },
   chip: { minHeight: 48, minWidth: 48, paddingHorizontal: 16, borderRadius: 20, borderWidth: 1.5, borderColor: C.line, backgroundColor: C.card, alignItems: 'center', justifyContent: 'center' },

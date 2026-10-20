@@ -147,9 +147,10 @@ const styles = StyleSheet.create({
   pill: { minHeight: 40, minWidth: 64, paddingHorizontal: 14, borderRadius: 20, alignItems: 'center', justifyContent: 'center', borderWidth: 1.5 },
   tabText: { ...T.button, fontSize: 15, lineHeight: 22, color: C.sub },
   segRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingHorizontal: 12, paddingVertical: 8, backgroundColor: C.bg },
-  seg: { flex: 1, flexDirection: 'row', minHeight: 44, borderRadius: 14, backgroundColor: '#e7dcc3', padding: 3 },
+  // 外枠の内側に padding 3 があるので、各タブが 44pt 以上になるよう外枠は 44+6
+  seg: { flex: 1, flexDirection: 'row', minHeight: 50, borderRadius: 14, backgroundColor: '#e7dcc3', padding: 3 },
   segThumb: { position: 'absolute', left: 3, top: 3, bottom: 3, borderRadius: 11, backgroundColor: C.card, borderWidth: 1.5, borderColor: C.accentDark },
-  segItem: { flex: 1, minHeight: 44 - 6 },
+  segItem: { flex: 1, minHeight: 44 },
   segText: { ...T.button, fontSize: 17, lineHeight: 24, color: C.sub },
   header: { minHeight: 52, flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', paddingLeft: 16, paddingRight: 8, backgroundColor: C.bg },
   headerTitle: { ...T.head, fontSize: 22, lineHeight: 30, color: C.ink },

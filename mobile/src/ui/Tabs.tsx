@@ -285,7 +285,8 @@ export function ShopTab({ roster, snapshot: snap, busy, onSlot, onCompanion, onB
           return (
             <View key={f.id} style={styles.themeRow}>
               <Image source={FURNITURE_IMAGES[f.id]} resizeMode="contain" style={{ width: 56, height: 56 }} accessibilityLabel={f.name} />
-              <View style={{ flex: 1 }}>
+              {/* 説明は最低160の幅を確保する。狭い幅・大きな文字では入手ボタンが次の行へ回り、説明が細切れにならない（広い幅は従来の1行） */}
+              <View style={{ flexGrow: 1, flexShrink: 1, flexBasis: 160 }}>
                 <Text style={styles.cName}>{f.name}</Text>
                 <Body sub>{have ? '持っています（おへやの「模様替え」で置けます）' : `${f.trialPointCost}ポイント${short ? '（足りません）' : ''}`}</Body>
               </View>
@@ -318,7 +319,7 @@ const styles = StyleSheet.create({
   chipRow: { flexDirection: 'row', flexWrap: 'wrap', gap: 8 },
   qChip: { minHeight: 56, minWidth: 96, flexGrow: 1, borderRadius: 16, borderWidth: 2, alignItems: 'center', justifyContent: 'center', paddingHorizontal: 8, paddingVertical: 6 },
   qSub: { ...T.head, fontSize: 12, lineHeight: 17, color: C.sub },
-  themeRow: { flexDirection: 'row', alignItems: 'center', gap: 8, paddingVertical: 6 },
+  themeRow: { flexDirection: 'row', flexWrap: 'wrap', alignItems: 'center', columnGap: 8, rowGap: 4, paddingVertical: 6 },
   soon: { ...T.head, alignSelf: 'flex-start', fontSize: 13, lineHeight: 19, color: C.sub, borderWidth: 1.5, borderColor: C.line, borderRadius: 12, paddingHorizontal: 8, paddingVertical: 3 },
   row: { flexDirection: 'row', gap: 8 },
   cName: { ...T.head, fontSize: 14, lineHeight: 20, color: C.ink, textAlign: 'center' },
