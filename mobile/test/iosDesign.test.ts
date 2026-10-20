@@ -133,15 +133,17 @@ test('入口: 通常起動は本体。web は明示 ?iosDesign=1 と(開発 or �
 
 test('入口: Root が本体と候補を切り替え、index は Root を登録する。App.tsx は候補を知らない', () => {
   const root = read('../src/Root.tsx');
-  assert.match(root, /isIosDesignEnabled\(/);
+  assert.match(root, /decideEntry\(/);
   assert.match(root, /require\('\.\/App'\)/);
   assert.match(root, /require\('\.\/ios\/IosDesignApp'\)/);
+  assert.match(root, /require\('\.\/ios\/ProductApp'\)/);
   assert.match(read('../index.ts'), /registerRootComponent\(Root\)/);
   assert.doesNotMatch(read('../src/App.tsx'), /ios\//);
-  // 本体の保存(asyncKv)を直接渡すのは本体だけ。候補側は名前空間を通す
+  // 端末の保存(asyncKv)を直接渡すのは、比較の入口(名前空間つき)と製品の入口(既存9キーをゲストの原本として読む)だけ
   for (const f of readdirSync(new URL('../src/ios/', import.meta.url))) {
     const text = read(`../src/ios/${f}`);
     if (f === 'IosDesignApp.tsx') assert.match(text, /new PrefixedKv\(asyncKv\)/);
+    else if (f === 'ProductApp.tsx') assert.match(text, /new ProductKv\(asyncKv\)[\s\S]*new PrefixedKv\(asyncKv, PRODUCT_PREVIEW_PREFIX\)/);
     else assert.doesNotMatch(text, /asyncKv|AsyncStorage/, f);
   }
 });
@@ -210,7 +212,7 @@ test('最低表示: 準備中は必ず表示。準備後は開始から待ち時
 test('最低表示: 本番(本体)の経路に最低待機は無い。待ちを持つのは候補側の useMinShow だけ', () => {
   const app = read('../src/App.tsx');
   assert.doesNotMatch(app, /useMinShow|minShow|delayMs|setTimeout/);
-  const ios = read('../src/ios/IosDesignApp.tsx');
+  const ios = read('../src/ios/Runner.tsx');
   assert.match(ios, /useMinShow\('boot', bootLoading, cfg\.delayMs, nonce\)/);
   assert.match(ios, /void c\.load\(\)/);
 });

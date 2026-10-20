@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { minShowRemaining, minShowVisible } from './compare.ts';
+import { minShowRemaining, minShowVisible } from './minShow.ts';
 
 /**
  * 比較用の最低表示。trigger が変わるたびに計り直し、実際の準備(real)が続く間は必ず表示、

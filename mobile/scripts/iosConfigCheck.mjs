@@ -1,7 +1,7 @@
 // iOS ビルド前の設定検査（純粋関数）。捏造した ID を登録せず、未設定は「ビルド前に」分かるようにする。
 // 値の用意（bundle ID の決定、Expo アカウントと owner、eas init の projectId）は本人のアカウント作成後の作業。
 
-const GOOGLE_IOS_CLIENT_ID = /^[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com$/i;
+export const GOOGLE_IOS_CLIENT_ID =/^[0-9]+-[a-z0-9]+\.apps\.googleusercontent\.com$/i;
 
 /** API の URL は HTTPS のみ（資格情報・クエリ・ハッシュなし）。localhost は署名ビルドでは不可 */
 export function isProductionApiBase(raw) {

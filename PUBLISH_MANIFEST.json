@@ -3,8 +3,8 @@
   "schema": 1,
   "note": "この束は元のアプリフォルダ(local original)から生成した写しです。手で編集せず、元を直して再生成してください。",
   "totals": {
-    "files": 941,
-    "bytes": 130332405,
+    "files": 958,
+    "bytes": 130441658,
     "assets": 749
   },
   "limits": {
@@ -14,6 +14,13 @@
   },
   "files": [
     {
+      "path": ".easignore",
+      "size": 885,
+      "sha256": "4feb98356c3ecf7287c45c63e8fae8f927d6b106aed97b403d1dab6feefd6d24",
+      "kind": "template",
+      "origin": "release/template/easignore.txt"
+    },
+    {
       "path": ".gitattributes",
       "size": 34,
       "sha256": "9dda5a562e8f022d875d707b138007ea5eead272a830963eebc3edec8383d096",
@@ -22,22 +29,22 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "size": 3370,
-      "sha256": "842ca1c25f8e9aef393320551bf7441041bd14e49f2bb62fe1960a6757c1e902",
+      "size": 3846,
+      "sha256": "419f15f750faa118bcfa425e150c74fb684a0c90b953858845d86cb2ca56b61b",
       "kind": "template",
       "origin": "release/template/ci.yml"
     },
     {
       "path": ".gitignore",
-      "size": 165,
-      "sha256": "7ca4605c7a8cde98c4e965e83e58f50be1c53b8be70574c3299887fc2905ff92",
+      "size": 217,
+      "sha256": "99bb2c8eedd2e3a7b92c6c8157e0a85f8eab7061c1963a2a7f70197239a0c3ae",
       "kind": "template",
       "origin": "release/template/gitignore.txt"
     },
     {
       "path": "README.md",
-      "size": 6014,
-      "sha256": "3fbd5c831c47b902f01b2ffaa6cfed7f6db7f0bda1144634460be7bcdf9316c8",
+      "size": 9108,
+      "sha256": "21f6137eb262bb3988847b9cf6c96ede41c3e4b0035267e05f863eb72adeca57",
       "kind": "template",
       "origin": "release/template/README.public.md"
     },
@@ -6018,23 +6025,30 @@
       "license": "project-original asset; no OSS license granted"
     },
     {
+      "path": "mobile/.easignore",
+      "size": 605,
+      "sha256": "91eaf5ac2be2e60f10c7146609c3e04b4e9b021a0da228dca18072943cfa0410",
+      "kind": "other",
+      "origin": "original"
+    },
+    {
       "path": "mobile/.gitignore",
-      "size": 60,
-      "sha256": "47af9ee2bf6f6ea8403dbb3a5391093c384e6b653092962dcd7a372eec78d00e",
+      "size": 112,
+      "sha256": "a55e6aade81f13f2ae1280ab9264a63015ff3bc6a98e7c70e12a822ebe77f097",
       "kind": "other",
       "origin": "original"
     },
     {
       "path": "mobile/app.config.js",
-      "size": 1045,
-      "sha256": "11042733b83ac35a21ddc88f7d3c4e150a8b6ed701f4f2eea9df5e6b3e1a2545",
+      "size": 2417,
+      "sha256": "6f1393fe7884e7ca4d578b9e94a74175767c699d922f527e3238ab7dc687dea1",
       "kind": "code",
       "origin": "original"
     },
     {
       "path": "mobile/app.json",
-      "size": 606,
-      "sha256": "41e384ffa92944f0621cf168fb309c00d47c01dda96e2dc37b172c27e5fb729a",
+      "size": 639,
+      "sha256": "aa800abb2cb0bddb761df72fb8df1bfe5c66b8dfa20dabc10dc537e422af38b7",
       "kind": "json",
       "origin": "original"
     },
@@ -6075,8 +6089,8 @@
     },
     {
       "path": "mobile/package.json",
-      "size": 1864,
-      "sha256": "f0245007e54af27af25820051828f881c44e1d6a251d6833e1e21c626d7386e4",
+      "size": 2364,
+      "sha256": "b21ea98033e56d1aeaefd5ebcb928e5ba725af7b8f38c80d089cfc6ace642034",
       "kind": "json",
       "origin": "original"
     },
@@ -6105,9 +6119,44 @@
       "license": "project-original asset; no OSS license granted"
     },
     {
+      "path": "mobile/release-selection.json",
+      "size": 30,
+      "sha256": "e4378795a864e776231c76a89bf48423435a5170ce303cdef6c789929ad4a578",
+      "kind": "json",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/scripts/buildPolicy.mjs",
+      "size": 7401,
+      "sha256": "2853f954ba931bf9e000a1f36e5de36f962ce38877e541dd86d979b249d68da3",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/scripts/check-eas-source.mjs",
+      "size": 783,
+      "sha256": "b84ff08938ff7ac3397271929044b3881cb81289c3215bd8a941ab5d65d8ebb8",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
       "path": "mobile/scripts/check-ios-config.mjs",
       "size": 1411,
       "sha256": "9bba02a966a39251c5a83244328834defeb716dffb3d3f3421bee500280f68ce",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/scripts/eas-pre-install.mjs",
+      "size": 1350,
+      "sha256": "746bd5f4cebf6996c6a13531ff4614aca07735e04dc9a816cd74f1f920aa91c5",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/scripts/export-native.mjs",
+      "size": 2340,
+      "sha256": "e397bf050becfc74b374dbf4abb72f33fc279c9e5370159560cba91565ab4a34",
       "kind": "code",
       "origin": "original"
     },
@@ -6127,8 +6176,15 @@
     },
     {
       "path": "mobile/scripts/iosConfigCheck.mjs",
-      "size": 5631,
-      "sha256": "22db62504445dcc314cb6aeda3e0061e7d7a0d5f085fabd5f50dfcc0c3877ab0",
+      "size": 5637,
+      "sha256": "5c0a87cfcfd20f25ec6555d0d06bc6cee5b28d2c4e7617c3ee92c118812f45b0",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/scripts/nativeExport.mjs",
+      "size": 7992,
+      "sha256": "48bf8641e45c570652e46357ae78b5c941d13df744dfc121ef943c209c2a75f3",
       "kind": "code",
       "origin": "original"
     },
@@ -6147,6 +6203,13 @@
       "origin": "original"
     },
     {
+      "path": "mobile/scripts/sourcePreflight.mjs",
+      "size": 11890,
+      "sha256": "b2861b7a3bac9087fe758a0fef716f79abef077756ae02faeb9c73341ab17afc",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
       "path": "mobile/src/App.tsx",
       "size": 9977,
       "sha256": "b7e5b390f2a186c79366b2921021c41b496b7b0ffe725aff5146fa0020f469e2",
@@ -6155,8 +6218,8 @@
     },
     {
       "path": "mobile/src/Root.tsx",
-      "size": 1306,
-      "sha256": "9f9b6b6c325f94d517ee7d5cf75d5982558cbb58f76a91d7a7a020cf72bed3fb",
+      "size": 3210,
+      "sha256": "f3910988cf266df35dfd00b40a4d7d7e1dddc2a4069a90b1ba801c314dfecf68",
       "kind": "code",
       "origin": "original"
     },
@@ -6260,15 +6323,15 @@
     },
     {
       "path": "mobile/src/ios/Flow.tsx",
-      "size": 4069,
-      "sha256": "9cbd5ca631a93fcde0d7fd093084fe04cc7694f5e067976d0c5517bec59feb19",
+      "size": 4357,
+      "sha256": "f95a8c474a3b9ba192374ed6a8db2d422975e3bc4c426cdffc134fff499dc01d",
       "kind": "code",
       "origin": "original"
     },
     {
       "path": "mobile/src/ios/IosDesignApp.tsx",
-      "size": 11349,
-      "sha256": "6b8102949bbb890a0335c5c0575e8493a03887eae4224fcf6fafb28a956cfd63",
+      "size": 5702,
+      "sha256": "9149ad22ebc811cdfa56a0e575ac35b4e4aca4427917074ec12085bc1e25708c",
       "kind": "code",
       "origin": "original"
     },
@@ -6301,9 +6364,30 @@
       "origin": "original"
     },
     {
+      "path": "mobile/src/ios/ProductApp.tsx",
+      "size": 3828,
+      "sha256": "0cd1e85e65dd8acfaab3033036d1aa3c88cfed4d18082f7a3f9a7db4a0e88666",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/src/ios/ReleaseBlocked.tsx",
+      "size": 1110,
+      "sha256": "65ae0034cd803dab118d55baa291f29fa58ae672c0fd9da8f531638548ab2ed9",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/src/ios/Runner.tsx",
+      "size": 8487,
+      "sha256": "61540ccd144f44131d972f2a491cf2f6eb9510de29755aabd22394010609edca",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
       "path": "mobile/src/ios/Screens.tsx",
-      "size": 4203,
-      "sha256": "f110b4c2c1d145d5313a46f7f4b5abef350e6ca4c272382a5eba1c0521d90996",
+      "size": 4352,
+      "sha256": "88df93a0b4b61706a00f587dd74db0f2b9b664bd5fe2809a31b94be71a18a8de",
       "kind": "code",
       "origin": "original"
     },
@@ -6330,8 +6414,15 @@
     },
     {
       "path": "mobile/src/ios/compare.ts",
-      "size": 6058,
-      "sha256": "909a202d913fe22e3af7e25d24fef35bf2b81f60e7742f274655c05bb69d3817",
+      "size": 4757,
+      "sha256": "50def599cf77ea2c89592650a785dd07b36c7192d7cc7afc2179acf5eb6fdbad",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/src/ios/entry.ts",
+      "size": 4185,
+      "sha256": "61ef65f50e5eef3304b954d6c81965a4fbf3428c0d6f96773ef591f5a807c28e",
       "kind": "code",
       "origin": "original"
     },
@@ -6343,9 +6434,23 @@
       "origin": "original"
     },
     {
+      "path": "mobile/src/ios/minShow.ts",
+      "size": 850,
+      "sha256": "a13afeff02366992a009483a939b4bf54590500278443edd835c0b466c8dbda9",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
       "path": "mobile/src/ios/namespace.ts",
-      "size": 4058,
-      "sha256": "f3d084b086e2f3dc7f379fb51e498fdf3dcc178ebca5c54cbc42a47fc73eedf9",
+      "size": 3325,
+      "sha256": "7bd06a4eb343c5138d30d05b0246d81384a060abfff15bf028b445b6110d6fd0",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/src/ios/storage.ts",
+      "size": 2560,
+      "sha256": "83b03362d7249994899bd4aeeabea149ce7efb37749e667ac7c007812a413ff8",
       "kind": "code",
       "origin": "original"
     },
@@ -6359,7 +6464,7 @@
     {
       "path": "mobile/src/ios/useMinShow.ts",
       "size": 1286,
-      "sha256": "4a538aa2a5fa1f7bc6447c179941afed3adaa4345b041722ab2575402e4752a0",
+      "sha256": "51c481f50dd03b9f960dc251d68870de6baf66a7f9906c77d8f6d0ac7035cbad",
       "kind": "code",
       "origin": "original"
     },
@@ -6547,8 +6652,8 @@
     },
     {
       "path": "mobile/src/ui/Home.tsx",
-      "size": 14577,
-      "sha256": "ed4a40a12888e1b50d99ed98b31ebcfce2d26e74f81c213a98c9fe3bb456b544",
+      "size": 14712,
+      "sha256": "2741f80e029364fb7b4126a19e89a03542ea868e90314b1aff6a7f839a726a73",
       "kind": "code",
       "origin": "original"
     },
@@ -6792,8 +6897,8 @@
     },
     {
       "path": "mobile/test/account.test.ts",
-      "size": 89425,
-      "sha256": "48620cc769a8f5ab506bb385212b82ba41e3144fc2a46b601472118fef0bb8e7",
+      "size": 89934,
+      "sha256": "558791331984053f76dcb7401aaa944389e871b13d4dd4c88fe47fe71ada2c70",
       "kind": "code",
       "origin": "original"
     },
@@ -6841,15 +6946,29 @@
     },
     {
       "path": "mobile/test/iosDesign.test.ts",
-      "size": 17619,
-      "sha256": "e7ef6ce247030d75045cb13e4144204f8539d859d7ef5049846295b2a9270513",
+      "size": 17870,
+      "sha256": "0f9b6246d4ecc2fbee675c361fc36016047730d4ae263c0c2212b2109e263690",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/test/iosProduct.test.ts",
+      "size": 24017,
+      "sha256": "687a318deb9095f6c3934fdfedb220989b967421468f6af14018c37b37dc9a76",
       "kind": "code",
       "origin": "original"
     },
     {
       "path": "mobile/test/iosRepairs.test.ts",
-      "size": 6953,
-      "sha256": "c18e1ea0703a82bac2e766250600aa386ca1a0e72989790df7292af5223355df",
+      "size": 6947,
+      "sha256": "3de7214903e11c3241005606e63b0eb20365cd7a732b215a68b970d75db00197",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "mobile/test/iosSource.test.ts",
+      "size": 29806,
+      "sha256": "ec696ccfca8ac7bfb4e341988c38756b977151091aa73822839961b521428bc1",
       "kind": "code",
       "origin": "original"
     },
@@ -7363,7 +7482,7 @@
       "json-to-json-not-followed": 74,
       "pattern:参考|reference|livly|リヴリー|duolingo|夢庭|dreamgarden": 22
     },
-    "unresolvedSoftReferences": 0,
+    "unresolvedSoftReferences": 33,
     "hardReferenceProblems": 0
   }
 }

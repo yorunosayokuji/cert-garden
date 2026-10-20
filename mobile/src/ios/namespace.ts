@@ -1,32 +1,11 @@
 // iOS候補の確認用保存。既存の certgarden:* キーには一切触れず、別の接頭辞の下だけに読み書きする。
 // 既存の各 Store は KeyValue を受け取るだけなので、ここで包んだ KeyValue を渡せば本体の保存から隔離できる。
 import type { KeyValue } from '../state/kv.ts';
+import { IOS_DESIGN_PREFIX, PrefixedKv } from './storage.ts';
 
-/** 本体は 'certgarden:' で始まるキーだけを使う。ここは必ず別の接頭辞（コロンの前が違う）にする */
-export const IOS_DESIGN_PREFIX = 'certgarden-ios-design:';
+// 接頭辞つきの保存は製品の経路からも使うので storage.ts にある（ここは比較専用の道具だけ）
+export { IOS_DESIGN_PREFIX, PrefixedKv };
 export const COMPARE_KEY = 'compare:v1';
-
-/** すべてのキーに接頭辞を付ける。接頭辞の外のキーは読めず、書けず、消せない */
-export class PrefixedKv implements KeyValue {
-  readonly base: KeyValue;
-  readonly prefix: string;
-  constructor(base: KeyValue, prefix = IOS_DESIGN_PREFIX) {
-    if (!prefix || prefix.startsWith('certgarden:') || 'certgarden:'.startsWith(prefix)) {
-      throw new Error('本体の保存と重なる接頭辞は使えません');
-    }
-    this.base = base;
-    this.prefix = prefix;
-  }
-  getItem(key: string) {
-    return this.base.getItem(this.prefix + key);
-  }
-  setItem(key: string, value: string) {
-    return this.base.setItem(this.prefix + key, value);
-  }
-  removeItem(key: string) {
-    return this.base.removeItem(this.prefix + key);
-  }
-}
 
 /**
  * 比較用の読込失敗。arm したキーの「次の1回の読み取り」だけ失敗させる（本物の失敗経路＝コアの読込エラー→再試行を確認するため）。

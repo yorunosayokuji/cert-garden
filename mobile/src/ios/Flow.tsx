@@ -3,7 +3,6 @@ import { KeyboardAvoidingView, Platform, View } from 'react-native';
 import { QUALIFICATIONS } from '../../../src/mobile.ts';
 import { Complete } from '../ui/Complete';
 import { Diagnostic } from '../ui/Diagnostic';
-import { MotionCheck } from '../ui/MotionCheck';
 import type { LabTab } from '../ui/MotionLab.tsx';
 import { Study } from '../ui/Study';
 import type { UiCtx } from './Screens';
@@ -16,7 +15,13 @@ export type FlowKind = 'question' | 'result' | 'diagnostic' | 'lab';
  * 候補ごとに変わるのは入口とナビゲーションで、設問と採点の中身は共通。
  * skeletonOn: 設問/結果の読み込み表示中（実際の準備＋比較用の最低表示）
  */
-export function FlowScreen({ ctx, lab, onCloseLab, goHome, loadingKind }: { ctx: UiCtx; lab: LabTab | null; onCloseLab: () => void; goHome: () => void; loadingKind: 'question' | 'result' | null }) {
+/**
+ * 動きの見くらべ（lab）の画面は、このファイルでは読み込まない。比較の入口だけが renderLab を渡す
+ * （製品の依存の木・書き出しに lab の部品を入れないため）。
+ */
+export type RenderLab = (initialId: string, onBack: () => void) => ReactElement;
+
+export function FlowScreen({ ctx, lab, renderLab, onCloseLab, goHome, loadingKind }: { ctx: UiCtx; lab: LabTab | null; renderLab?: RenderLab; onCloseLab: () => void; goHome: () => void; loadingKind: 'question' | 'result' | null }) {
   const { rt } = ctx;
   const { c, diag, holds } = rt;
   const wrap = (node: ReactElement) => (
@@ -82,7 +87,7 @@ export function FlowScreen({ ctx, lab, onCloseLab, goHome, loadingKind }: { ctx:
       />,
     );
   }
-  if (lab) return <MotionCheck initialId={c.roster.room[0] ?? 'anzu'} onBack={onCloseLab} />;
+  if (lab && renderLab) return renderLab(c.roster.room[0] ?? 'anzu', onCloseLab);
   return null;
 }
 

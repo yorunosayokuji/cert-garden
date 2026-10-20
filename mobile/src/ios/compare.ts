@@ -19,28 +19,8 @@ export const VARIANTS: readonly VariantDef[] = [
 
 // ---- 入口 ----
 
-export interface EntryInput {
-  platform: string;
-  /** 開発サーバー実行中か（__DEV__） */
-  isDev: boolean;
-  /** EXPO_PUBLIC_IOS_DESIGN の値。確認用ビルドだけ '1' */
-  buildFlag: string | undefined;
-  /** web の location.search（native では空） */
-  search: string;
-}
-
-/**
- * 候補入口を開くか。通常起動は常に本体。
- * web: 明示の ?iosDesign=1 が必要で、開発サーバーか確認用ビルド(EXPO_PUBLIC_IOS_DESIGN=1)の時だけ。
- * native: 開発実行(__DEV__)かつ EXPO_PUBLIC_IOS_DESIGN=1 の時だけ。署名ビルド(__DEV__ でない)では常に本体。
- */
-export function isIosDesignEnabled(i: EntryInput): boolean {
-  if (i.platform === 'web') {
-    if (!(i.isDev || i.buildFlag === '1')) return false;
-    return new URLSearchParams(i.search).get('iosDesign') === '1';
-  }
-  return i.isDev && i.buildFlag === '1';
-}
+// 入口の判定は entry.ts（製品の起動経路から読む純粋関数）。比較用のここからも同じものを出す
+export { isIosDesignEnabled, type EntryInput } from './entry.ts';
 
 // ---- URL ----
 
@@ -106,21 +86,8 @@ export function pickerKeyAction(e: KeyInfo, current: number, count = VARIANT_COU
 
 // ---- 比較用の最低表示（本番の画面には使わない） ----
 
-/**
- * 読み込み表示を出し続けるか。実際の準備中は必ず表示。準備が終わっていても、開始から delayMs 未満なら表示を続ける（比較用）。
- * delayMs=0 なら実際の準備だけで決まる＝待ちを足さない。
- */
-export function minShowVisible(startedAt: number | null, real: boolean, now: number, delayMs: number): boolean {
-  if (real) return true;
-  if (startedAt === null || delayMs <= 0) return false;
-  return now - startedAt < delayMs;
-}
-
-/** あと何 ms で表示を終えてよいか（実際の準備が終わっている時のみ意味がある） */
-export function minShowRemaining(startedAt: number | null, now: number, delayMs: number): number {
-  if (startedAt === null || delayMs <= 0) return 0;
-  return Math.max(0, delayMs - (now - startedAt));
-}
+// 製品の経路からも使う純粋関数は minShow.ts にある（比較用の道具と混ぜないため）。ここからも同じものを出す
+export { minShowRemaining, minShowVisible } from './minShow.ts';
 
 // ---- 画面の分類（スケルトンの出し分け） ----
 

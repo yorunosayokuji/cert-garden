@@ -75,7 +75,7 @@ test('シート: 開いたら中へ焦点・Tab一周・背景inert・閉じた�
   assert.match(sheet, /e\.key === 'Escape'/);
   assert.match(sheet, /focusable=\{false\}/);
   assert.match(read('../src/ios/webFocus.ts'), /data-product-frame/);
-  assert.match(read('../src/ios/IosDesignApp.tsx'), /productFrame: '1'/);
+  assert.match(read('../src/ios/Runner.tsx'), /productFrame: '1'/);
   const v = read('../src/ios/Variants.tsx');
   assert.match(v, /setInert\(pages\.current\[0\]/);
   assert.match(v, /index !== 1/);

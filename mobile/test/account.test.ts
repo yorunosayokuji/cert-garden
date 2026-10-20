@@ -1290,12 +1290,18 @@ test('app.config.js: 有効な Google iOS クライアントIDがあるときだ
   const mod = (await import('../app.config.js')) as { default: (a: { config: Record<string, unknown> }) => Record<string, unknown> };
   const f = mod.default;
   const base = { scheme: 'certgarden', name: 'x' };
+  // 通信設定(ATS)は製品相当が既定（HTTPSのみ）。scheme の判定だけを見る
+  const withoutAts = (c: Record<string, unknown>) => {
+    const { ios, ...rest } = c as { ios?: { infoPlist?: Record<string, unknown> } };
+    assert.deepEqual(ios?.infoPlist?.NSAppTransportSecurity, { NSAllowsArbitraryLoads: false });
+    return rest;
+  };
   const prev = process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID;
   try {
     delete process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID;
-    assert.deepEqual(f({ config: base }), base);
+    assert.deepEqual(withoutAts(f({ config: base })), base);
     process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID = 'nope';
-    assert.deepEqual(f({ config: base }), base);
+    assert.deepEqual(withoutAts(f({ config: base })), base);
     process.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID = CLIENT_ID;
     assert.deepEqual(f({ config: base }).scheme, ['certgarden', 'com.googleusercontent.apps.123456789012-abcdefghijklmnop']);
   } finally {
@@ -1496,7 +1502,7 @@ test('読込の固定(比較入口だけ): URL の pin を読み書きし、他�
   for (const kind of SKELETON_KINDS) assert.equal(parsePin(withPin('', kind)), kind);
   assert.doesNotMatch(read('../src/App.tsx'), /\bpin\b/);
   for (const f of ['../src/Root.tsx', '../src/ui/Home.tsx', '../src/ui/LearnTab.tsx', '../src/ui/Tabs.tsx', '../src/ui/Study.tsx', '../src/ui/Complete.tsx']) assert.doesNotMatch(read(f), /\bpin\b/, f);
-  assert.match(read('../src/ios/IosDesignApp.tsx'), /pin === 'question' \|\| pin === 'result'/);
+  assert.match(read('../src/ios/Runner.tsx'), /pin === 'question' \|\| pin === 'result'/);
   assert.match(read('../src/ios/Screens.tsx'), /bootVisible \|\| ctx\.pin === kind/);
   for (const t of ['箱庭', '学ぶ', '手帳', 'お店', '問題', '結果']) assert.match(read('../src/ios/CompareChrome.tsx'), new RegExp(`text: '${t}'`));
 });
@@ -1511,7 +1517,8 @@ test('画面の方針(I4修理): 取り消しの可否はサービスの問い�
   assert.match(app, /account\.init\(\)\.finally/);
   assert.match(app, /cfg && accountReady/);
   assert.match(app, /account\.startMonitoring\(\)/);
-  assert.match(app, /accessibilityLabel="アカウントの処理中"/);
+  assert.match(read('../src/ios/Runner.tsx'), /accessibilityLabel="アカウントの処理中"/);
+  assert.match(read('../src/ios/ProductApp.tsx'), /account\.startMonitoring\(\)/); // 製品も同じ監視
   const native = read('../src/account/native.ts');
   assert.match(native, /AppleAuthentication\.getCredentialStateAsync/);
   assert.match(native, /AppleAuthentication\.addRevokeListener\(cb\)/);

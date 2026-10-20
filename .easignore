@@ -1,0 +1,28 @@
+# 公開repoのroot用 .easignore（EAS Build に送るソースから外す物）
+# 公式: .easignore があると .gitignore より優先されるため、.gitignore の規則をここにも残している。
+# 注意: monorepo の root に置いた .easignore がどの範囲に効くかは、このテンプレート作成時に公式文書で確認できていない（未確認）。
+#       これは二重の防止であり、実際の効き方は EAS を使う前に公式文書で確認すること。
+# 兄弟の src/・design-assets/・license は外さない（mobile が ../src と素材を読むため）。
+node_modules/
+dist/
+dist-ios-design/
+dist-native/
+dist-native-compare/
+dist-native-flag/
+.expo/
+.wrangler/
+.tmp/
+.audit.tmp.json
+screenshots/
+*RECEIPT*.json
+.env
+.env.*
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+*.p8
+*.pem
+*.p12
+*.mobileprovision
+*.log
+.DS_Store

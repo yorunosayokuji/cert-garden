@@ -1,6 +1,9 @@
 node_modules/
 dist/
 dist-ios-design/
+dist-native/
+dist-native-compare/
+dist-native-flag/
 .expo/
 .wrangler/
 .tmp/

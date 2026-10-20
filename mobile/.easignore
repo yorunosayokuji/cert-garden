@@ -1,0 +1,22 @@
+# EAS へ送るソースから外す物（公式: .easignore があると .gitignore より優先されるので、.gitignore の規則もここに残す）
+# これだけで公開してよいと保証するものではない: 送る元は、専用 Git の公開写し（scripts/check-eas-source.mjs で確認）
+node_modules/
+dist/
+dist-ios-design/
+dist-native/
+dist-native-compare/
+dist-native-flag/
+.expo/
+.audit.tmp.json
+# 私的な記録・撮影・ローカルの確認用
+IOS_*_RECEIPT.json
+*RECEIPT*.json
+screenshots/
+e2e/
+# 秘密になりうる物
+.env
+.env.*
+*.p8
+*.pem
+*.p12
+*.mobileprovision

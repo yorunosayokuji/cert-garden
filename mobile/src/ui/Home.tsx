@@ -23,8 +23,8 @@ interface Props {
   layout: Layout;
   onSaveLayout: (layout: Layout) => Promise<boolean>;
   onRoom: (id: RoomId) => void;
-  /** 動きの見くらべ（学習状態には触れない独立画面）を開く */
-  onOpenLab: (tab: LabTab) => void;
+  /** 動きの見くらべ（学習状態には触れない独立画面）を開く。渡さなければ「新しい動き」のボタンを出さない（iOSの製品） */
+  onOpenLab?: (tab: LabTab) => void;
   /** iOS候補2用。'overlay' は実・ポイントを部屋の上に浮かせ、見出しを省く。既定(standard)は本体と同じ */
   chrome?: 'standard' | 'overlay';
   /** iOS候補用。部屋の飾りの一言を出さず、操作に必要な説明だけにする（本体は既定の false のまま） */
@@ -215,9 +215,11 @@ export function Home({ snapshot, room, roster, reduceMotion, layout, onSaveLayou
         <Pressable onPress={startEdit} accessibilityRole="button" accessibilityLabel="模様替えをする" style={styles.entry}>
           <Text style={styles.entryText}>模様替え</Text>
         </Pressable>
-        <Pressable onPress={() => onOpenLab('v3')} accessibilityRole="button" accessibilityLabel="新しい動きを見る（26匹の待機と左右へのすすみ方）" style={styles.entry}>
-          <Text style={styles.entryText}>新しい動き</Text>
-        </Pressable>
+        {onOpenLab ? (
+          <Pressable onPress={() => onOpenLab('v3')} accessibilityRole="button" accessibilityLabel="新しい動きを見る（26匹の待機と左右へのすすみ方）" style={styles.entry}>
+            <Text style={styles.entryText}>新しい動き</Text>
+          </Pressable>
+        ) : null}
       </View> : null}
       {!editing ? <ScrollView horizontal showsHorizontalScrollIndicator={false} style={{ flexGrow: 0, maxWidth: availW }} contentContainerStyle={styles.chips} accessibilityRole="radiogroup">
         {ROOMS.map((r) => {

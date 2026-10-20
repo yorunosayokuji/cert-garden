@@ -23,7 +23,8 @@ export interface UiCtx {
   retry: () => void;
   /** キーボードを避ける時の、画面上端から製品領域までの高さ */
   keyboardOffset: number;
-  openLab: (tab: LabTab) => void;
+  /** 動きの見くらべを開く。比較の入口だけが渡す（製品は undefined ＝ 箱庭に「新しい動き」を出さない） */
+  openLab?: (tab: LabTab) => void;
   /** ログイン・クラウド保存（手帳の「せってい」の下） */
   account: AccountService;
   /** 比較用: 読み込み表示を固定している画面（null なら固定なし） */

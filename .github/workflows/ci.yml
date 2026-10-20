@@ -1,5 +1,5 @@
 # 公開repo用のCI（release/template/ci.yml から生成写しの .github/workflows/ci.yml へ置かれる）
-# できること: 固定install / 型検査 / 試験 / Web bundle。
+# できること: 固定install / 型検査 / 試験 / Web bundle / iOS製品相当のJS・assets書き出し。
 # やらないこと: iOS署名・実機・実OAuth・Cloudflare本番・デプロイ・公開。secret は使わない。
 # このCIの成功は「ローカル相当の機械検査が通った」ことだけを意味し、App Store公開の証明ではない。
 #
@@ -39,7 +39,7 @@ jobs:
       - run: npm test
 
   mobile:
-    name: mobile (typecheck + tests + web bundle)
+    name: mobile (typecheck + tests + web / iOS JS bundle)
     runs-on: ubuntu-latest
     timeout-minutes: 30
     defaults:
@@ -64,6 +64,12 @@ jobs:
           CI: '1'
           EXPO_NO_TELEMETRY: '1'
       - run: npm run export:web:ios-design
+        env:
+          CI: '1'
+          EXPO_NO_TELEMETRY: '1'
+      # iOS製品相当のJS(Hermes)とassetsの書き出し。署名・ネイティブのコンパイル・実機・App Store審査ではない。
+      # Apple/EASのアカウント・Mac・secretは使わない。候補比較のnative書き出し(export:ios:ios-design)は入口の修理中のため、まだ回さない。
+      - run: npm run export:ios
         env:
           CI: '1'
           EXPO_NO_TELEMETRY: '1'
