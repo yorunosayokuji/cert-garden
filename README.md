@@ -10,7 +10,7 @@ https://github.com/yorunosayokuji/cert-garden
 | iOSアプリ（App Store公開） | **未完**。アカウント画面などを開発中です。署名済みビルド・実機確認・審査提出はしていません |
 | ログイン（Google / Apple） | サーバー側の検証コードとローカル試験まで。**実際のOAuth接続は未実施** |
 | Cloudflare サーバー | ローカル検証のみ。**本番は未作成・未接続**（設定のIDはダミー） |
-| 画面の見た目 | 5つの候補を用意。**どれも採用は決まっていません**（未選択5案）。iOSの製品の入口は、選ばれた1案だけで起動する作りですが、選択ファイル（`mobile/release-selection.json`）は**未選択（null）**のため、いまのiOS版は起動を拒否します（旧画面へは戻りません） |
+| 画面の見た目 | 5つの候補のうち、作者が**候補4**（「箱庭」と「学ぶ」の2つを主なタブにし、「手帳」と「お店」は下から出るシートにする構成）を選びました。iOSの製品の入口は、選択ファイル（`mobile/release-selection.json`）の `approvedVariant: 4` の1案だけで起動します。ほかの4案は比較用の別の入口に残し、製品画面では候補4だけを表示します。選択が未設定（null）や不正なら、起動を拒否する安全装置は残っています（旧画面へは戻りません）。名義などは未決定で、見た目の最終承認ではありません |
 | 教材 | 10資格の**基礎**の問題だけ。**各試験の出題範囲を網羅したものではなく、合格を保証しません** |
 | 依存パッケージ | 脆弱性の確認は継続中です。サーバーは監査で指摘0件。モバイルは互換性の修正を入れて自動試験は通りますが、**モバイルの監査にはcriticalが0件、highが15件残っており未解消です。** 直接の原因は開発用ツールの braces 3.0.3 と node-forge 1.4.0 で、2026-10-20 時点でどちらも修正版がありません（[GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)、[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv)）。2026-10-20 に、iOS向け製品相当のJSをソースマップ付きで書き出して調べた範囲（1438個のソース）では、braces・node-forge・micromatch・metro-file-map は含まれていませんでした。ただしこれはそのJSの範囲だけの確認で、署名済みのネイティブビルドや、開発ビルドの環境（Expo CLI・Metro）での影響は未検証です。2026-10-21 または最初の署名ビルドの前に再確認します。修正版が無いことは、安全の確認ではありません |
 | 認証まわり | Expo SDK 57 と、Apple / Google / 安全保存 / ブラウザー認証の部品（expo-apple-authentication、expo-auth-session、expo-secure-store など5つ）への依存と実装は入っています。ただし**実際のOAuth接続と実機での確認は未了**です。React Navigation と Reanimated は**まだ導入していません** |
@@ -31,15 +31,15 @@ https://github.com/yorunosayokuji/cert-garden
 
 ## iOSの製品の入口と、公開前の検査（ローカルでできる範囲）
 
-- **入口**: iOSでは、画面の案を `mobile/release-selection.json` の `approvedVariant`（1〜5、未選択はnull）で決めます。環境変数・URL・保存からは変えられません。未選択の署名版は「起動できません」を出して止まります。
+- **入口**: iOSでは、画面の案を `mobile/release-selection.json` の `approvedVariant`（1〜5、未選択はnull。現在は4）で決めます。環境変数・URL・保存からは変えられません。未選択（null）や不正な値の署名版は「起動できません」を出して止まります。
 - **比較の道具**（5案の見比べ・読込の固定・故障の差し込み・人工の待ち・「新しい動き」の見くらべ）は開発用の別の入口にあり、製品の書き出しには入りません（書き出したバイトコードの中身まで検査しています）。比較の入口は、開発ビルド（`__DEV__`）かつ比較用フラグの時だけ開き、署名版では開きません。
 - **起動時**: 製品は、保存の空間が決まるまで個人のデータを描かず、箱庭の骨組みを出します（人工の待ちなし）。
 - **保存**: iOSの製品は、端末の既存の保存（学習・部屋・手帳など9項目）をそのまま「ゲストの元データ」として読みます。アカウントから復元した内容は別の領域に置き、ログアウトや別アカウントのログインでは見えません。
-- **EASビルド前の検査**（`mobile/package.json` の `eas-build-pre-install`）: profileが空・未知、iOS以外、署名ビルド（preview / production）で画面が未選択・bundle ID / owner / projectId / API(HTTPS) / GoogleクライアントIDが欠けている、比較用フラグや秘密らしい公開変数が混ざっている、のいずれかなら止めます。依存のinstallより前に動きます。
+- **EASビルド前の検査**（`mobile/package.json` の `eas-build-pre-install`）: profileが空・未知、iOS以外、署名ビルド（preview / production）で画面の案が未選択（現在は4で選択済み）・bundle ID / owner / projectId / API(HTTPS) / GoogleクライアントIDが欠けている、比較用フラグや秘密らしい公開変数が混ざっている、のいずれかなら止めます。依存のinstallより前に動きます。
 - **送るソースの検査**: `npm run check:eas-source`（mobile、読むだけ）。専用のGitで、コミット済み・cleanで、HEAD・index・作業ツリーのバイトが `PUBLISH_MANIFEST.json`（パス・sha256・大きさ）と一致し、リンクの逸脱や一覧に無いファイルが無いことを確認します。EAS CLIは呼びません。
 - **iOS向けの書き出し**: `npm run export:ios`（製品相当・Hermes）、`npm run export:ios:compare-dev`（比較の開発ビルド相当。配布物ではありません）、`npm run export:ios:flag-release`（補助検査）。JSとassetsの書き出しの確認で、**ネイティブのコンパイル・署名・実機・TestFlightは行っていません**。
 - **通信設定とFaceID**: 製品相当のビルドはHTTPSのみ（App Transport Securityを無効にしません）。開発ビルドだけ開発サーバー用の既定を残します。使っていないFaceIDの文言は出力しません。
-- 未完: 画面の案の選択、Apple / EAS のアカウント、実OAuth、署名ビルド、実機での確認、App Storeの審査。
+- 未完: Apple / EAS のアカウントと、bundle ID・owner・projectId・API・Googleクライアントの設定（これらが欠ける間は署名ビルド前の検査が止めます）、実OAuth、署名ビルド、実機での確認、App Storeの審査。公開できる状態ではありません。
 
 ## 構成
 

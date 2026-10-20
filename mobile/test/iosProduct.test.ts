@@ -68,12 +68,13 @@ test('入口(Web・Android): 通常は旧画面と既存の保存。?iosDesign=1
   assert.equal(isIosDesignEnabled({ platform: 'ios', isDev: true, buildFlag: '1', search: '' }), true);
 });
 
-test('製品の設定: スケルトンON・人工の待ち0。release-selection.json は本人が選ぶまで null で、1〜5のどれも採用していない', () => {
+test('製品の設定: スケルトンON・人工の待ち0。release-selection.json は本人が採用した候補4で、製品の入口がその案だけで起動する', () => {
   assert.deepEqual(productConfig(3), { variant: 3, skeleton: true, delayMs: 0 });
   const sel = JSON.parse(read('../release-selection.json'));
-  // 本人が選んだ後は、この試験も一緒に更新する（今は未選択が正しい）
-  assert.deepEqual(sel, { approvedVariant: null });
-  assert.deepEqual(parseSelection(sel), { approvedVariant: null });
+  // 本人が選んだ案（2026-10-20 に本人が候補4を採用）。検査は選択あり/なしの両方を別の入力で確かめている（未選択=null の拒否は他の試験が担う）
+  assert.deepEqual(sel, { approvedVariant: 4 });
+  assert.deepEqual(parseSelection(sel), { approvedVariant: 4 });
+  assert.deepEqual(decideEntry(base({ selection: sel })), { kind: 'product', variant: 4, space: 'device' });
 });
 
 test('選択の検査: TypeScript 側(entry.ts)と EAS 前の検査(buildPolicy.mjs)は同じ規則', () => {
@@ -229,7 +230,13 @@ test('ビルド前の検査: 空・未知の profile は止める（本番相当
   const realSel = JSON.parse(read('release-selection.json'));
   const prod = evaluateBuild({ profile: 'production', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() });
   assert.equal(prod.ok, false);
-  for (const re of [/未選択/, /bundleIdentifier/, /owner/, /projectId/, /API_BASE_URL/, /GOOGLE_IOS_CLIENT_ID/]) assert.ok(prod.errors.some((e: string) => re.test(e)), String(re));
+  // 案は選ばれたので「未選択」では止まらない。それでも ID・owner・API・Google が無い間は止まる（gate は緩めない）
+  assert.equal(realSel.approvedVariant, 4);
+  assert.ok(!prod.errors.some((e: string) => /未選択/.test(e)));
+  // 同じ実設定で、案だけを null に戻すと「未選択」で止まる（安全装置は残っている）
+  const unselected = evaluateBuild({ profile: 'production', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: { approvedVariant: null }, fs: cleanFs() });
+  assert.ok(unselected.errors.some((e: string) => /未選択/.test(e)));
+  for (const re of [/bundleIdentifier/, /owner/, /projectId/, /API_BASE_URL/, /GOOGLE_IOS_CLIENT_ID/]) assert.ok(prod.errors.some((e: string) => re.test(e)), String(re));
   assert.deepEqual(evaluateBuild({ profile: 'development', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() }), { ok: true, kind: 'dev', errors: [] });
   assert.deepEqual(evaluateBuild({ profile: 'simulator', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() }), { ok: true, kind: 'dev', errors: [] });
 });
@@ -272,8 +279,10 @@ test('EAS の hook(実プロセス): package.json の eas-build-pre-install に�
   for (const p of ['preview', 'production']) {
     const r = run({ EAS_BUILD_PROFILE: p, EAS_BUILD_PLATFORM: 'ios' });
     assert.equal(r.status, 1, p);
-    assert.match(r.stderr, /画面のデザインが未選択/);
+    // 案は選ばれている（候補4）ので「未選択」では止まらない。ID・owner・API・Google が無い間は止まる
+    assert.doesNotMatch(r.stderr, /画面のデザインが未選択/);
     assert.match(r.stderr, /bundleIdentifier/);
+    assert.match(r.stderr, /API_BASE_URL/);
   }
   // 比較フラグが混ざっていれば、それも理由に出る
   const flagged = run({ EAS_BUILD_PROFILE: 'production', EAS_BUILD_PLATFORM: 'ios', EXPO_PUBLIC_IOS_DESIGN: '1' });

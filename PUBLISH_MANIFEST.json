@@ -4,7 +4,7 @@
   "note": "この束は元のアプリフォルダ(local original)から生成した写しです。手で編集せず、元を直して再生成してください。",
   "totals": {
     "files": 958,
-    "bytes": 130442760,
+    "bytes": 130444365,
     "assets": 749
   },
   "limits": {
@@ -43,8 +43,8 @@
     },
     {
       "path": "README.md",
-      "size": 9822,
-      "sha256": "c401e0fafeb63cdbdc738146df79cdd26ae7cc2c38d9770fe52d20838440ae29",
+      "size": 10382,
+      "sha256": "5704c8bd105d1cf6fb6021ab4fd960a43a7b62f584a85c5b2d98e0f3ad9d6439",
       "kind": "template",
       "origin": "release/template/README.public.md"
     },
@@ -6120,8 +6120,8 @@
     },
     {
       "path": "mobile/release-selection.json",
-      "size": 30,
-      "sha256": "e4378795a864e776231c76a89bf48423435a5170ce303cdef6c789929ad4a578",
+      "size": 27,
+      "sha256": "c9c7fef77bec79f4eed44d4bf8867246444e686f441d0aee6d6f31d9c4763d89",
       "kind": "json",
       "origin": "original"
     },
@@ -6953,8 +6953,8 @@
     },
     {
       "path": "mobile/test/iosProduct.test.ts",
-      "size": 24017,
-      "sha256": "687a318deb9095f6c3934fdfedb220989b967421468f6af14018c37b37dc9a76",
+      "size": 25065,
+      "sha256": "578b147f6bbc7a61540ceeed7d3230c78bf4f5d545f4ca65da77342005fac7ed",
       "kind": "code",
       "origin": "original"
     },
