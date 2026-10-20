@@ -4,7 +4,7 @@
   "note": "この束は元のアプリフォルダ(local original)から生成した写しです。手で編集せず、元を直して再生成してください。",
   "totals": {
     "files": 958,
-    "bytes": 130445418,
+    "bytes": 130446133,
     "assets": 749
   },
   "limits": {
@@ -43,8 +43,8 @@
     },
     {
       "path": "README.md",
-      "size": 10664,
-      "sha256": "87e851aec4e50b71c6c7d2fe0a6453fc5093b3f62447bb463bf2047bf192dc76",
+      "size": 10981,
+      "sha256": "3f089d33368b87f41eb38ff9bc967399ee71ffb352ecea670968248ab32f0158",
       "kind": "template",
       "origin": "release/template/README.public.md"
     },
@@ -7093,8 +7093,8 @@
     },
     {
       "path": "server/scripts/preflight.test.mjs",
-      "size": 2377,
-      "sha256": "4a5d08a438800d81b8cf611f3ba08522eb5db6ef391290423a6d5aa7528e51bf",
+      "size": 2624,
+      "sha256": "04743fbdfb4c1704ba85487ba72f1729ea7cbd0eccd58d7d8452b6c4c6b7f3b3",
       "kind": "code",
       "origin": "original"
     },
@@ -7275,8 +7275,8 @@
     },
     {
       "path": "server/wrangler.jsonc",
-      "size": 948,
-      "sha256": "781ee887786db2890edb7c48bad6db84b4df14b44b9433b674d9466b3585429a",
+      "size": 1099,
+      "sha256": "041a070868cb21910555748766513fdddb080f84484b4fb6e9a031a5ab266746",
       "kind": "json",
       "origin": "original"
     },

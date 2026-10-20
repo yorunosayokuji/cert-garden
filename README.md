@@ -9,7 +9,7 @@ https://github.com/yorunosayokuji/cert-garden
 |---|---|
 | iOSアプリ（App Store公開） | **未完**。アカウント画面などを開発中です。署名済みビルド・実機確認・審査提出はしていません |
 | ログイン（Google / Apple） | サーバー側の検証コードとローカル試験まで。**実際のOAuth接続は未実施** |
-| Cloudflare サーバー | ローカル検証のみ。**本番は未作成・未接続**（設定のIDはダミー） |
+| Cloudflare サーバー | このアプリ専用のD1データベースを作成し、最初の表（9つ）を適用済みです。**サーバー本体（Worker）は未公開で、実際のログイン（OAuth）にも未接続**です。サーバーの試験は引き続きローカルの実行環境で行っています |
 | 画面の見た目 | 5つの候補のうち、作者が**候補4**（「箱庭」と「学ぶ」の2つを主なタブにし、「手帳」と「お店」は下から出るシートにする構成）を選びました。iOSの製品の入口は、選択ファイル（`mobile/release-selection.json`）の `approvedVariant: 4` の1案だけで起動します。ほかの4案は比較用の別の入口に残し、製品画面では候補4だけを表示します。選択が未設定（null）や不正なら、起動を拒否する安全装置は残っています（旧画面へは戻りません）。名義などは未決定で、見た目の最終承認ではありません |
 | 教材 | 10資格の**基礎**の問題だけ。**各試験の出題範囲を網羅したものではなく、合格を保証しません** |
 | 依存パッケージ | 脆弱性の確認は継続中です。サーバーは監査で指摘0件。モバイルは互換性の修正を入れて自動試験は通りますが、**モバイルの監査にはcriticalが0件、highが15件残っており未解消です。** 直接の原因は開発用ツールの braces 3.0.3 と node-forge 1.4.0 で、2026-10-20 時点でどちらも修正版がありません（[GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)、[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv)）。2026-10-20 に、iOS向け製品相当のJSをソースマップ付きで書き出して調べた範囲（1438個のソース）では、braces・node-forge・micromatch・metro-file-map は含まれていませんでした。ただしこれはそのJSの範囲だけの確認で、署名済みのネイティブビルドや、開発ビルドの環境（Expo CLI・Metro）での影響は未検証です。2026-10-21 または最初の署名ビルドの前に再確認します。修正版が無いことは、安全の確認ではありません |
@@ -48,7 +48,7 @@ https://github.com/yorunosayokuji/cert-garden
 |---|---|
 | `src/` `test/` `demo/` | 画面に依存しない学習コア（出題・復習・成長・保存）と、その試験 |
 | `mobile/` | Expo + React Native のアプリ（iOS向け、Webでも確認可） |
-| `server/` | Cloudflare Workers + D1 のバックエンド（ローカル検証のみ） |
+| `server/` | Cloudflare Workers + D1 のバックエンド（D1作成・初期表の適用済み。Worker未公開、試験はローカル） |
 | `design-assets/` | アプリが実際に読む絵と教材データだけ（全素材の置き場ではありません） |
 
 ## 技術の選定理由
@@ -57,7 +57,7 @@ https://github.com/yorunosayokuji/cert-garden
 |---|---|---|
 | Expo + React Native + TypeScript | 一つのコードでiOS中心に作れ、既存の学習コアを再利用できる | 実機・署名はこれから |
 | 学習コア（TypeScript） | 画面と分けて、試験で壊れにくくする | 試験が通っても教材の正しさや試験範囲は保証しない |
-| Cloudflare Workers + D1 | 軽量なAPIとSQL保存を一か所にまとめられる | 本番は未作成。ローカルのDBだけでは本番の合格にならない |
+| Cloudflare Workers + D1 | 軽量なAPIとSQL保存を一か所にまとめられる | D1は作成・初期表の適用まで済みだが、Workerは未公開。ローカルの試験だけでは本番の合格にならない |
 | jose（JWT検証） | 標準的な署名検証をサーバーで行う | 実際のGoogle/Apple接続は未実施 |
 | Expo Haptics 等 | 触覚などiOSらしい反応 | 実機でしか確かめられない |
 

@@ -1,8 +1,10 @@
 {
-  // cert-garden backend。ローカル検証専用の設定: database_id は未作成のダミー、vars は空（= 未設定で fail closed）。
+  // cert-garden backend。D1 cert-garden は2026-10-20に専用account内で作成済み（APAC hint。国内保管の保証ではない）。
+  // Worker未deploy。vars は空（= 未設定で fail closed）。APP_ENVもdevelopmentのまま。
   // 秘密は vars に置かず `wrangler secret put` で入れる（名前は README / .dev.vars.example）。
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "cert-garden-api",
+  "account_id": "87fdf9b9b2ca657cdfbce7e4ffe59c53",
   "main": "src/index.ts",
   "compatibility_date": "2026-10-01",
   "workers_dev": false,
@@ -12,7 +14,7 @@
     {
       "binding": "DB",
       "database_name": "cert-garden",
-      "database_id": "00000000-0000-0000-0000-000000000000",
+      "database_id": "92dd7c1b-b6d5-459b-a5b4-bf6c2b424f7e",
       "migrations_dir": "migrations"
     }
   ],
