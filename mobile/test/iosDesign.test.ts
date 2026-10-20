@@ -264,13 +264,14 @@ test('iOS設定: 暗号申告・iPhone専用・scheme・4プロファイルが�
   assert.equal(eas.build.production.env, undefined);
 });
 
-test('iOS設定: bundle ID・owner・projectId は捏造せず未設定のまま。ビルド前の検査がそれを報告する', () => {
+test('iOS設定: bundle ID は捏造せず未設定のまま（owner・projectId は Expo のプロジェクト作成後に入った）。ビルド前の検査がそれを報告する', () => {
   const app = JSON.parse(read('../app.json'));
   const miss = missingForBuild(app);
-  assert.equal(miss.length, 3);
-  assert.equal(app.expo.owner, undefined);
+  assert.equal(miss.length, 1);
+  assert.match(String(miss[0]), /bundleIdentifier/);
+  assert.equal(app.expo.owner, 'yorunosayokuji');
   assert.equal(app.expo.ios.bundleIdentifier, undefined);
-  assert.equal(app.expo.extra?.eas?.projectId, undefined);
+  assert.equal(app.expo.extra?.eas?.projectId, '8c5b4c31-03ca-4c45-899d-adbe75594b8f');
   const filled = { expo: { ...app.expo, owner: 'someone', ios: { ...app.expo.ios, bundleIdentifier: 'com.someone.certgarden' }, extra: { eas: { projectId: '00000000-0000-4000-8000-000000000000' } } } };
   assert.deepEqual(missingForBuild(filled), []);
   assert.ok(problems({ expo: { ...app.expo, ios: { supportsTablet: false } } }, JSON.parse(read('../eas.json'))).length > 0, '暗号申告が消えたら検出する');

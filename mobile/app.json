@@ -2,6 +2,7 @@
   "expo": {
     "name": "資格箱庭（ローカル試作）",
     "slug": "cert-garden-local",
+    "owner": "yorunosayokuji",
     "scheme": "certgarden",
     "version": "0.0.1",
     "orientation": "portrait",
@@ -16,6 +17,11 @@
       "usesAppleSignIn": true,
       "config": {
         "usesNonExemptEncryption": false
+      }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "8c5b4c31-03ca-4c45-899d-adbe75594b8f"
       }
     },
     "web": {

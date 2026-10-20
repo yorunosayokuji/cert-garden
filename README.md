@@ -39,7 +39,8 @@ https://github.com/yorunosayokuji/cert-garden
 - **送るソースの検査**: `npm run check:eas-source`（mobile、読むだけ）。専用のGitで、コミット済み・cleanで、HEAD・index・作業ツリーのバイトが `PUBLISH_MANIFEST.json`（パス・sha256・大きさ）と一致し、リンクの逸脱や一覧に無いファイルが無いことを確認します。EAS CLIは呼びません。
 - **iOS向けの書き出し**: `npm run export:ios`（製品相当・Hermes）、`npm run export:ios:compare-dev`（比較の開発ビルド相当。配布物ではありません）、`npm run export:ios:flag-release`（補助検査）。JSとassetsの書き出しの確認で、**ネイティブのコンパイル・署名・実機・TestFlightは行っていません**。
 - **通信設定とFaceID**: 製品相当のビルドはHTTPSのみ（App Transport Securityを無効にしません）。開発ビルドだけ開発サーバー用の既定を残します。使っていないFaceIDの文言は出力しません。
-- 未完: Apple / EAS のアカウントと、bundle ID・owner・projectId・API・Googleクライアントの設定（これらが欠ける間は署名ビルド前の検査が止めます）、実OAuth、署名ビルド、実機での確認、App Storeの審査。公開できる状態ではありません。
+- 現在地: Expoには、このアプリ専用のプロジェクトを作成済みです（owner と projectId は設定済み。名前は仮名で、正式なStore名ではありません）。ただしEAS CLIの認証・Google OAuth・署名ビルドは未実施です。
+- 未完: Apple Developer（名義は本人が意図的に保留）と、bundle ID・API・Googleクライアントの設定（これらが欠ける間は署名ビルド前の検査が止めます）、実OAuth、署名ビルド、実機での確認、App Storeの審査。公開できる状態ではありません。
 
 ## 構成
 

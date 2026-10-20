@@ -236,7 +236,11 @@ test('ビルド前の検査: 空・未知の profile は止める（本番相当
   // 同じ実設定で、案だけを null に戻すと「未選択」で止まる（安全装置は残っている）
   const unselected = evaluateBuild({ profile: 'production', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: { approvedVariant: null }, fs: cleanFs() });
   assert.ok(unselected.errors.some((e: string) => /未選択/.test(e)));
-  for (const re of [/bundleIdentifier/, /owner/, /projectId/, /API_BASE_URL/, /GOOGLE_IOS_CLIENT_ID/]) assert.ok(prod.errors.some((e: string) => re.test(e)), String(re));
+  // owner と projectId は Expo のプロジェクト作成後に入った。残る3項目は未設定のまま止まる
+  assert.equal(realApp.expo.owner, 'yorunosayokuji');
+  assert.equal(realApp.expo.extra.eas.projectId, '8c5b4c31-03ca-4c45-899d-adbe75594b8f');
+  for (const re of [/bundleIdentifier/, /API_BASE_URL/, /GOOGLE_IOS_CLIENT_ID/]) assert.ok(prod.errors.some((e: string) => re.test(e)), String(re));
+  for (const re of [/owner/, /projectId/]) assert.ok(!prod.errors.some((e: string) => re.test(e)), String(re));
   assert.deepEqual(evaluateBuild({ profile: 'development', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() }), { ok: true, kind: 'dev', errors: [] });
   assert.deepEqual(evaluateBuild({ profile: 'simulator', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() }), { ok: true, kind: 'dev', errors: [] });
 });

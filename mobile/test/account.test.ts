@@ -1270,7 +1270,8 @@ test('ビルド前: 署名ビルド用の API URL と Google クライアントI
   const eas = JSON.parse(read('../eas.json'));
   assert.equal(app.expo.ios.usesAppleSignIn, true);
   const miss = missingForBuild(app, eas);
-  assert.equal(miss.length, 3 + 4);
+  // owner と projectId は Expo のプロジェクト作成後に入った。bundle ID と 署名ビルド用の env 4 つが残る
+  assert.equal(miss.length, 1 + 4);
   assert.ok(miss.some((m: string) => m.includes('production.env.EXPO_PUBLIC_API_BASE_URL')));
   assert.ok(miss.some((m: string) => m.includes('preview.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID')));
   const env = { EXPO_PUBLIC_API_BASE_URL: 'https://api.example.test', EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: CLIENT_ID };
