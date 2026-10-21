@@ -184,7 +184,8 @@ test('解説の参考: 確定前のビューには載せず、確定後だけ日
     assert.ok(refs.sources.every((s) => s.title && s.roleLabel && s.scopeNote && s.checked));
     assert.ok(refs.sources.every((s) => !s.url || s.url.startsWith('https://')));
     assert.ok(/専門家の監修ではありません/.test(refs.checkNote));
-    const shown = JSON.stringify(refs);
+    // 出典URL自体（例: .../syllabus_ip_ver6_5.pdf）は利用者が開くリンクなので、表示文字列の検査からは除く
+    const shown = JSON.stringify({ ...refs, sources: refs.sources.map((s) => ({ ...s, url: null })) });
     assert.ok(!/search_result_only|direct page|not independent|syllabus|qualification_scope|concept_reference|explicit_arithmetic|definition_or_scenario/.test(shown), `${t.themeId}: 内部の文字列を出さない`);
     assert.ok(refs.sources.every((s) => !/正解を検証済/.test(s.scopeNote)), '範囲の確認元を正解検証済みと表示しない');
     await rig.core.endStage(v.stageId);

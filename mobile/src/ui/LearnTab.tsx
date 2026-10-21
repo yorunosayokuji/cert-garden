@@ -236,12 +236,12 @@ export function LearnTab({ snapshot, resumable, busy, qual: savedQual, onQual, o
       {ds.active ? (
         <Card>
           <H>途中の初回チェックがあります</H>
-          <Body sub>{qualName(qual)}の6問です。つづきから受けられます（無料）。</Body>
+          <Body sub>{qualName(qual)}の途中のチェックです。保存した問題からつづけられます（無料）。</Body>
           <Button label="チェックをつづける" onPress={() => onDiag(qual)} disabled={busy} />
         </Card>
       ) : !ds.latest && !ds.dismissed ? (
         <Card>
-          <H>はじめに、短いチェック（6問）</H>
+          <H>はじめに、短いチェック（最大6問）</H>
           <Body sub>無料・実もポイントも使いません。わからなくても進めます。</Body>
           <Button label="チェックする" onPress={() => onDiag(qual)} disabled={busy} />
           <Button label="あとで（このまま学べます）" kind="quiet" onPress={() => onDiagDismiss(qual)} disabled={busy} />
@@ -249,7 +249,7 @@ export function LearnTab({ snapshot, resumable, busy, qual: savedQual, onQual, o
       ) : (
         <Card>
           <H>初回チェック</H>
-          {rec ? <Body sub>前回の目安: 「{rec.title}」から（今回の6問での結果です）</Body> : <Body sub>6問・無料。学習の完了には数えません。</Body>}
+          {rec ? <Body sub>前回の目安: 「{rec.title}」から（今回出した問題での結果です）</Body> : <Body sub>最大6問・無料。学習の完了には数えません。</Body>}
           <Button label={rec ? '結果を見る／もう一度' : 'チェックする'} kind="secondary" onPress={() => onDiag(qual)} disabled={busy} />
         </Card>
       )}

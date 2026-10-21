@@ -2,6 +2,7 @@
   "name": "cert-garden-mobile",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "npm@11.19.0",
   "main": "index.ts",
   "description": "資格学習×箱庭: Expo + React Native ローカル試作（未公開）",
   "scripts": {

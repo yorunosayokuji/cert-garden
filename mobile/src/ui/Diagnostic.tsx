@@ -30,7 +30,7 @@ interface Props {
 }
 
 /**
- * 資格ごとの初回チェック（6問）。無料・実もポイントも使わず、学習テーマの完了にも数えない。
+ * 資格ごとの初回チェック（最大6問）。無料・実もポイントも使わず、学習テーマの完了にも数えない。
  * 結果は「今回のチェックでの正誤」と始める目安のテーマだけ。資格全体のレベルや合格の見込みは出さない。
  */
 export function Diagnostic({ onReport, isHeld, companion, reduceMotion, qualName, view, latest, busy, canStartTheme, onStart, onSelect, onConfirm, onDontKnow, onNext, onClose, onAbandon, onStartTheme }: Props) {
@@ -55,7 +55,7 @@ export function Diagnostic({ onReport, isHeld, companion, reduceMotion, qualName
         {view.kind === 'none' || view.kind === 'stale' ? (
           <Card>
             {view.kind === 'stale' ? <Body>{view.reason}</Body> : null}
-            <Text style={styles.introLead}>6問・無料・わからなくてもOK</Text>
+            <Text style={styles.introLead}>最大6問・無料・わからなくてもOK</Text>
             <Body sub>どこから学ぶとよいかの目安です。実もポイントも使いません。</Body>
             <Button label="チェックを始める" onPress={onStart} disabled={busy} />
             {latest ? <Body sub>前回の結果は残っています。</Body> : null}
@@ -65,8 +65,8 @@ export function Diagnostic({ onReport, isHeld, companion, reduceMotion, qualName
             </Pressable>
             {note ? (
               <View style={{ gap: 4 }}>
-                <Body sub>用意した基礎の2テーマから3問ずつ出します。学習の完了には数えません。</Body>
-                <Body sub>この6問だけで、実力や合格の見込みは分かりません。資格全体のレベルを示すものでもありません。</Body>
+                <Body sub>用意した基礎テーマから、合計で最大6問を出します。学習の完了には数えません。</Body>
+                <Body sub>少ない問題数だけで、実力や合格の見込みは分かりません。資格全体のレベルを示すものでもありません。</Body>
               </View>
             ) : null}
           </Card>
@@ -127,7 +127,7 @@ export function Diagnostic({ onReport, isHeld, companion, reduceMotion, qualName
         {result ? (
           <>
             <H>今回のチェックの結果</H>
-            <Body sub>この6問での正誤です。実力や合格の見込みを示すものではありません。</Body>
+            <Body sub>今回出した {result.themes.reduce((n, t) => n + t.total, 0)}問での正誤です。出していないテーマや範囲は含みません。実力や合格の見込みを示すものではありません。</Body>
             {result.themes.map((t) => {
               const rec = t.themeId === result.recommendedThemeId;
               return (
@@ -137,7 +137,7 @@ export function Diagnostic({ onReport, isHeld, companion, reduceMotion, qualName
                     今回は {t.total}問中 {t.correct}問 正解{t.unknown > 0 ? `（わからない ${t.unknown}問）` : ''}
                   </Body>
                   <Text style={[styles.badge, t.level === 'check' && styles.badgeCheck]}>{t.level === 'solid' ? '今回は正解が多めでした' : '要確認：ここから確かめるのがおすすめ'}</Text>
-                  {rec ? <Body sub>始める目安のテーマです（正解がいちばん少なかったテーマ。同じ数なら先のテーマ）。</Body> : null}
+                  {rec ? <Body sub>始める目安のテーマです（今回出した範囲で正解の割合がいちばん低かったテーマ。同じ割合なら先のテーマ）。</Body> : null}
                   <Button
                     label={rec ? 'このテーマから学ぶ（おすすめ）' : 'このテーマを学ぶ'}
                     kind={rec ? 'primary' : 'secondary'}

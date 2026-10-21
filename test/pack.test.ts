@@ -22,11 +22,13 @@ async function finish(core: Awaited<ReturnType<typeof openCore>>['core'], v: Sta
   throw new Error('完了しない');
 }
 
-test('原稿: 10資格×2テーマ・120問を読み、資格はカタログと一致。基礎コースで監修なしの状態を落とさない', () => {
-  assert.equal(themes.length, 20);
+test('原稿: 10資格・21テーマ・126問（ITパスポートのみ3テーマ、他9資格は各2テーマ）を読み、資格はカタログと一致。基礎コースで監修なしの状態を落とさない', () => {
+  assert.equal(themes.length, 21);
   assert.deepEqual([...new Set(themes.map((t) => t.qualificationId))].sort(), QUALIFICATIONS.map((q) => q.id).sort());
-  for (const q of QUALIFICATIONS) assert.equal(themes.filter((t) => t.qualificationId === q.id).length, 2, q.id);
-  assert.equal(themes.reduce((n, t) => n + t.questionCount, 0), 120);
+  for (const q of QUALIFICATIONS) assert.equal(themes.filter((t) => t.qualificationId === q.id).length, q.id === 'it-passport' ? 3 : 2, q.id);
+  assert.deepEqual(themes.filter((t) => t.qualificationId === 'it-passport').map((t) => t.themeId).sort(), ['data-operations', 'logic-conditions', 'transfer-rate']);
+  assert.ok(themes.every((t) => t.questionCount === 6), '各テーマ6問');
+  assert.equal(themes.reduce((n, t) => n + t.questionCount, 0), 126);
   assert.ok(themes.every((t) => t.coverage === 'foundation_only' && t.humanSubjectReview === false && t.publicationStatus === 'local_draft'));
   assert.equal(pack.humanSubjectReview, false);
 });
@@ -46,7 +48,9 @@ test('最新の原稿: 改稿した3テーマは版 foundation.2、ほかは .1 
   assert.equal(v2.length, 3, '改稿は3テーマ');
   assert.ok(pack.themes.filter((t) => !v2.includes(t)).every((t) => t.version.endsWith('.foundation.1')));
   const all = pack.themes.flatMap((t) => t.coreQuestions);
-  assert.equal(all.length, 120);
+  assert.equal(all.length, 126);
+  assert.equal(pack.themes.filter((t) => t.themeId !== 'data-operations').flatMap((t) => t.coreQuestions).length, 120, '旧120問は保持');
+  assert.ok(pack.themes.find((t) => t.themeId === 'data-operations')!.version.endsWith('.foundation.1'));
   assert.ok(all.every((q) => q.sources.length > 0 && q.sources.every((s) => typeof s.role === 'string' && typeof s.status === 'string')));
   assert.equal(pack.humanSubjectReview, false);
   assert.ok(pack.themes.every((t) => t.humanSubjectReview === false));
@@ -65,8 +69,9 @@ test('壊れた原稿は黙って通さない（検算違い・正解2つ・出�
   assert.throws(bad((p) => { p.themes.push(p.themes[0]!); }), /重複/);
 });
 
-test('確認前のビューに正解・解説・出典を載せない（全20テーマ）', async () => {
-  const rig = await openCore({ content: content(), config: { initialFruits: 20, maxFruits: 20 } });
+test('確認前のビューに正解・解説・出典を載せない（全21テーマ）', async () => {
+  const rig = await openCore({ content: content(), config: { initialFruits: 30, maxFruits: 30 } });
+  assert.equal(themes.length, 21);
   for (const t of themes) {
     const v = await toFirstQuestion(rig.core, await rig.core.startStage(t.qualificationId, t.themeId));
     const json = JSON.stringify(v);
@@ -170,4 +175,27 @@ test('既存のビット列教材は保持され、未登録のテーマは読�
   await rig.core.endStage(v.stageId);
   await assert.rejects(rig.core.startStage('eco', 'no-such-theme'), (e: unknown) => e instanceof CoreError && e.code === codes.contentLoad);
   assert.equal(rig.core.getGardenSnapshot().fruits, 7, '失敗した開始では実を使わない');
+});
+
+test('新テーマ data-operations: 6問+再確認2問を完了でき、報酬10は1回だけ。選択肢に正解は1つ、確認前に漏らさない', async () => {
+  const t = pack.themes.find((x) => x.themeId === 'data-operations')!;
+  assert.equal(t.coreQuestions.length, 6);
+  assert.ok(t.coreQuestions.every((q) => q.options.filter((o) => o.isCorrect).length === 1));
+  assert.ok(t.coreQuestions.every((q) => q.sources.length > 0 && q.sources.every((s) => !/^http:/.test(s.url))));
+  const rig = await openCore({ content: content(), config: { initialFruits: 10 } });
+  const v = await rig.core.startStage('it-passport', 'data-operations');
+  assert.equal(v.progress.total, 8, '6問+再確認2問');
+  assert.equal(rig.core.getGardenSnapshot().fruits, 9);
+  // 誤答を含めて完了（再確認が出る経路）。毎回最後まで進める
+  const done = await finish(rig.core, v, 'wrong');
+  assert.equal(done.duplicate, false);
+  assert.equal(done.pointsAwarded, 10);
+  const s = Object.values(rig.core.getState().stages)[0]!;
+  assert.equal(s.answers.length, 8);
+  assert.equal(rig.core.getGardenSnapshot().points, 10, '報酬は1回だけ');
+  assert.ok(done.nextReview);
+  // 完了済みのステージを再度完了しても二重に付かない
+  await assert.rejects(rig.core.confirm(v.stageId, s.questions[0]!.id));
+  assert.equal(rig.core.getGardenSnapshot().points, 10);
+  assert.equal(rig.core.getGardenSnapshot().completedThemes.length, 1);
 });

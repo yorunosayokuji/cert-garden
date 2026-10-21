@@ -3,8 +3,8 @@
   "schema": 1,
   "note": "この束は元のアプリフォルダ(local original)から生成した写しです。手で編集せず、元を直して再生成してください。",
   "totals": {
-    "files": 958,
-    "bytes": 130450624,
+    "files": 962,
+    "bytes": 130487203,
     "assets": 749
   },
   "limits": {
@@ -29,8 +29,8 @@
     },
     {
       "path": ".github/workflows/ci.yml",
-      "size": 3846,
-      "sha256": "419f15f750faa118bcfa425e150c74fb684a0c90b953858845d86cb2ca56b61b",
+      "size": 4647,
+      "sha256": "569df3d4ebcd225dc33e980b1368cba5bab758f55724d89f71ced9d3cb90896d",
       "kind": "template",
       "origin": "release/template/ci.yml"
     },
@@ -42,9 +42,16 @@
       "origin": "release/template/gitignore.txt"
     },
     {
+      "path": ".npmrc",
+      "size": 20,
+      "sha256": "b962362ebe7560b534e834c2ede51186c2e3fceb94e12cc434a11180f22391f2",
+      "kind": "other",
+      "origin": "original"
+    },
+    {
       "path": "README.md",
-      "size": 11342,
-      "sha256": "5409b325028e9de2e6d9f334562104951e67764f18001231391efc0b2bfe043a",
+      "size": 11789,
+      "sha256": "da9949e1c9bdaf6b790af90a202605308f0a79e78dbedb9ffe08725a31f3bb3d",
       "kind": "template",
       "origin": "release/template/README.public.md"
     },
@@ -184,8 +191,8 @@
     },
     {
       "path": "design-assets/app-completion-20261020/learning-pack.json",
-      "size": 338011,
-      "sha256": "2849b85147fca937d2cb327687b10a1995b7659d1a43104827e65ece3b5b9a19",
+      "size": 356908,
+      "sha256": "64a56f11ce51806a4a54f1be47d3de40356a39df1fcaf6ca2b26bc713b2d3587",
       "kind": "json",
       "origin": "original"
     },
@@ -6039,6 +6046,13 @@
       "origin": "original"
     },
     {
+      "path": "mobile/.npmrc",
+      "size": 20,
+      "sha256": "b962362ebe7560b534e834c2ede51186c2e3fceb94e12cc434a11180f22391f2",
+      "kind": "other",
+      "origin": "original"
+    },
+    {
       "path": "mobile/app.config.js",
       "size": 2417,
       "sha256": "6f1393fe7884e7ca4d578b9e94a74175767c699d922f527e3238ab7dc687dea1",
@@ -6089,8 +6103,8 @@
     },
     {
       "path": "mobile/package.json",
-      "size": 2364,
-      "sha256": "b21ea98033e56d1aeaefd5ebcb928e5ba725af7b8f38c80d089cfc6ace642034",
+      "size": 2399,
+      "sha256": "91f58bd4dd443dc9a9bf630ad003c4358f88eafc5e448b8e348bb36322463cd7",
       "kind": "json",
       "origin": "original"
     },
@@ -6645,8 +6659,8 @@
     },
     {
       "path": "mobile/src/ui/Diagnostic.tsx",
-      "size": 10987,
-      "sha256": "a3d54bcb83ec47081b2d255e7da027d81ec304209677085808bebdd4e3d5b03b",
+      "size": 11165,
+      "sha256": "010e19397eae06129ead6035be4972ef9f87ad1bc0f46aafe1e9d840d9f5e44c",
       "kind": "code",
       "origin": "original"
     },
@@ -6666,8 +6680,8 @@
     },
     {
       "path": "mobile/src/ui/LearnTab.tsx",
-      "size": 18327,
-      "sha256": "bda985e34bb392057fc53020ca2be3916105ba1c8bc23c7af0161e5d348a0ac5",
+      "size": 18376,
+      "sha256": "cdbd4297c42930188b14706dfc389d3d33723b8bfd029bbfb9e71f6b80728d9c",
       "kind": "code",
       "origin": "original"
     },
@@ -7037,8 +7051,8 @@
     },
     {
       "path": "package.json",
-      "size": 498,
-      "sha256": "f01dcf560bc44b49326bb76160ebbd8e552f3615abfafcf459481610ded45a06",
+      "size": 533,
+      "sha256": "cb067f7c89d963af1ecb3f8b75d65015e464aa7255951400ef9901a109324257",
       "kind": "json",
       "origin": "original"
     },
@@ -7053,6 +7067,13 @@
       "path": "server/.gitignore",
       "size": 89,
       "sha256": "92fc7f3abd3e48f82df4f64d8e2d5c7d8a85f0395e0db181425347e1b63a0e71",
+      "kind": "other",
+      "origin": "original"
+    },
+    {
+      "path": "server/.npmrc",
+      "size": 20,
+      "sha256": "b962362ebe7560b534e834c2ede51186c2e3fceb94e12cc434a11180f22391f2",
       "kind": "other",
       "origin": "original"
     },
@@ -7079,8 +7100,8 @@
     },
     {
       "path": "server/package.json",
-      "size": 872,
-      "sha256": "f1567c659e812936209796b37a299d7199598f78aaa98775ef0f8277759713e3",
+      "size": 907,
+      "sha256": "1ecea419ecea8e070393216eda192b4a424592b4a50777021df6e5830df8fdf0",
       "kind": "json",
       "origin": "original"
     },
@@ -7317,8 +7338,8 @@
     },
     {
       "path": "src/diagnostic.ts",
-      "size": 20179,
-      "sha256": "361d6cc04099b9bf0b0bdae32c90f214a97e1387b3eb2e25d5a177de4e2f66be",
+      "size": 22593,
+      "sha256": "5abc237823f7e84b88fbbec6ed5c055c924ac7354c7a336aa527b71564c92070",
       "kind": "code",
       "origin": "original"
     },
@@ -7401,8 +7422,8 @@
     },
     {
       "path": "test/diagnostic.test.ts",
-      "size": 12703,
-      "sha256": "38244e181ed083ba4397db38bf9c20ddde800f02fc5919db5d6dd4ec86010902",
+      "size": 19393,
+      "sha256": "5d11493c29253febf2d3390fe0a06b4b4b4b8cdb76f8f6d684de3e22156f7c55",
       "kind": "code",
       "origin": "original"
     },
@@ -7429,8 +7450,15 @@
     },
     {
       "path": "test/holds.test.ts",
-      "size": 19523,
-      "sha256": "d0d64c3082c3b173d56ef5099fe8a055723a4636c050e48d9256098d359f64cd",
+      "size": 19728,
+      "sha256": "01259c649aa2ab75c4c754dbbea2da8d1231bc4aec72e213930b9ab733463699",
+      "kind": "code",
+      "origin": "original"
+    },
+    {
+      "path": "test/installScripts.test.ts",
+      "size": 4634,
+      "sha256": "237a69436b382c274bb12425f46ceec519c0ef9a5dc0f7c26355e5258e58f293",
       "kind": "code",
       "origin": "original"
     },
@@ -7443,8 +7471,8 @@
     },
     {
       "path": "test/pack.test.ts",
-      "size": 10629,
-      "sha256": "aba9042ec4925962b45cbf8b5b10a868ce1cf4f63a687b9e8846239e1086a133",
+      "size": 12728,
+      "sha256": "2f7217c926725a0140b2ac5bdc6a19a2a8ad3762a41d5691244db170e0393343",
       "kind": "code",
       "origin": "original"
     },

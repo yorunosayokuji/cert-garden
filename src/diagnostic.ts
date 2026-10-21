@@ -6,7 +6,9 @@ import { baseQuestionId, type QuestionRef } from './holds.ts';
 import type { Clock, ContentProvider, Question, ReferenceView, ThemeContent } from './types.ts';
 import { describeReferences } from './validate.ts';
 
-export const DIAG_PER_THEME = 3;
+/** 新しく始めるチェックの最大問題数と最大テーマ数。教材が増えても長いチェックにしない */
+export const DIAG_MAX_ITEMS = 6;
+export const DIAG_MAX_THEMES = 6;
 
 export interface DiagItem {
   questionId: string;
@@ -144,8 +146,8 @@ function rng(seed: number) {
   };
 }
 
-/** テーマから概念が重ならないよう3問。足りなければ残りを順に */
-export function pickConcepts(questions: Question[], n = DIAG_PER_THEME): Question[] {
+/** テーマから概念が重ならないよう n 問。足りなければ残りを順に（重複なし、存在する問題だけ） */
+export function pickConcepts(questions: Question[], n: number): Question[] {
   const picked: Question[] = [];
   const seen = new Set<string>();
   for (const q of questions) {
@@ -162,10 +164,41 @@ export function pickConcepts(questions: Question[], n = DIAG_PER_THEME): Questio
   return picked;
 }
 
+/** 対象テーマを最大6個に。6個以下はそのまま。超える場合は runId の種で選び、元の並びを保つ（先頭に固定しない） */
+export function selectThemes<T extends { themeId: string }>(themes: T[], runId: string): T[] {
+  if (themes.length <= DIAG_MAX_THEMES) return themes.slice();
+  const rand = rng(seedFrom(runId + ':themes'));
+  const idx = themes.map((_, i) => i);
+  for (let i = idx.length - 1; i > 0; i--) {
+    const j = Math.floor(rand() * (i + 1));
+    [idx[i], idx[j]] = [idx[j]!, idx[i]!];
+  }
+  return idx.slice(0, DIAG_MAX_THEMES).sort((a, b) => a - b).map((i) => themes[i]!);
+}
+
+/** 6問を k テーマへ配る。割り切れない分は runId の種で選んだテーマが1問多い（差は最大1） */
+function quotas(k: number, runId: string): number[] {
+  const base = Math.floor(DIAG_MAX_ITEMS / k);
+  const q = Array<number>(k).fill(base);
+  const extra = DIAG_MAX_ITEMS - base * k;
+  if (extra > 0) {
+    const rand = rng(seedFrom(runId + ':extra'));
+    const idx = q.map((_, i) => i);
+    for (let i = idx.length - 1; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      [idx[i], idx[j]] = [idx[j]!, idx[i]!];
+    }
+    for (const i of idx.slice(0, extra)) q[i]! += 1;
+  }
+  return q;
+}
+
+/** themes は selectThemes 済み（最大6）。合計は最大6問 */
 export function buildItems(themes: ThemeContent[], runId: string): DiagItem[] {
   const rand = rng(seedFrom(runId));
-  const perTheme = themes.map((t) =>
-    pickConcepts(t.coreQuestions).map((q): DiagItem => {
+  const quota = quotas(Math.max(1, themes.length), runId);
+  const perTheme = themes.map((t, ti) =>
+    pickConcepts(t.coreQuestions, quota[ti]!).map((q): DiagItem => {
       const order = q.options.map((o) => o.id);
       for (let i = order.length - 1; i > 0; i--) {
         const j = Math.floor(rand() * (i + 1));
@@ -176,12 +209,15 @@ export function buildItems(themes: ThemeContent[], runId: string): DiagItem[] {
   );
   // テーマを交互に並べ、同じテーマ・同じ概念が続かないようにする
   const items: DiagItem[] = [];
-  for (let k = 0; k < DIAG_PER_THEME; k++) for (const list of perTheme) if (list[k]) items.push(list[k]!);
+  const rounds = Math.max(0, ...perTheme.map((l) => l.length));
+  for (let k = 0; k < rounds; k++) for (const list of perTheme) if (list[k]) items.push(list[k]!);
   return items;
 }
 
 export function summarize(run: DiagRun, titles: Record<string, string>, completedAt: number): DiagResult {
-  const themes: DiagThemeResult[] = run.themeIds.map((themeId) => {
+  // 出題していないテーマは結果にも推奨にも入れない（0/0を作らない）
+  const asked = run.themeIds.filter((id) => run.items.some((i) => i.themeId === id));
+  const themes: DiagThemeResult[] = asked.map((themeId) => {
     const its = run.items.filter((i) => i.themeId === themeId);
     const ans = its.map((i) => run.answers.find((a) => a.questionId === i.questionId));
     const correct = ans.filter((a) => a?.correct).length;
@@ -193,13 +229,14 @@ export function summarize(run: DiagRun, titles: Record<string, string>, complete
       unknown,
       wrong: ans.filter((a) => a && a.optionId !== null && !a.correct).length,
       total: its.length,
-      level: correct >= 2 ? 'solid' : 'check',
+      // 従来の「3問中2問以上」を割合で保つ（2/3以上）。分母が小さくても何問中何問かは total/correct で出す
+      level: correct * 3 >= its.length * 2 ? 'solid' : 'check',
       concepts: its.map((i, k) => ({ concept: i.concept, correct: ans[k]?.correct === true })),
     };
   });
-  // 正解が最も少ないテーマ（同数なら先のテーマ）を、始める目安にする
+  // 正解率（正解÷出題数。分母が違っても比べられるよう交差乗算）が最も低いテーマ（同率なら先のテーマ）を、始める目安にする
   let rec = themes[0]!;
-  for (const t of themes) if (t.correct < rec.correct) rec = t;
+  for (const t of themes) if (t.correct * rec.total < rec.correct * t.total) rec = t;
   return { runId: run.runId, qualificationId: run.qualificationId, completedAt, themes, recommendedThemeId: rec.themeId };
 }
 
@@ -309,17 +346,21 @@ export class DiagnosticEngine {
   start(qualificationId: string, themeIds: string[]): Promise<DiagView> {
     return this.mutate(async (d) => {
       const q = (d.quals[qualificationId] ??= {});
-      const themes = await this.themesOf({ qualificationId, themeIds }, true);
-      const versions = Object.fromEntries(themes.map((t) => [t.themeId, t.version]));
-      if (q.active && sameVersions(q.active.versions, versions) && sameList(q.active.themeIds, themeIds)) {
-        return this.viewOf(q.active, await this.themesOf(q.active), q); // 進行中は保留してもそのまま続ける
+      // 進行中は、そのrunが記録した設問・テーマのまま続ける（教材にテーマが増えても入れ替えない）。教材版が変わった時だけ作り直す
+      if (q.active) {
+        const cur = await this.themesOf(q.active).catch(() => null);
+        if (cur && sameVersions(q.active.versions, Object.fromEntries(cur.map((t) => [t.themeId, t.version])))) {
+          return this.viewOf(q.active, cur, q); // 保留してもそのまま続ける
+        }
       }
+      const runId = this.d.newId();
+      const themes = selectThemes(await this.themesOf({ qualificationId, themeIds }, true), runId);
+      const versions = Object.fromEntries(themes.map((t) => [t.themeId, t.version]));
       const blocked = themes.find((t) => t.blocked);
       if (blocked) throw err(codes.themeOnHold, blocked.blocked!);
       if (themes.some((t) => t.coreQuestions.length < 1)) throw err(codes.contentInvalid, '教材に問題がありません');
-      const runId = this.d.newId();
       q.active = {
-        runId, qualificationId, themeIds: themeIds.slice(), versions, startedAt: this.d.clock.now(),
+        runId, qualificationId, themeIds: themes.map((t) => t.themeId), versions, startedAt: this.d.clock.now(),
         items: buildItems(themes, runId), answers: [], index: 0, qState: 'choosing', selectedOptionId: null, step: 0,
       };
       return this.viewOf(q.active, themes, q);

@@ -2,6 +2,7 @@
   "name": "cert-garden-server",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "npm@11.19.0",
   "description": "cert-garden Cloudflare Workers + D1 backend (local-verified only, not deployed)",
   "type": "module",
   "engines": {

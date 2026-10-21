@@ -1,11 +1,11 @@
 {
   "version": 1,
-  "date": "2026-10-20",
+  "date": "2026-10-21",
   "purpose": "usable foundation courses for all 10 adopted qualifications; not full exam preparation",
   "status": "local_draft",
-  "coverage": "foundation_only; 2 themes each; full syllabus gaps remain",
+  "coverage": "foundation_only; at least 2 themes each; full syllabus gaps remain",
   "humanSubjectReview": false,
-  "sourcePolicy": "syllabus sources confirm scope only; do not imply every answer is verified by that page",
+  "sourcePolicy": "syllabus sources confirm scope only unless a selected concept section is explicitly linked; do not imply every answer is verified by the overview page",
   "themes": [
     {
       "qualificationId": "it-passport",
@@ -59,10 +59,10 @@
           "hint": "このテーマでは1バイト=8ビット、1M=1,000,000とします。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             }
           ],
           "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
@@ -125,10 +125,10 @@
           "hint": "このテーマでは1バイト=8ビット、1M=1,000,000とします。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             }
           ],
           "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
@@ -190,10 +190,10 @@
           "hint": "このテーマでは1バイト=8ビット、1M=1,000,000とします。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             }
           ],
           "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
@@ -255,10 +255,10 @@
           "hint": "このテーマでは1バイト=8ビット、1M=1,000,000とします。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             }
           ],
           "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
@@ -320,10 +320,10 @@
           "hint": "このテーマでは1バイト=8ビット、1M=1,000,000とします。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             }
           ],
           "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
@@ -385,10 +385,10 @@
           "hint": "このテーマでは1バイト=8ビット、1M=1,000,000とします。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             }
           ],
           "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
@@ -468,10 +468,10 @@
           "hint": "ANDは両方、ORは少なくとも片方、NOTはその条件の反対です。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             },
             {
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND",
@@ -538,10 +538,10 @@
           "hint": "ANDは両方、ORは少なくとも片方、NOTはその条件の反対です。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             },
             {
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND",
@@ -608,10 +608,10 @@
           "hint": "ANDは両方、ORは少なくとも片方、NOTはその条件の反対です。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             },
             {
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND",
@@ -678,10 +678,10 @@
           "hint": "ANDは両方、ORは少なくとも片方、NOTはその条件の反対です。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             },
             {
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND",
@@ -748,10 +748,10 @@
           "hint": "ANDは両方、ORは少なくとも片方、NOTはその条件の反対です。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             },
             {
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND",
@@ -818,10 +818,10 @@
           "hint": "ANDは両方、ORは少なくとも片方、NOTはその条件の反対です。",
           "sources": [
             {
-              "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/about/range.html",
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
               "role": "syllabus",
-              "checked": "2026-10-20",
-              "status": "search_result_only; direct page returned invalid request; version not confirmed"
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
             },
             {
               "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND",
@@ -8046,6 +8046,369 @@
       "humanSubjectReview": false,
       "targetExamYear": null,
       "scopeMappingStatus": "foundation concept only; full qualification syllabus not mapped"
+    },
+    {
+      "qualificationId": "it-passport",
+      "themeId": "data-operations",
+      "domainId": "technology",
+      "version": "2026-10-21.foundation.1",
+      "title": "表のデータを操作する",
+      "intro": "行・列・表のつながりを、商品データで確かめます。",
+      "explanation": [
+        "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+        "挿入は行の追加、更新は値の変更、削除は行を取り除く操作です。この練習ではSQLの文法は使いません。"
+      ],
+      "coreQuestions": [
+        {
+          "id": "it-passport:data-operations:1",
+          "concept": "selection",
+          "prompt": "商品表から「価格が200円の商品」の行だけを取り出す。どの操作？",
+          "options": [
+            {
+              "id": "o1",
+              "text": "選択",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "text": "射影",
+              "isCorrect": false,
+              "misconception": "selection:d1",
+              "whyWrong": "「射影」は必要な列を取り出す操作です。"
+            },
+            {
+              "id": "o3",
+              "text": "結合",
+              "isCorrect": false,
+              "misconception": "selection:d2",
+              "whyWrong": "「結合」は共通の値を使って複数の表をつなぐ操作です。"
+            },
+            {
+              "id": "o4",
+              "text": "挿入",
+              "isCorrect": false,
+              "misconception": "selection:d3",
+              "whyWrong": "「挿入」は新しい行を追加する操作です。"
+            }
+          ],
+          "explanation": "選択は条件で行を絞ります。商品名などの列だけを取り出す射影とは別です。",
+          "hint": "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+          "sources": [
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "role": "syllabus",
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
+            },
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "section": "Ver.6.5 PDF page 57, item 56; SQL syntax is not examined",
+              "role": "concept_reference",
+              "checked": "2026-10-21",
+              "status": "selected original syllabus text checked; not an independent expert review or full syllabus audit"
+            }
+          ],
+          "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
+          "verification": {
+            "type": "definition_or_scenario",
+            "humanSubjectReview": false,
+            "semanticStatus": "author compared the original question, answer and distractors with IPA item 56; offline fixture checked separately; not independent expert review",
+            "fixtureId": "it-passport:data-operations:1"
+          }
+        },
+        {
+          "id": "it-passport:data-operations:2",
+          "concept": "projection",
+          "prompt": "商品表から「商品コード」と「価格」の列だけを取り出す。どの操作？",
+          "options": [
+            {
+              "id": "o1",
+              "text": "選択",
+              "isCorrect": false,
+              "misconception": "projection:d1",
+              "whyWrong": "「選択」は条件に合う行を取り出す操作です。"
+            },
+            {
+              "id": "o2",
+              "text": "射影",
+              "isCorrect": true
+            },
+            {
+              "id": "o3",
+              "text": "結合",
+              "isCorrect": false,
+              "misconception": "projection:d2",
+              "whyWrong": "「結合」は共通の値を使って複数の表をつなぐ操作です。"
+            },
+            {
+              "id": "o4",
+              "text": "更新",
+              "isCorrect": false,
+              "misconception": "projection:d3",
+              "whyWrong": "「更新」は既存の行の値を変える操作です。"
+            }
+          ],
+          "explanation": "必要な列を取り出すのが射影です。今回は条件で行を減らす操作ではありません。",
+          "hint": "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+          "sources": [
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "role": "syllabus",
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
+            },
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "section": "Ver.6.5 PDF page 57, item 56; SQL syntax is not examined",
+              "role": "concept_reference",
+              "checked": "2026-10-21",
+              "status": "selected original syllabus text checked; not an independent expert review or full syllabus audit"
+            }
+          ],
+          "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
+          "verification": {
+            "type": "definition_or_scenario",
+            "humanSubjectReview": false,
+            "semanticStatus": "author compared the original question, answer and distractors with IPA item 56; offline fixture checked separately; not independent expert review",
+            "fixtureId": "it-passport:data-operations:2"
+          }
+        },
+        {
+          "id": "it-passport:data-operations:3",
+          "concept": "join",
+          "prompt": "商品表と売上表で、商品コードが一致する行を使って、売上に商品名を添える。どの操作？",
+          "options": [
+            {
+              "id": "o1",
+              "text": "射影",
+              "isCorrect": false,
+              "misconception": "join:d1",
+              "whyWrong": "「射影」は必要な列を取り出す操作です。"
+            },
+            {
+              "id": "o2",
+              "text": "選択",
+              "isCorrect": false,
+              "misconception": "join:d2",
+              "whyWrong": "「選択」は条件に合う行を取り出す操作です。"
+            },
+            {
+              "id": "o3",
+              "text": "結合",
+              "isCorrect": true
+            },
+            {
+              "id": "o4",
+              "text": "削除",
+              "isCorrect": false,
+              "misconception": "join:d3",
+              "whyWrong": "「削除」は指定した行を取り除く操作です。"
+            }
+          ],
+          "explanation": "共通の商品コードを手がかりに、二つの表の情報を組み合わせるので結合です。",
+          "hint": "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+          "sources": [
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "role": "syllabus",
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
+            },
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "section": "Ver.6.5 PDF page 57, item 56; SQL syntax is not examined",
+              "role": "concept_reference",
+              "checked": "2026-10-21",
+              "status": "selected original syllabus text checked; not an independent expert review or full syllabus audit"
+            }
+          ],
+          "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
+          "verification": {
+            "type": "definition_or_scenario",
+            "humanSubjectReview": false,
+            "semanticStatus": "author compared the original question, answer and distractors with IPA item 56; offline fixture checked separately; not independent expert review",
+            "fixtureId": "it-passport:data-operations:3"
+          }
+        },
+        {
+          "id": "it-passport:data-operations:4",
+          "concept": "insert",
+          "prompt": "新しい商品D4を、商品表の新しい1行として追加する。どの操作？",
+          "options": [
+            {
+              "id": "o1",
+              "text": "既存行の更新",
+              "isCorrect": false,
+              "misconception": "insert:d1",
+              "whyWrong": "「既存行の更新」は既存の行の値を変える操作です。"
+            },
+            {
+              "id": "o2",
+              "text": "列の射影",
+              "isCorrect": false,
+              "misconception": "insert:d2",
+              "whyWrong": "「列の射影」は必要な列を取り出す操作です。"
+            },
+            {
+              "id": "o3",
+              "text": "条件による選択",
+              "isCorrect": false,
+              "misconception": "insert:d3",
+              "whyWrong": "「条件による選択」は条件に合う行を取り出す操作です。"
+            },
+            {
+              "id": "o4",
+              "text": "挿入",
+              "isCorrect": true
+            }
+          ],
+          "explanation": "新しい行を加えるのが挿入です。既存の商品の価格を書き換える更新とは分けます。",
+          "hint": "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+          "sources": [
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "role": "syllabus",
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
+            },
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "section": "Ver.6.5 PDF page 57, item 56; SQL syntax is not examined",
+              "role": "concept_reference",
+              "checked": "2026-10-21",
+              "status": "selected original syllabus text checked; not an independent expert review or full syllabus audit"
+            }
+          ],
+          "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
+          "verification": {
+            "type": "definition_or_scenario",
+            "humanSubjectReview": false,
+            "semanticStatus": "author compared the original question, answer and distractors with IPA item 56; offline fixture checked separately; not independent expert review",
+            "fixtureId": "it-passport:data-operations:4"
+          }
+        },
+        {
+          "id": "it-passport:data-operations:5",
+          "concept": "update",
+          "prompt": "商品A1の価格を200円から250円に変更する。商品数は増やさない。どの操作？",
+          "options": [
+            {
+              "id": "o1",
+              "text": "更新",
+              "isCorrect": true
+            },
+            {
+              "id": "o2",
+              "text": "挿入",
+              "isCorrect": false,
+              "misconception": "update:d1",
+              "whyWrong": "「挿入」は新しい行を追加する操作です。"
+            },
+            {
+              "id": "o3",
+              "text": "射影",
+              "isCorrect": false,
+              "misconception": "update:d2",
+              "whyWrong": "「射影」は必要な列を取り出す操作です。"
+            },
+            {
+              "id": "o4",
+              "text": "結合",
+              "isCorrect": false,
+              "misconception": "update:d3",
+              "whyWrong": "「結合」は共通の値を使って複数の表をつなぐ操作です。"
+            }
+          ],
+          "explanation": "既存行の値を書き換えるのが更新です。新しい商品行を加える挿入ではありません。",
+          "hint": "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+          "sources": [
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "role": "syllabus",
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
+            },
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "section": "Ver.6.5 PDF page 57, item 56; SQL syntax is not examined",
+              "role": "concept_reference",
+              "checked": "2026-10-21",
+              "status": "selected original syllabus text checked; not an independent expert review or full syllabus audit"
+            }
+          ],
+          "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
+          "verification": {
+            "type": "definition_or_scenario",
+            "humanSubjectReview": false,
+            "semanticStatus": "author compared the original question, answer and distractors with IPA item 56; offline fixture checked separately; not independent expert review",
+            "fixtureId": "it-passport:data-operations:5"
+          }
+        },
+        {
+          "id": "it-passport:data-operations:6",
+          "concept": "delete",
+          "prompt": "販売をやめた商品B2の行だけを取り除く。商品表そのものは残す。どの操作？",
+          "options": [
+            {
+              "id": "o1",
+              "text": "表全体の削除",
+              "isCorrect": false,
+              "misconception": "delete:d1",
+              "whyWrong": "「表全体の削除」は表そのものを消す操作です。"
+            },
+            {
+              "id": "o2",
+              "text": "行の削除",
+              "isCorrect": true
+            },
+            {
+              "id": "o3",
+              "text": "行の挿入",
+              "isCorrect": false,
+              "misconception": "delete:d2",
+              "whyWrong": "「行の挿入」は新しい行を追加する操作です。"
+            },
+            {
+              "id": "o4",
+              "text": "列の射影",
+              "isCorrect": false,
+              "misconception": "delete:d3",
+              "whyWrong": "「列の射影」は必要な列を取り出す操作です。"
+            }
+          ],
+          "explanation": "指定した行を取り除く削除です。表を丸ごと消すことや、必要な列を取り出すこととは別です。",
+          "hint": "選択は条件に合う行、射影は必要な列を取り出す操作です。結合は共通の値を使って表をつなぎます。",
+          "sources": [
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "role": "syllabus",
+              "checked": "2026-10-21",
+              "status": "official index and Ver.6.5 selected sections checked; full syllabus not audited; SQL grammar is excluded by item 56"
+            },
+            {
+              "url": "https://www.ipa.go.jp/shiken/syllabus/omgdg50000005kn1-att/syllabus_ip_ver6_5.pdf",
+              "section": "Ver.6.5 PDF page 57, item 56; SQL syntax is not examined",
+              "role": "concept_reference",
+              "checked": "2026-10-21",
+              "status": "selected original syllabus text checked; not an independent expert review or full syllabus audit"
+            }
+          ],
+          "sourceNote": "アプリ独自の基礎問題。公式問題・書籍の転載ではありません。出典の試験範囲確認と正解内容の検証は別です。",
+          "verification": {
+            "type": "definition_or_scenario",
+            "humanSubjectReview": false,
+            "semanticStatus": "author compared the original question, answer and distractors with IPA item 56; offline fixture checked separately; not independent expert review",
+            "fixtureId": "it-passport:data-operations:6"
+          }
+        }
+      ],
+      "recheckStrategy": "select two different questions prioritizing wrong concepts; shuffle options and retain original question provenance; same-day recheck is not later recall",
+      "coverage": "foundation_only",
+      "estimatedMinutes": 5,
+      "publicationStatus": "local_draft",
+      "humanSubjectReview": false,
+      "targetExamYear": 2026,
+      "scopeMappingStatus": "IPA syllabus Ver.6.5 item 56 data manipulation, selected concept subset; not full database or full exam coverage"
     }
   ]
 }

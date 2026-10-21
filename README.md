@@ -67,24 +67,26 @@ Node.js 24 以上が必要です。フォルダごとに別の `package-lock.jso
 
 ```sh
 # 学習コア
-npm ci
+npm ci --ignore-scripts
 npm run typecheck
 npm test
 
 # モバイル（Webの書き出しまで。ブラウザーは使いません）
 cd mobile
-npm ci
+npm ci --ignore-scripts
 npm run typecheck
 npm test
 npm run export:web
 
 # サーバー（ローカルの試験のみ）
 cd ../server
-npm ci
+npm ci --ignore-scripts
 npm run typecheck
 npm test
 npm run test:preflight
 ```
+
+各フォルダの `.npmrc`（`ignore-scripts=true`）と `packageManager: npm@11.19.0` により、`npm install`/`npm ci` は依存のinstall scriptを実行しません。明示した `npm run`/`npm test` は動きます。これはinstall時の自動実行を止める措置で、依存の既知の脆弱性（修正版の無いものを含む）を解消するものではありません。
 
 `mobile/` の `npm run e2e` は別途ブラウザーが必要なので、CIでは動かしません。
 

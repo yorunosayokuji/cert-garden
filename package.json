@@ -2,6 +2,7 @@
   "name": "cert-garden-core",
   "version": "0.0.1",
   "private": true,
+  "packageManager": "npm@11.19.0",
   "description": "資格学習×箱庭: 画面に依存しない学習コア（試作・未公開）",
   "type": "module",
   "engines": { "node": ">=24" },
