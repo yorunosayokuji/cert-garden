@@ -12,7 +12,7 @@ https://github.com/yorunosayokuji/cert-garden
 | Cloudflare サーバー | このアプリ専用のD1データベースを作成し、最初の表（9つ）を適用済みです。**サーバー本体（Worker）は未公開で、実際のログイン（OAuth）にも未接続**です。サーバーの試験は引き続きローカルの実行環境で行っています |
 | 画面の見た目 | 5つの候補のうち、作者が**候補4**（「箱庭」と「学ぶ」の2つを主なタブにし、「手帳」と「お店」は下から出るシートにする構成）を選びました。iOSの製品の入口は、選択ファイル（`mobile/release-selection.json`）の `approvedVariant: 4` の1案だけで起動します。ほかの4案は比較用の別の入口に残し、製品画面では候補4だけを表示します。選択が未設定（null）や不正なら、起動を拒否する安全装置は残っています（旧画面へは戻りません）。名義などは未決定で、見た目の最終承認ではありません |
 | 教材 | 10資格の**基礎**の問題だけ。**各試験の出題範囲を網羅したものではなく、合格を保証しません** |
-| 依存パッケージ | 脆弱性の確認は継続中です。サーバーは監査で指摘0件。モバイルは互換性の修正を入れて自動試験は通りますが、**モバイルの監査にはcriticalが0件、highが15件残っており未解消です。** 直接の原因は開発用ツールの braces 3.0.3 と node-forge 1.4.0 で、2026-10-20 時点でどちらも修正版がありません（[GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)、[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv)）。2026-10-20 に、iOS向け製品相当のJSをソースマップ付きで書き出して調べた範囲（1438個のソース）では、braces・node-forge・micromatch・metro-file-map は含まれていませんでした。ただしこれはそのJSの範囲だけの確認で、署名済みのネイティブビルドや、開発ビルドの環境（Expo CLI・Metro）での影響は未検証です。2026-10-21 または最初の署名ビルドの前に再確認します。修正版が無いことは、安全の確認ではありません |
+| 依存パッケージ | 脆弱性の確認は継続中です。サーバーは監査で指摘0件。モバイルは互換性の修正を入れて自動試験は通りますが、**モバイルの監査にはcriticalが0件、highが15件残っており未解消です。** 直接の原因は開発用ツールの braces 3.0.3 と node-forge 1.4.0 で、2026-10-21 時点でもどちらも修正版が提供されていません（[GHSA-vfj7-8cjw-p6xm](https://github.com/advisories/GHSA-vfj7-8cjw-p6xm)、[GHSA-86w9-cpqp-85rv](https://github.com/advisories/GHSA-86w9-cpqp-85rv)）。2026-10-20 に、iOS向け製品相当のJSをソースマップ付きで書き出して調べた範囲（1438個のソース）では、braces・node-forge・micromatch・metro-file-map は含まれていませんでした。ただしこれはそのJSの範囲だけの確認で、署名済みのネイティブビルドや、開発ビルドの環境（Expo CLI・Metro）での影響は未検証です。次の再確認は、最初の署名ビルドの前、または修正版が公開された時に行います。修正版が無いことは、安全の確認ではありません |
 | 認証まわり | Expo SDK 57 と、Apple / Google / 安全保存 / ブラウザー認証の部品（expo-apple-authentication、expo-auth-session、expo-secure-store など5つ）への依存と実装は入っています。ただし**実際のOAuth接続と実機での確認は未了**です。React Navigation と Reanimated は**まだ導入していません** |
 | Webの通常画面 | 従来の画面と既存の保存のままです。**iOSの製品の画面ではなく、正式採用でもありません** |
 | ライセンス | このリポジトリのコードや絵に**オープンソースライセンスは付けていません**。使用・再配布の許可を意味しません。フォントなど第三者のライセンスは各ファイルのまま保持しています |
@@ -39,8 +39,8 @@ https://github.com/yorunosayokuji/cert-garden
 - **送るソースの検査**: `npm run check:eas-source`（mobile、読むだけ）。専用のGitで、コミット済み・cleanで、HEAD・index・作業ツリーのバイトが `PUBLISH_MANIFEST.json`（パス・sha256・大きさ）と一致し、リンクの逸脱や一覧に無いファイルが無いことを確認します。EAS CLIは呼びません。
 - **iOS向けの書き出し**: `npm run export:ios`（製品相当・Hermes）、`npm run export:ios:compare-dev`（比較の開発ビルド相当。配布物ではありません）、`npm run export:ios:flag-release`（補助検査）。JSとassetsの書き出しの確認で、**ネイティブのコンパイル・署名・実機・TestFlightは行っていません**。
 - **通信設定とFaceID**: 製品相当のビルドはHTTPSのみ（App Transport Securityを無効にしません）。開発ビルドだけ開発サーバー用の既定を残します。使っていないFaceIDの文言は出力しません。
-- 現在地: Expoには、このアプリ専用のプロジェクトを作成済みです（owner と projectId は設定済み。名前は仮名で、正式なStore名ではありません）。ただしEAS CLIの認証・Google OAuth・署名ビルドは未実施です。
-- 未完: Apple Developer（名義は本人が意図的に保留）と、bundle ID・API・Googleクライアントの設定（これらが欠ける間は署名ビルド前の検査が止めます）、実OAuth、署名ビルド、実機での確認、App Storeの審査。公開できる状態ではありません。
+- 現在地: Expoには、このアプリ専用のプロジェクトを作成済みです（owner と projectId は設定済み。名前は仮名で、正式なStore名ではありません）。bundle IDとGoogleのiOS用クライアントの設定も、ローカルの設定ファイルには入れてあります（Googleは「テスト中」の限定設定）。ただし、実際のGoogle/Appleログイン、実際のサーバーAPIへの接続、EAS CLIの認証・署名ビルド、実機での確認は未確認です。
+- 未完: Apple Developer（名義は本人が意図的に保留）と、APIのURL（HTTPS）の設定（未設定の間は署名ビルド前の検査が止めます。サーバー側のApple関連設定も空で、環境はdevelopmentのままです）、実OAuth、署名ビルド、実機での確認、App Storeの審査。公開できる状態ではありません。
 
 ## 構成
 

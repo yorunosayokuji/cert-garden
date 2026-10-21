@@ -4,27 +4,22 @@ import { b64, BASE, call, makeWorld, req, resetDb, signIdToken, login, installAp
 
 beforeEach(resetDb);
 
-describe('本番入口(src/index.ts)をWorkers runtimeで実行: wrangler.jsonc の空varsはfail closed', () => {
+describe('本番入口(src/index.ts)をWorkers runtimeで実行: wrangler.jsonc の実設定（Apple未設定はfail closed）', () => {
   const f = (path: string, init?: RequestInit) => (exports as any).default.fetch(new Request(BASE + path, init)) as Promise<Response>;
 
-  it('health: D1に届き、providerは未設定と表示。no-store', async () => {
+  it('health: D1に届き、Googleは設定済み・Appleは未設定と表示。no-store', async () => {
     const r = await f('/health');
     expect(r.status).toBe(200);
     expect(r.headers.get('cache-control')).toBe('no-store');
-    expect(await r.json()).toMatchObject({ status: 'ok', db: 'ok', providers: { google: false, apple: false } });
+    expect(await r.json()).toMatchObject({ status: 'ok', db: 'ok', providers: { google: true, apple: false } });
   });
 
-  it('未設定のままchallenge/exchangeは503（匿名の成功を返さない）', async () => {
-    for (const p of ['google', 'apple']) {
-      const c = await f('/v1/auth/challenge', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ provider: p }) });
-      expect(c.status).toBe(503);
-      const e = await f('/v1/auth/exchange', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ provider: p, challengeId: 'x', idToken: 'x'.repeat(30) }),
-      });
-      expect(e.status).toBe(503);
-    }
+  it('実設定: Googleは公開client IDで設定済み(challenge発行できる)、Apple未設定は503。偽のchallengeでは交換できず、匿名の成功は返さない', async () => {
+    const post = (path: string, body: unknown) => f(path, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+    expect((await post('/v1/auth/challenge', { provider: 'google' })).status).toBe(200);
+    expect((await post('/v1/auth/exchange', { provider: 'google', challengeId: 'x', idToken: 'x'.repeat(30) })).status).toBe(400);
+    expect((await post('/v1/auth/challenge', { provider: 'apple' })).status).toBe(503);
+    expect((await post('/v1/auth/exchange', { provider: 'apple', challengeId: 'x', idToken: 'x'.repeat(30) })).status).toBe(503);
   });
 
   it('未認証のbackup/account/logoutは401', async () => {

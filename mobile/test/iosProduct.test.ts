@@ -225,7 +225,7 @@ test('ビルド前の検査: 空・未知の profile は止める（本番相当
   const bad = ev({ profile: 'development', easJson: { ...GOOD_EAS, build: { ...GOOD_EAS.build, development: { developmentClient: true, distribution: 'internal' } } } }) as { ok: boolean; errors: string[] };
   assert.equal(bad.ok, false);
   assert.ok(bad.errors.some((e) => /EXPO_PUBLIC_IOS_DESIGN/.test(e)));
-  // 実際の eas.json / app.json: 今は本人の選択も ID も無いので、製品ビルドは止まり、開発ビルドは（ソースの形が正しければ）通る
+  // 実際の eas.json / app.json: 本人の選択・bundle ID・Google client ID はあるが API URL が無いので、製品ビルドは止まり、開発ビルドは（ソースの形が正しければ）通る
   const realApp = JSON.parse(read('app.json'));
   const realSel = JSON.parse(read('release-selection.json'));
   const prod = evaluateBuild({ profile: 'production', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() });
@@ -236,11 +236,12 @@ test('ビルド前の検査: 空・未知の profile は止める（本番相当
   // 同じ実設定で、案だけを null に戻すと「未選択」で止まる（安全装置は残っている）
   const unselected = evaluateBuild({ profile: 'production', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: { approvedVariant: null }, fs: cleanFs() });
   assert.ok(unselected.errors.some((e: string) => /未選択/.test(e)));
-  // owner と projectId は Expo のプロジェクト作成後に入った。残る3項目は未設定のまま止まる
+  // owner・projectId・承認済み bundle ID・Google iOS client ID は入っている。残る API URL が未設定のまま止まる
   assert.equal(realApp.expo.owner, 'yorunosayokuji');
   assert.equal(realApp.expo.extra.eas.projectId, '8c5b4c31-03ca-4c45-899d-adbe75594b8f');
-  for (const re of [/bundleIdentifier/, /API_BASE_URL/, /GOOGLE_IOS_CLIENT_ID/]) assert.ok(prod.errors.some((e: string) => re.test(e)), String(re));
-  for (const re of [/owner/, /projectId/]) assert.ok(!prod.errors.some((e: string) => re.test(e)), String(re));
+  assert.equal(realApp.expo.ios.bundleIdentifier, 'com.yorunosayokuji.certgarden');
+  assert.ok(prod.errors.some((e: string) => /API_BASE_URL/.test(e)), 'API_BASE_URL');
+  for (const re of [/GOOGLE_IOS_CLIENT_ID/, /bundleIdentifier/, /owner/, /projectId/]) assert.ok(!prod.errors.some((e: string) => re.test(e)), String(re));
   assert.deepEqual(evaluateBuild({ profile: 'development', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() }), { ok: true, kind: 'dev', errors: [] });
   assert.deepEqual(evaluateBuild({ profile: 'simulator', platform: 'ios', env: {}, appJson: realApp, easJson: REAL_EAS, pkgJson: PKG, selection: realSel, fs: cleanFs() }), { ok: true, kind: 'dev', errors: [] });
 });
@@ -283,10 +284,11 @@ test('EAS の hook(実プロセス): package.json の eas-build-pre-install に�
   for (const p of ['preview', 'production']) {
     const r = run({ EAS_BUILD_PROFILE: p, EAS_BUILD_PLATFORM: 'ios' });
     assert.equal(r.status, 1, p);
-    // 案は選ばれている（候補4）ので「未選択」では止まらない。ID・owner・API・Google が無い間は止まる
+    // 案は選ばれている（候補4）ので「未選択」では止まらず、bundle ID と Google client ID も設定済み。API URL が無い間は止まる
     assert.doesNotMatch(r.stderr, /画面のデザインが未選択/);
-    assert.match(r.stderr, /bundleIdentifier/);
+    assert.doesNotMatch(r.stderr, /bundleIdentifier/);
     assert.match(r.stderr, /API_BASE_URL/);
+    assert.doesNotMatch(r.stderr, /GOOGLE_IOS_CLIENT_ID/);
   }
   // 比較フラグが混ざっていれば、それも理由に出る
   const flagged = run({ EAS_BUILD_PROFILE: 'production', EAS_BUILD_PLATFORM: 'ios', EXPO_PUBLIC_IOS_DESIGN: '1' });

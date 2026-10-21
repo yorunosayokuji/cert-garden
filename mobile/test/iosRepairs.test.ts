@@ -19,8 +19,10 @@ test('dev client: developmentClient のビルドには expo-dev-client が要り
   assert.ok(problems(app, eas, { ...pkg, dependencies: deps }).some((p: string) => p.includes('expo-dev-client')));
   assert.equal(eas.build.development.env.EXPO_PUBLIC_IOS_DESIGN, '1');
   assert.equal(eas.build.simulator.extends, 'development');
-  assert.equal(eas.build.preview.env, undefined);
-  assert.equal(eas.build.production.env, undefined);
+  // preview/production の env は公開してよい Google iOS client ID だけ（比較入口の環境変数は無い）
+  assert.deepEqual(Object.keys(eas.build.preview.env), ['EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID']);
+  assert.deepEqual(Object.keys(eas.build.production.env), ['EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID']);
+  assert.equal(eas.build.development.env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID, '99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com');
   assert.ok(problems(app, { build: { ...eas.build, development: { ...eas.build.development, env: {} } } }, pkg).some((p: string) => p.includes('EXPO_PUBLIC_IOS_DESIGN')));
 });
 

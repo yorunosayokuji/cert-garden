@@ -1,6 +1,6 @@
 {
   // cert-garden backend。D1 cert-garden は2026-10-20に専用account内で作成済み（APAC hint。国内保管の保証ではない）。
-  // Worker未deploy。vars は空（= 未設定で fail closed）。APP_ENVもdevelopmentのまま。
+  // Worker未deploy。vars は、公開識別子のGoogle iOSクライアントID（GOOGLE_CLIENT_IDS）だけ設定済み。Appleの3項目は空（Appleは503で拒否）、APP_ENVはdevelopmentのまま。
   // 秘密は vars に置かず `wrangler secret put` で入れる（名前は README / .dev.vars.example）。
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "cert-garden-api",
@@ -21,7 +21,7 @@
   "vars": {
     "APP_ENV": "development",
     "ALLOWED_ORIGINS": "",
-    "GOOGLE_CLIENT_IDS": "",
+    "GOOGLE_CLIENT_IDS": "99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com",
     "APPLE_CLIENT_ID": "",
     "APPLE_TEAM_ID": "",
     "APPLE_KEY_ID": "",

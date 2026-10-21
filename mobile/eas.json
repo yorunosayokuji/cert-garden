@@ -1,20 +1,33 @@
 {
-  "cli": { "appVersionSource": "remote" },
+  "cli": {
+    "appVersionSource": "remote"
+  },
   "build": {
     "development": {
       "developmentClient": true,
       "distribution": "internal",
-      "env": { "EXPO_PUBLIC_IOS_DESIGN": "1" }
+      "env": {
+        "EXPO_PUBLIC_IOS_DESIGN": "1",
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com"
+      }
     },
     "simulator": {
       "extends": "development",
-      "ios": { "simulator": true }
+      "ios": {
+        "simulator": true
+      }
     },
     "preview": {
-      "distribution": "internal"
+      "distribution": "internal",
+      "env": {
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com"
+      }
     },
     "production": {
-      "autoIncrement": true
+      "autoIncrement": true,
+      "env": {
+        "EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID": "99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com"
+      }
     }
   },
   "submit": {

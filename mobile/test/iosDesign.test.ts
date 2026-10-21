@@ -256,21 +256,28 @@ test('触覚: 実機のiOSだけで鳴り、Webでは何もしない。誤答・
 
 // ---- iOS設定 ----
 
-test('iOS設定: 暗号申告・iPhone専用・scheme・4プロファイルが揃い、確認用入口の環境変数が preview/production に無い', () => {
+test('iOS設定: 暗号申告・iPhone専用・scheme・4プロファイルが揃い、確認用入口の環境変数が preview/production に無く、Google iOS client ID だけがある', () => {
   const app = JSON.parse(read('../app.json'));
   const eas = JSON.parse(read('../eas.json'));
   assert.deepEqual(problems(app, eas), []);
   assert.equal(eas.build.simulator.ios.simulator, true);
-  assert.equal(eas.build.production.env, undefined);
+  // 本人承認済みの公開識別子（Google iOS client ID）だけが署名ビルドの env にある。API URL と比較用フラグは無い
+  const ID = '99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com';
+  assert.deepEqual(eas.build.production.env, { EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: ID });
+  assert.deepEqual(eas.build.preview.env, { EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: ID });
+  assert.equal(eas.build.production.env.EXPO_PUBLIC_IOS_DESIGN, undefined);
+  assert.equal(eas.build.preview.env.EXPO_PUBLIC_IOS_DESIGN, undefined);
+  assert.equal(eas.build.production.env.EXPO_PUBLIC_API_BASE_URL, undefined);
 });
 
-test('iOS設定: bundle ID は捏造せず未設定のまま（owner・projectId は Expo のプロジェクト作成後に入った）。ビルド前の検査がそれを報告する', () => {
+test('iOS設定: bundle ID は本人が承認した値（com.yorunosayokuji.certgarden）、owner・projectId は Expo のプロジェクト作成後の値。app.json 側の欠落はなく、bundle ID が消えたら検査が報告する', () => {
   const app = JSON.parse(read('../app.json'));
-  const miss = missingForBuild(app);
-  assert.equal(miss.length, 1);
-  assert.match(String(miss[0]), /bundleIdentifier/);
+  assert.deepEqual(missingForBuild(app), []);
   assert.equal(app.expo.owner, 'yorunosayokuji');
-  assert.equal(app.expo.ios.bundleIdentifier, undefined);
+  assert.equal(app.expo.ios.bundleIdentifier, 'com.yorunosayokuji.certgarden');
+  const noBundle = missingForBuild({ expo: { ...app.expo, ios: { ...app.expo.ios, bundleIdentifier: undefined } } });
+  assert.equal(noBundle.length, 1);
+  assert.match(String(noBundle[0]), /bundleIdentifier/);
   assert.equal(app.expo.extra?.eas?.projectId, '8c5b4c31-03ca-4c45-899d-adbe75594b8f');
   const filled = { expo: { ...app.expo, owner: 'someone', ios: { ...app.expo.ios, bundleIdentifier: 'com.someone.certgarden' }, extra: { eas: { projectId: '00000000-0000-4000-8000-000000000000' } } } };
   assert.deepEqual(missingForBuild(filled), []);

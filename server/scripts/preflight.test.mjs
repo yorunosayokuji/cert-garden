@@ -10,14 +10,18 @@ const good = () => ({
   vars: { APP_ENV: 'production', GOOGLE_CLIENT_IDS: 'a.apps.googleusercontent.com', APPLE_CLIENT_ID: 'com.example.app', APPLE_TEAM_ID: 'TEAM123456', APPLE_KEY_ID: 'KEY1234567', ALLOWED_ORIGINS: 'https://app.example.com' },
 });
 
-test('現在のwrangler.jsoncは実D1のIDを持つが、auth未設定・development のため不合格（fail closedの確認）', () => {
+test('現在のwrangler.jsoncは実D1のIDを持つが、Apple未設定・development のため不合格（fail closedの確認）', () => {
   const cfg = parseJsonc(readFileSync(new URL('../wrangler.jsonc', import.meta.url), 'utf8'));
   const p = checkConfig(cfg);
   assert.ok(!p.some((s) => s.includes('database_id')), 'ダミーID拒否は実IDで解消');
   assert.match(cfg.d1_databases[0].database_id, /^[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}$/);
   assert.equal(cfg.account_id, '87fdf9b9b2ca657cdfbce7e4ffe59c53');
-  assert.ok(p.some((s) => s.includes('GOOGLE_CLIENT_IDS')));
+  // Google iOS client ID（公開識別子）は設定済み。残る拒否は development と Apple の3設定だけ
+  assert.equal(cfg.vars.GOOGLE_CLIENT_IDS, '99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com');
+  assert.ok(!p.some((s) => s.includes('GOOGLE_CLIENT_IDS')));
   assert.ok(p.some((s) => s.includes('APP_ENV')));
+  for (const k of ['APPLE_CLIENT_ID', 'APPLE_TEAM_ID', 'APPLE_KEY_ID']) assert.ok(p.some((s) => s.includes(k)), k);
+  assert.equal(p.length, 4);
 });
 
 test('揃った設定は合格', () => assert.deepEqual(checkConfig(good()), []));

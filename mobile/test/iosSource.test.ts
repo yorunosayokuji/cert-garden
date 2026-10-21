@@ -302,6 +302,23 @@ function introspect(env: Record<string, string | undefined>) {
 }
 const CLIENT = '123456789012-abcdefghijklmnop.apps.googleusercontent.com'; // ダミー（形だけ）
 
+test('Expo設定(実CLI introspect): eas.json の各profileのenvをそのまま渡すと、実Google iOS client IDの逆順schemeと承認済みbundle ID・owner・projectIdが出る', () => {
+  const eas = JSON.parse(readFileSync(join(mobile, 'eas.json'), 'utf8'));
+  const REAL = '99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv.apps.googleusercontent.com';
+  for (const p of ['development', 'simulator', 'preview', 'production']) {
+    const prof = eas.build[p].extends ? eas.build[eas.build[p].extends] : eas.build[p];
+    const env = { ...(prof.env ?? {}), ...(eas.build[p].env ?? {}), EAS_BUILD_PROFILE: p };
+    assert.equal(env.EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID, REAL, p);
+    const cfg = introspect(env);
+    const schemes = cfg.ios.infoPlist.CFBundleURLTypes.flatMap((t: { CFBundleURLSchemes: string[] }) => t.CFBundleURLSchemes);
+    assert.ok(schemes.includes('certgarden'), p);
+    assert.ok(schemes.includes('com.googleusercontent.apps.99697541013-7vqs8qopvg0vtdi5q9kmc2k0jjl0fhgv'), p);
+    assert.equal(cfg.ios.bundleIdentifier, 'com.yorunosayokuji.certgarden', p);
+    assert.equal(cfg.owner, 'yorunosayokuji', p);
+    assert.equal(cfg.extra.eas.projectId, '8c5b4c31-03ca-4c45-899d-adbe75594b8f', p);
+  }
+});
+
 test('Expo設定(実CLI introspect): 製品相当のビルドは ATS を無効にせず(NSAllowsArbitraryLoads=false・例外なし)、使っていない FaceID の文言を要求しない', () => {
   for (const env of [{ EAS_BUILD_PROFILE: 'production' }, { EAS_BUILD_PROFILE: 'preview' }, { EAS_BUILD_PROFILE: 'staging' }, {}]) {
     const cfg = introspect({ ...env, EXPO_PUBLIC_GOOGLE_IOS_CLIENT_ID: CLIENT });
@@ -312,7 +329,7 @@ test('Expo設定(実CLI introspect): 製品相当のビルドは ATS を無効�
     assert.equal(cfg.ios.supportsTablet, false);
     const schemes = cfg.ios.infoPlist.CFBundleURLTypes.flatMap((t: { CFBundleURLSchemes: string[] }) => t.CFBundleURLSchemes);
     assert.ok(schemes.includes('certgarden') && schemes.includes('com.googleusercontent.apps.123456789012-abcdefghijklmnop'));
-    assert.equal(cfg.ios.bundleIdentifier, 'com.placeholder.appid', 'Expo が補う仮の値。本物のIDは作っていない');
+    assert.equal(cfg.ios.bundleIdentifier, 'com.yorunosayokuji.certgarden', '本人が承認した bundle ID（Expo の仮の値 com.placeholder.appid ではない）');
   }
 });
 
